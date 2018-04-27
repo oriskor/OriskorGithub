@@ -1,0 +1,820 @@
+﻿@model EDI.Models.tradingPartnerSetup
+
+@{
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<style>
+    .linkone {
+        font-size: 12px;
+    }
+
+    dt {
+        color: #ffffff;
+    }
+
+    fieldset {
+        display: block;
+        -webkit-margin-start: 2px;
+        -webkit-margin-end: 2px;
+        -webkit-padding-before: 0.35em;
+        -webkit-padding-start: 0.75em;
+        -webkit-padding-end: 0.75em;
+        -webkit-padding-after: 0.625em;
+        min-width: -webkit-min-content;
+        border-width: 2px;
+        border-style: groove;
+        border-color: rgba(68, 85, 105, 0.81);
+        border-image: initial;
+    }
+
+    legend {
+        display: block !important;
+        -webkit-padding-start: 2px;
+        -webkit-padding-end: 2px;
+        width: auto;
+        max-width: 100%;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+    }
+
+    label {
+        color: aliceblue;
+    }
+
+    .col-md-10 {
+        border: 1px solid black;
+    }
+
+    div {
+        padding-bottom: 5px;
+    }
+
+    @@media (min-width: 768px) {
+        .col-md-10 {
+            -ms-flex: 0 0 83.333333%;
+            flex: 0 0 80.333333%;
+            max-width: 83.333333%;
+        }
+    }
+
+    legend {
+        font-size: 1rem;
+        font-weight: 500;
+        color: white;
+    }
+</style>
+<!-- row -->
+<div class="row linkone">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Partner Name : </label>   <label class="card-title">@Html.DisplayFor(model => model.Name) </label>
+                    </div>
+                </div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#TradingPartnerDetails" role="tab"><span><i class="ti-user"></i></span> @Html.DisplayFor(model => model.Name) </a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#ItemSetup" role="tab"><span><i class="fa fa-bars"></i></span> Item Setup </a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Templates" role="tab"><span><i class="fa fa-file"></i> Templates</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Adresses" role="tab"><span><i class="fa fa-address-book"></i></span> Adresses</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#EDITransactions" role="tab"><span><i class="fa fa-train"></i></span> Transactions</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PartnerSetup" role="tab"><span><i class="fa fa-paragraph"></i></span> Partner Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LookupTables" role="tab"><span><i class="ti-list-ol"></i> Lookup Tables</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LabelSetup" role="tab"><span><i class="ti-settings"></i></span> Label Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#GLAccount" role="tab"><span><i class="fa fa-address-card-o"></i></span> GL Account</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#InteGrationSetup" role="tab"><span><i class="fa fa-asl-interpreting"></i></span> InteGration Setup</a> </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tabcontent-border ">
+                    <div class="tab-pane active" id="TradingPartnerDetails" role="tabpanel">
+                        <div class="p-20">
+
+                            @Html.Action("TradingPartnerDetail", "TradingPartner", new { id = Model.ID })
+
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="ItemSetup" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                    <input id="HideTrading1" type="checkbox">
+                                    <label for="HideTrading1"> Hide Trading Paartner PlugIn </label>
+                                    @Html.DisplayFor(item => item.Name)
+                                </div>
+                            </div>
+                            <div class="row">
+                                @Html.Action("ItemSetup", "TradingPartner", new { id = Model.ID })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane p-20" id="Templates" role="tabpanel">
+                        <div class="p-20">
+                            <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                                <div class="row">
+                                    <div class="col-md-2">Ship Date : </div>
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Name)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                @*<dl class="dl-horizontal">
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N104_ShipFromID)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N104_ShipFromID)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N401_ShipFromCity)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N401_ShipFromCity)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N402_ShipFromState)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N402_ShipFromState)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N403_ShipFromPostalCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N403_ShipFromPostalCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N404_ShipFromCountryCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N404_ShipFromCountryCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N104_ShipToID)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N104_ShipToID)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N401_ShipToCity)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N401_ShipToCity)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N402_ShipToState)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N402_ShipToState)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N403_ShipToPostalCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N403_ShipToPostalCode)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N404_ShipToCountryCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N404_ShipToCountryCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.CTT01_NumberOfPO1Segments)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.CTT01_NumberOfPO1Segments)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                    </dl>*@
+                            </div>
+                            <p>
+                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                @*    @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-rounded btn-secondary" })*@
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="Adresses" role="tabpanel">
+                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#ShipTo" role="tab"><span><i class="ti-home"></i></span> ShipTo</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#BillTo" role="tab"><span><i class="ti-user"></i></span> BillTo</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Store" role="tab"><span><i class="ti-email"></i> Store</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#DistributionCenter" role="tab"><span><i class="ti-home"></i></span> Distribution Center</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content tabcontent-border ">
+                                <div class="tab-pane active p-20" id="ShipTo" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Name : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Address : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1"><label>City :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>State :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>Zip :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane  p-20" id="BillTo" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Name : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Address : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1"><label>City :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>State :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>Zip :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane p-20" id="Store" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Store # : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane  p-20" id="DistributionCenter" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>DC # : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="EDITransactions" role="tabpanel">
+                        <div class="p-20">
+                            <div>
+                                <div>
+                                    <div class="row">
+                                        <div>
+                                            <label>Buyer name : </label>
+                                        </div>
+                                        <div>
+                                            John
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <label>Special handling Instructions : </label>
+                                        </div>
+                                        <div>
+                                            XYZ
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div>
+                                            <label>Note : </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <textarea rows="5" cols="10000"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane p-20" id="PartnerSetup" role="tabpanel">
+                        <div class="p-20">
+                            <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                                <fieldset>
+                                    <legend>Transaction Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>EPP Name : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Mode : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Sent Date : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Functional Control # : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Standard Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Standard :  </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Transaction ID : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Partner Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Sender ID :  </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Reciever ID : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <div>
+                                    @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                    @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane p-20" id="LookupTables" role="tabpanel">
+                        <div class="p-20">
+                            <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                                <div class="row">
+                                    <div class="col-md-2">Ship Date : </div>
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Name)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                @*<dl class="dl-horizontal">
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N104_ShipFromID)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N104_ShipFromID)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N401_ShipFromCity)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N401_ShipFromCity)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N402_ShipFromState)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N402_ShipFromState)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N403_ShipFromPostalCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N403_ShipFromPostalCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N404_ShipFromCountryCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N404_ShipFromCountryCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N104_ShipToID)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N104_ShipToID)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N401_ShipToCity)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N401_ShipToCity)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N402_ShipToState)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N402_ShipToState)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N403_ShipToPostalCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N403_ShipToPostalCode)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.N404_ShipToCountryCode)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.N404_ShipToCountryCode)
+                                                </dd>
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <dt>
+                                                    @Html.DisplayNameFor(model => model.CTT01_NumberOfPO1Segments)
+                                                </dt>
+
+                                                <dd>
+                                                    @Html.DisplayFor(model => model.CTT01_NumberOfPO1Segments)
+                                                </dd>
+
+                                            </div>
+                                        </div>
+
+                                    </dl>*@
+                            </div>
+                            <p>
+                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                @*    @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-rounded btn-secondary" })*@
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="LabelSetup" role="tabpanel">
+                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#ShipTo" role="tab"><span><i class="ti-home"></i></span> ShipTo</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#BillTo" role="tab"><span><i class="ti-user"></i></span> BillTo</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Store" role="tab"><span><i class="ti-email"></i> Store</span></a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#DistributionCenter" role="tab"><span><i class="ti-home"></i></span> Distribution Center</a> </li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content tabcontent-border ">
+                                <div class="tab-pane active p-20" id="ShipTo" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Name : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Address : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1"><label>City :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>State :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>Zip :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane  p-20" id="BillTo" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Name : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Address : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-1"><label>City :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>State :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                                <div class="col-md-1"><label>Zip :</label></div>
+                                                <div class="col-md-3">   @Html.DisplayFor(model => model.Name)</div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane p-20" id="Store" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>Store # : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane  p-20" id="DistributionCenter" role="tabpanel">
+                                    <div class="p-20">
+                                        <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+
+                                            <div class="row">
+                                                <div class="col-md-2"> <label>DC # : </label>  </div>
+                                                <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                            </div>
+
+                                            <div>
+                                                @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                                @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane  p-20" id="GLAccount" role="tabpanel">
+                        <div class="p-20">
+                            <div>
+                                <div>
+                                    <div class="row">
+                                        <div>
+                                            <label>Buyer name : </label>
+                                        </div>
+                                        <div>
+                                            John
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div>
+                                            <label>Special handling Instructions : </label>
+                                        </div>
+                                        <div>
+                                            XYZ
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div>
+                                            <label>Note : </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <textarea rows="5" cols="10000"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane p-20" id="InteGrationSetup" role="tabpanel">
+                        <div class="p-20">
+                            <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                                <fieldset>
+                                    <legend>Transaction Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>EPP Name : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Mode : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Sent Date : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Functional Control # : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Standard Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Standard :  </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Transaction ID : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <fieldset>
+                                    <legend>Partner Information</legend>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Sender ID :  </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2"> <label>Reciever ID : </label> </div>
+                                        <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                                    </div>
+                                </fieldset>
+                                <div>
+                                    @*@Html.ActionLink("Edit", "Edit", new { id = Model.HeaderKey }) |*@
+
+                                    @Html.ActionLink("Back to List", "Index", "C850_Header", new object { }, new { @class = "btn waves-effect waves-light btn-secondary" })
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- row -->
