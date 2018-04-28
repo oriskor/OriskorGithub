@@ -289,23 +289,6 @@
     <Property Name="N404_ShipFromCountryCode" Type="varchar" MaxLength="3" />
     <Property Name="CTT01_NumberOfPOCSegments" Type="varchar" MaxLength="9" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Address' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Address">
-          <Property Name="Edi_code" Type="nvarchar" MaxLength="20" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Address_1" Type="nvarchar(max)" />
-          <Property Name="Address_2" Type="nvarchar(max)" />
-          <Property Name="Address_3" Type="nvarchar(max)" />
-          <Property Name="Address_4" Type="nvarchar(max)" />
-          <Property Name="City" Type="nvarchar" MaxLength="50" />
-          <Property Name="State" Type="nvarchar" MaxLength="50" />
-          <Property Name="Zip" Type="nvarchar" MaxLength="20" />
-          <Property Name="Country" Type="nvarchar" MaxLength="50" />
-          <Property Name="Bus_sys" Type="nvarchar" MaxLength="50" />
-          <Property Name="Type" Type="nvarchar" MaxLength="20" />
-          <Property Name="t_id" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="company_master">
     <Key>
       <PropertyRef Name="c_id" />
@@ -322,18 +305,6 @@ warning 6013: The table/view 'edi_portal.dbo.Address' does not have a primary ke
     <Property Name="package_id" Type="int" Nullable="false" />
     <Property Name="edi_code" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Config' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Config">
-          <Property Name="SenderIdQlfr" Type="nvarchar" MaxLength="2" />
-          <Property Name="SenderId" Type="nvarchar" MaxLength="15" />
-          <Property Name="ReceiverIdQlfr" Type="nvarchar" MaxLength="2" />
-          <Property Name="ReceiverId" Type="nvarchar" MaxLength="15" />
-          <Property Name="ControlNumber" Type="nvarchar" MaxLength="9" />
-          <Property Name="AcknowledgmentRequested" Type="nvarchar" MaxLength="1" />
-          <Property Name="UsageIndicator" Type="nvarchar" MaxLength="1" />
-          <Property Name="ComponentElementSeparator" Type="nvarchar" MaxLength="1" />
-        </EntityType>-->
   <EntityType Name="docu_type">
     <Key>
       <PropertyRef Name="d_id" />
@@ -386,29 +357,6 @@ warning 6002: The table/view 'edi_portal.dbo.erp_master' does not have a primary
     <Property Name="api_details" Type="varchar(max)" />
     <Property Name="description" Type="varchar(max)" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.fcn_plcn' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="fcn_plcn">
-          <Property Name="isa_control" Type="nvarchar" MaxLength="50" />
-          <Property Name="gs_control" Type="nvarchar" MaxLength="50" />
-          <Property Name="st_control" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.fcn_tglcn' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="fcn_tglcn">
-          <Property Name="Transaction_#" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_1" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_2" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_3" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.fcn_tlcn' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="fcn_tlcn">
-          <Property Name="Transaction_name" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_1" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_2" Type="nvarchar" MaxLength="50" />
-          <Property Name="control_3" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="FunctionalGroupInbound">
     <Key>
       <PropertyRef Name="FunctionalGroupKey" />
@@ -441,30 +389,6 @@ warning 6013: The table/view 'edi_portal.dbo.fcn_tlcn' does not have a primary k
     <Property Name="GS08_VersionReleaseCode" Type="nvarchar" MaxLength="12" />
     <Property Name="GE01_NoOfTranSetsIncluded" Type="nvarchar" MaxLength="9" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.gl_accounts' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="gl_accounts">
-          <Property Name="income" Type="nvarchar" MaxLength="50" />
-          <Property Name="expence" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Identifier_Partner_production_ecidentifier' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Identifier_Partner_production_ecidentifier">
-          <Property Name="identifier" Type="nvarchar" MaxLength="50" />
-          <Property Name="identifier_type" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Identifier_Partner_test_identifier' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Identifier_Partner_test_identifier">
-          <Property Name="identifier" Type="nvarchar" MaxLength="50" />
-          <Property Name="identifier_type" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Identifier_trading_p_plugin' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Identifier_trading_p_plugin">
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="version" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="InterchangeInbound">
     <Key>
       <PropertyRef Name="InterchangeKey" />
@@ -547,19 +471,6 @@ warning 6013: The table/view 'edi_portal.dbo.Identifier_trading_p_plugin' does n
     <Property Name="Cost_of_Sales" Type="nvarchar" MaxLength="20" />
     <Property Name="id" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Lookup_setup' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Lookup_setup">
-          <Property Name="conversion_factot" Type="nvarchar" MaxLength="50" />
-          <Property Name="primary_item" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.lookup_template' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="lookup_template">
-          <Property Name="template_name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="value" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="menu_master">
     <Key>
       <PropertyRef Name="m_id" />
@@ -633,14 +544,6 @@ warning 6002: The table/view 'edi_portal.dbo.subscription_master' does not have 
     <Property Name="p_id" Type="int" Nullable="false" />
     <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.templates' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="templates">
-          <Property Name="Dcument_Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Version" Type="nvarchar" MaxLength="20" />
-          <Property Name="Date_Changed" Type="date" />
-          <Property Name="t_id" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="tradingPartnerSetup">
     <Key>
       <PropertyRef Name="id" />
@@ -712,23 +615,6 @@ warning 6013: The table/view 'edi_portal.dbo.templates' does not have a primary 
     <Property Name="doc_id" Type="nvarchar" MaxLength="50" />
     <Property Name="tp_id" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.Transction_Setup' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="Transction_Setup">
-          <Property Name="Transaction_Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Active" Type="nvarchar" MaxLength="5" />
-          <Property Name="Test_Or_Production" Type="nvarchar" MaxLength="20" />
-          <Property Name="Import_Document_Type" Type="nvarchar" MaxLength="20" />
-          <Property Name="Primary_Item_Field" Type="nvarchar" MaxLength="20" />
-          <Property Name="Shipping_Export_Type" Type="nvarchar" MaxLength="50" />
-          <Property Name="Shipping_Export_Row" Type="nvarchar" MaxLength="50" />
-          <Property Name="Address_Lookup_Order" Type="nvarchar" MaxLength="25" />
-          <Property Name="Consolidate_Items_Im" Type="nvarchar" MaxLength="5" />
-          <Property Name="Consolidate_Items_Turnaroun" Type="nvarchar" MaxLength="5" />
-          <Property Name="Direction" Type="nvarchar" MaxLength="20" />
-          <Property Name="Version" Type="nvarchar" MaxLength="20" />
-          <Property Name="Standard_Document" Type="nvarchar" MaxLength="50" />
-        </EntityType>-->
   <EntityType Name="user_master">
     <Key>
       <PropertyRef Name="user_id" />
@@ -743,12 +629,6 @@ warning 6013: The table/view 'edi_portal.dbo.Transction_Setup' does not have a p
     <Property Name="email_id" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="varchar" MaxLength="32" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'edi_portal.dbo.UserInRole' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="UserInRole">
-          <Property Name="User_Id" Type="int" />
-          <Property Name="Role_ID" Type="int" />
-        </EntityType>-->
   <Association Name="FK__EDIFiles__Status__76969D2E">
     <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
     <End Role="EDIFiles" Type="Self.EDIFiles" Multiplicity="*" />
@@ -809,12 +689,6 @@ warning 6013: The table/view 'edi_portal.dbo.UserInRole' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-error 6004: The table 'edi_portal.dbo.UserInRole' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__UserInRol__Role___0A9D95DB" />-->
-  <!--Errors Found During Generation:
-error 6004: The table 'edi_portal.dbo.UserInRole' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__UserInRol__User___0B91BA14" />-->
   <Association Name="FK_810_DetailInterReference">
     <End Role="810_Header" Type="Self.810_Header" Multiplicity="0..1" />
     <End Role="810_Detail" Type="Self.810_Detail" Multiplicity="*" />
@@ -935,9 +809,6 @@ error 6004: The table 'edi_portal.dbo.UserInRole' is referenced by a relationshi
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-error 6004: The table 'edi_portal.dbo.Address' is referenced by a relationship, but cannot be found.
-        <Association Name="fk_address_tid" />-->
   <Association Name="fk_c_id">
     <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
     <End Role="erp_master" Type="Self.erp_master" Multiplicity="*" />
@@ -1106,9 +977,6 @@ error 6004: The table 'edi_portal.dbo.Address' is referenced by a relationship, 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <!--Errors Found During Generation:
-error 6004: The table 'edi_portal.dbo.templates' is referenced by a relationship, but cannot be found.
-        <Association Name="fk_templates_tid" />-->
   <Association Name="fk_tp_id">
     <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="0..1" />
     <End Role="transactions" Type="Self.transactions" Multiplicity="*" />

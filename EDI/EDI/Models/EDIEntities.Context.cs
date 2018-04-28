@@ -15,9 +15,9 @@ namespace EDI.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class EDIEntitiesCon : DbContext
+    public partial class EDIEntities : DbContext
     {
-        public EDIEntitiesCon()
+        public EDIEntities()
             : base("name=EDIEntitiesCon")
         {
         }
