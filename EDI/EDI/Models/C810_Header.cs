@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C810_Header
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C810_Header()
         {
             this.C810_Detail = new HashSet<C810_Detail>();
@@ -42,6 +43,7 @@ namespace EDI.Models
         public string SAC05_TotalChargeAmount { get; set; }
         public string CTT01_NumberOfLineItems { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C810_Detail> C810_Detail { get; set; }
     }
 }

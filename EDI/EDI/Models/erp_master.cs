@@ -15,7 +15,7 @@ namespace EDI.Models
     public partial class erp_master
     {
         public string c_name { get; set; }
-        public int c_id { get; set; }
+        public string c_id { get; set; }
         public string erp_name { get; set; }
         public string technology { get; set; }
         public string api_details { get; set; }

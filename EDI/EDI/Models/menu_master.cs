@@ -14,17 +14,20 @@ namespace EDI.Models
     
     public partial class menu_master
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public menu_master()
         {
             this.MenuRoleMappings = new HashSet<MenuRoleMapping>();
             this.sub_menu = new HashSet<sub_menu>();
         }
     
-        public int m_id { get; set; }
+        public string m_id { get; set; }
         public string m_name { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MenuRoleMapping> MenuRoleMappings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sub_menu> sub_menu { get; set; }
     }
 }

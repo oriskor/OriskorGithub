@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Korbose\2018\Projects\EDI\EDI\Models\EDIModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\EDI\OriskorGithub\EDI\EDI\Models\EDIEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

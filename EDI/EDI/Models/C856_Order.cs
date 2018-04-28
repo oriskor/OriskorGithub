@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C856_Order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C856_Order()
         {
             this.C856_Pack = new HashSet<C856_Pack>();
@@ -26,7 +27,9 @@ namespace EDI.Models
         public string PRF02_ReleaseNumber { get; set; }
     
         public virtual C856_Shipment C856_Shipment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C856_Pack> C856_Pack { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C856_Tare> C856_Tare { get; set; }
     }
 }

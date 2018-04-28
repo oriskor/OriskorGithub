@@ -28,7 +28,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        @Html.DisplayFor(modelItem => modelItem.ID)
+                                        @Html.DisplayFor(modelItem => modelItem.id)
                                     </td>
 
                                     <td>
@@ -78,8 +78,8 @@
                     </div>
                 </div>
                 <div>
-                    @Html.ActionLink("Export", "Edit", new { id = Model.ID }, new { @class= "btn btn-info" }) |
-                    @Html.ActionLink("Import", "Edit", new { id = Model.ID }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Export", "Edit", new { id = Model.id }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Import", "Edit", new { id = Model.id }, new { @class = "btn btn-info" })
                 </div>
             </div>
         </div>

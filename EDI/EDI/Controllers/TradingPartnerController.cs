@@ -13,66 +13,66 @@ namespace EDI.Controllers
         EDIEntities db = new EDIEntities();
 
 
-        public PartialViewResult BindGridPartnerTestECIdentifier(int id)
+        public PartialViewResult BindGridPartnerTestECIdentifier(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/BindGridPartnerTestECIdentifier.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult BindgridTransactionGroupLelelControlNumbers(int id)
+        public PartialViewResult BindgridTransactionGroupLelelControlNumbers(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/BindgridTransactionGroupLelelControlNumbers.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult ItemSetup(int id)
+        public PartialViewResult ItemSetup(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/ItemSetup.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult Tamplate(int id)
+        public PartialViewResult Tamplate(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/Tamplate.cshtml", TradingPartnerSetup);
         }
 
-        public PartialViewResult Transaction(int id)
+        public PartialViewResult Transaction(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/Transaction.cshtml", TradingPartnerSetup);
         }
 
-        public PartialViewResult LabelSetup(int id)
+        public PartialViewResult LabelSetup(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/LabelSetup.cshtml", TradingPartnerSetup);
         }
 
-        public PartialViewResult GLAccounts(int id)
+        public PartialViewResult GLAccounts(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/GLAccounts.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult IntegrationSetup(int id)
+        public PartialViewResult IntegrationSetup(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/IntegrationSetup.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult PartnerSetup(int id)
+        public PartialViewResult PartnerSetup(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/PartnerSetup.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult LookupTables(int id)
+        public PartialViewResult LookupTables(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/LookupTables.cshtml", TradingPartnerSetup);
         }
-        public PartialViewResult Address(int id)
+        public PartialViewResult Address(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/Address.cshtml", TradingPartnerSetup);
         }
 
-        public PartialViewResult TradingPartnerDetail(int id)
+        public PartialViewResult TradingPartnerDetail(string id)
         {
             tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
             return PartialView("~/Views/TradingPartnerDetails/TradingPartnerMain.cshtml", TradingPartnerSetup);
@@ -85,7 +85,7 @@ namespace EDI.Controllers
             return View();
         }
         // GET: C850_Header/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {

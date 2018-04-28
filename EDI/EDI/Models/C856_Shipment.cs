@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C856_Shipment
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C856_Shipment()
         {
             this.C856_Order = new HashSet<C856_Order>();
@@ -27,6 +28,7 @@ namespace EDI.Models
         public string N104_ShipToId { get; set; }
     
         public virtual C856_Header C856_Header { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C856_Order> C856_Order { get; set; }
     }
 }

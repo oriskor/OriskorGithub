@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C856_Pack
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C856_Pack()
         {
             this.C856_Item = new HashSet<C856_Item>();
@@ -25,6 +26,7 @@ namespace EDI.Models
         public string MAN02_SerialShipContainerCode { get; set; }
         public string DTM02_ExpirationDate { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C856_Item> C856_Item { get; set; }
         public virtual C856_Order C856_Order { get; set; }
     }

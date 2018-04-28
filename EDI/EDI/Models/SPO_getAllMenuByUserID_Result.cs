@@ -15,7 +15,7 @@ namespace EDI.Models
     {
         public string UserName { get; set; }
         public string roll_name { get; set; }
-        public Nullable<int> Menu_Id { get; set; }
+        public string Menu_Id { get; set; }
         public string m_name { get; set; }
         public string Submenu_name { get; set; }
         public Nullable<int> sub_m_id { get; set; }

@@ -14,7 +14,27 @@ namespace EDI.Models
     
     public partial class tradingPartnerSetup
     {
-        public int ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tradingPartnerSetup()
+        {
+            this.docu_type = new HashSet<docu_type>();
+            this.item_setup = new HashSet<item_setup>();
+            this.transactions = new HashSet<transaction>();
+            this.tradingPartnerSetup_sub = new HashSet<tradingPartnerSetup_sub>();
+        }
+    
         public string Name { get; set; }
+        public string c_id { get; set; }
+        public string id { get; set; }
+    
+        public virtual company_master company_master { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<docu_type> docu_type { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<item_setup> item_setup { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transaction> transactions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tradingPartnerSetup_sub> tradingPartnerSetup_sub { get; set; }
     }
 }

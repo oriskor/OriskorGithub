@@ -12,12 +12,13 @@ namespace EDI.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class tradingPartnerSetup_sub
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string TP_id { get; set; }
+        public string Value { get; set; }
+    
+        public virtual tradingPartnerSetup tradingPartnerSetup { get; set; }
     }
 }

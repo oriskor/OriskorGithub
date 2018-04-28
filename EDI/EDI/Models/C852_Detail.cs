@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C852_Detail
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C852_Detail()
         {
             this.C852_ProdActivity = new HashSet<C852_ProdActivity>();
@@ -30,6 +31,7 @@ namespace EDI.Models
         public string PO407_Unit { get; set; }
     
         public virtual C852_Header C852_Header { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C852_ProdActivity> C852_ProdActivity { get; set; }
     }
 }

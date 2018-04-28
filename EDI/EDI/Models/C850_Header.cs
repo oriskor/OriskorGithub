@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C850_Header
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C850_Header()
         {
             this.C850_Detail = new HashSet<C850_Detail>();
@@ -47,6 +48,7 @@ namespace EDI.Models
         public string N404_ShipToCountryCode { get; set; }
         public string CTT01_NumberOfPO1Segments { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C850_Detail> C850_Detail { get; set; }
     }
 }

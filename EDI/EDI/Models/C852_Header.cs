@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C852_Header
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C852_Header()
         {
             this.C852_Detail = new HashSet<C852_Detail>();
@@ -29,6 +30,7 @@ namespace EDI.Models
         public string N903_FreeFormDesc { get; set; }
         public string CTT01_NumberOfLineItems { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C852_Detail> C852_Detail { get; set; }
     }
 }

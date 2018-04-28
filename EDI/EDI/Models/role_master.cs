@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class role_master
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public role_master()
         {
             this.MenuRoleMappings = new HashSet<MenuRoleMapping>();
@@ -24,7 +25,9 @@ namespace EDI.Models
         public string roll_name { get; set; }
         public int Role_Id2 { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MenuRoleMapping> MenuRoleMappings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_master> user_master { get; set; }
     }
 }

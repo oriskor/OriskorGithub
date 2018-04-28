@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class Status
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Status()
         {
             this.EDIFiles = new HashSet<EDIFile>();
@@ -23,6 +24,7 @@ namespace EDI.Models
         public string StatusCode { get; set; }
         public string StatusDesc { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<EDIFile> EDIFiles { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace EDI.Models
         public int user_id { get; set; }
         public string u_first_name { get; set; }
         public string u_last_name { get; set; }
-        public Nullable<int> c_id { get; set; }
+        public string c_id { get; set; }
         public Nullable<int> role_id { get; set; }
         public string UserName { get; set; }
         public int phone_no { get; set; }

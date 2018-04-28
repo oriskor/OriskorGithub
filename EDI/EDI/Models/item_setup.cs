@@ -14,7 +14,7 @@ namespace EDI.Models
     
     public partial class item_setup
     {
-        public int item__id { get; set; }
+        public string item__id { get; set; }
         public string item_translation { get; set; }
         public string Upc__ { get; set; }
         public string Vendor_Part_id { get; set; }
@@ -44,5 +44,8 @@ namespace EDI.Models
         public string income { get; set; }
         public string expence { get; set; }
         public string Cost_of_Sales { get; set; }
+        public string id { get; set; }
+    
+        public virtual tradingPartnerSetup tradingPartnerSetup { get; set; }
     }
 }

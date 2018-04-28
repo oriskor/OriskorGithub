@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C856_Header
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C856_Header()
         {
             this.C856_Shipment = new HashSet<C856_Shipment>();
@@ -30,6 +31,7 @@ namespace EDI.Models
         public string BSN05_HierarchicalStructureCode { get; set; }
         public string CTT01_NumberOfLineItems { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C856_Shipment> C856_Shipment { get; set; }
     }
 }

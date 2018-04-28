@@ -14,16 +14,9 @@ namespace EDI.Models
     
     public partial class edi_format_master
     {
-        public edi_format_master()
-        {
-            this.company_master = new HashSet<company_master>();
-        }
-    
-        public int edi_code { get; set; }
+        public string edi_code { get; set; }
         public string edi_type { get; set; }
         public string c_name { get; set; }
         public string edi_foramt { get; set; }
-    
-        public virtual ICollection<company_master> company_master { get; set; }
     }
 }

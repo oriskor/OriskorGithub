@@ -196,146 +196,161 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bussines\HeaderDetailInformationBussines.cs" />
     <Compile Include="Models\C810_Detail.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C810_Header.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C850_Detail.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C850_Header.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C852_Detail.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C852_Header.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C852_ProdActivity.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Header.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Item.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Order.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Pack.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Shipment.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C856_Tare.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C860_Detail.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C860_Header.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Comman.cs" />
     <Compile Include="Models\company_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Db.cs" />
     <Compile Include="Models\DDLdEMO.cs" />
+    <Compile Include="Models\docu_type.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\docu_type_sub.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDIEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDIEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EDIEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDIEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\EDIFile.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EDIModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDIModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EDIModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EDIModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDIModel.edmx</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\edi_format_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Entities.cs" />
     <Compile Include="Models\erp_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FunctionalGroupInbound.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FunctionalGroupOutbound.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetHeaderDetailInformation_Result.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InterchangeInbound.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\InterchangeOutbound.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\item_setup.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuRoleMapping.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\menu_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\package_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PermissionType.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Provider\HeaderDetailsInformation.cs" />
     <Compile Include="Models\role_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPO_getAllMenuByUserID_Result.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SPO_getAllMenuWhichNotAssignedToTheRole_Result.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SPO_getRejectedFiles_Result.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SqlHelper.cs" />
     <Compile Include="Models\Status.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\subscription_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sub_menu.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TradingPartners.cs" />
     <Compile Include="Models\tradingPartnerSetup.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tradingPartnerSetup_sub.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\transaction.cs">
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\transaction_rejected.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\transaction_sent.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user_master.cs">
-      <DependentUpon>EDIModel.tt</DependentUpon>
+      <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -527,6 +542,16 @@
     <Content Include="js\waves.js" />
     <Content Include="js\widget-charts.js" />
     <Content Include="js\widget-data.js" />
+    <Content Include="Models\EDIEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDIEntities.edmx</DependentUpon>
+      <LastGenOutput>EDIEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EDIEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EDIEntities.edmx</DependentUpon>
+      <LastGenOutput>EDIEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\awem.js" />
     <Content Include="Scripts\AwesomeMvc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -551,23 +576,6 @@
     <Content Include="assets\plugins\bootstrap\css\bootstrap.css.map" />
     <Content Include="assets\plugins\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="js\prepros-6.config" />
-    <EntityDeploy Include="Models\EDIModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EDIModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EDIModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EDIModel.edmx</DependentUpon>
-      <LastGenOutput>EDIModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EDIModel.edmx.diagram">
-      <DependentUpon>EDIModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EDIModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EDIModel.edmx</DependentUpon>
-      <LastGenOutput>EDIModel.cs</LastGenOutput>
-    </Content>
     <Content Include="assets\plugins\morrisjs\.bower.json" />
     <Content Include="assets\plugins\morrisjs\.gitignore" />
     <Content Include="assets\plugins\morrisjs\.travis.yml" />
@@ -582,6 +590,13 @@
     <Content Include="JQuery\.gitignore" />
     <Content Include="JQuery\base64.jquery.json" />
     <Content Include="JQuery\README.md" />
+    <EntityDeploy Include="Models\EDIEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EDIEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EDIEntities.edmx.diagram">
+      <DependentUpon>EDIEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

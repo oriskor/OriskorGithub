@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class InterchangeOutbound
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InterchangeOutbound()
         {
             this.FunctionalGroupOutbounds = new HashSet<FunctionalGroupOutbound>();
@@ -38,6 +39,7 @@ namespace EDI.Models
         public string ISA16_ComponentElementSeparator { get; set; }
         public string IEA01_NoOfIncludedFuncGroups { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FunctionalGroupOutbound> FunctionalGroupOutbounds { get; set; }
     }
 }

@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class PermissionType
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PermissionType()
         {
             this.MenuRoleMappings = new HashSet<MenuRoleMapping>();
@@ -22,6 +23,7 @@ namespace EDI.Models
         public int PermissionTypeID { get; set; }
         public string PermissionTypeDesc { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MenuRoleMapping> MenuRoleMappings { get; set; }
     }
 }

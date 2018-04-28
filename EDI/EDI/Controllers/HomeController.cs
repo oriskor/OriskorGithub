@@ -32,7 +32,7 @@ namespace EDI.Controllers
             Menu objMenu = new Menu();
             objMenu.MenuStructuredModel  = db.tradingPartnerSetups.ToList();
 
-            return PartialView("~/Views/Shared/_SideMenu.cshtml", objMenu.menuStructuredModel);
+            return PartialView("~/Views/Shared/_SideMenu.cshtml", db.tradingPartnerSetups.ToList());
         }
 
         public ActionResult About()

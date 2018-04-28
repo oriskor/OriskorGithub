@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class C860_Header
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public C860_Header()
         {
             this.C860_Detail = new HashSet<C860_Detail>();
@@ -39,6 +40,7 @@ namespace EDI.Models
         public string N404_ShipFromCountryCode { get; set; }
         public string CTT01_NumberOfPOCSegments { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C860_Detail> C860_Detail { get; set; }
     }
 }

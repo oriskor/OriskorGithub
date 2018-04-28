@@ -14,16 +14,16 @@ namespace EDI.Models
     
     public partial class transaction_sent
     {
-        public int t_id { get; set; }
-        public Nullable<int> c_id { get; set; }
-        public Nullable<int> edi_code { get; set; }
+        public string t_id { get; set; }
+        public string c_id { get; set; }
+        public string edi_code { get; set; }
         public string sent { get; set; }
         public string received { get; set; }
-        public Nullable<int> t_partner_id { get; set; }
+        public string t_partner_id { get; set; }
         public string doc_type { get; set; }
-        public Nullable<int> doc_code { get; set; }
-        public Nullable<int> a_doc_code { get; set; }
-        public Nullable<int> store_no { get; set; }
+        public string doc_code { get; set; }
+        public string a_doc_code { get; set; }
+        public string store_no { get; set; }
         public Nullable<decimal> amount { get; set; }
         public Nullable<System.DateTime> date_send { get; set; }
         public Nullable<System.DateTime> d_acnoledgment { get; set; }

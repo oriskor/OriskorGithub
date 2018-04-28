@@ -56,7 +56,7 @@ namespace EDI.Models
                 while (dr.Read())
                 {
                     menu_master listItems = new menu_master ();
-                    listItems.m_id = (int)dr["m_id"];
+                    listItems.m_id = (string)dr["m_id"];
                     listItems.m_name = (string)dr["m_name"];
                     listMenu.Add(listItems);
                 }

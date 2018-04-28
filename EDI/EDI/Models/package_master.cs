@@ -14,6 +14,7 @@ namespace EDI.Models
     
     public partial class package_master
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public package_master()
         {
             this.company_master = new HashSet<company_master>();
@@ -26,7 +27,9 @@ namespace EDI.Models
         public string price { get; set; }
         public string discount { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<company_master> company_master { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<subscription_master> subscription_master { get; set; }
     }
 }

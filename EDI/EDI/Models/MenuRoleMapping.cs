@@ -14,12 +14,12 @@ namespace EDI.Models
     
     public partial class MenuRoleMapping
     {
-        public int MenuRoleMappingID { get; set; }
-        public Nullable<int> Menu_Id { get; set; }
+        public string Menu_Id { get; set; }
         public Nullable<int> Sub_Menu_Id { get; set; }
         public Nullable<int> Role_Id { get; set; }
         public Nullable<int> PermissionTypeID { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
+        public string MenuRoleMappingID { get; set; }
     
         public virtual menu_master menu_master { get; set; }
         public virtual PermissionType PermissionType { get; set; }
