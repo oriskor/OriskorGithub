@@ -1,0 +1,29 @@
+﻿@model EDI.Models.role_master
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<div style="margin-left:10px">
+    <h2>Details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.roll_name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.roll_name)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.role_id }, new { @class = "btn btn-outline-info" }) |
+        @Html.ActionLink("Back to List", "Index", new object { }, new { @class = "btn waves-effect waves-light  btn-secondary" })
+    </p>
+</div>

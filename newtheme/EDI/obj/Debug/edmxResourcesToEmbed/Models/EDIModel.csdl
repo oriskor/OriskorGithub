@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDIModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="company_master">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <Property Name="c_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="c_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="c_address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contact_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="c_person_position" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="phone_no" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="package_id" Type="Int32" Nullable="false" />
+    <Property Name="edi_code" Type="Int32" />
+    <NavigationProperty Name="erp_master" Relationship="Self.fk_c_id" FromRole="company_master" ToRole="erp_master" />
+    <NavigationProperty Name="user_master" Relationship="Self.fk_company_id" FromRole="company_master" ToRole="user_master" />
+    <NavigationProperty Name="edi_format_master" Relationship="Self.fk_edi_code" FromRole="company_master" ToRole="edi_format_master" />
+    <NavigationProperty Name="package_master" Relationship="Self.fk_p_id" FromRole="company_master" ToRole="package_master" />
+    <NavigationProperty Name="transaction_rejected" Relationship="Self.fk_rejected" FromRole="company_master" ToRole="transaction_rejected" />
+    <NavigationProperty Name="transaction_sent" Relationship="Self.fk_sent" FromRole="company_master" ToRole="transaction_sent" />
+  </EntityType>
+  <EntityType Name="edi_format_master">
+    <Key>
+      <PropertyRef Name="edi_code" />
+    </Key>
+    <Property Name="edi_code" Type="Int32" Nullable="false" />
+    <Property Name="edi_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="c_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="edi_foramt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_edi_code" FromRole="edi_format_master" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="menu_master">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="Int32" Nullable="false" />
+    <Property Name="m_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="sub_menu" Relationship="Self.fk_m_id" FromRole="menu_master" ToRole="sub_menu" />
+  </EntityType>
+  <EntityType Name="package_master">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_duration" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="discount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_p_id" FromRole="package_master" ToRole="company_master" />
+    <NavigationProperty Name="subscription_master" Relationship="Self.fk_package_id" FromRole="package_master" ToRole="subscription_master" />
+  </EntityType>
+  <EntityType Name="role_master">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="roll_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="user_master" Relationship="Self.fk_role_id" FromRole="role_master" ToRole="user_master" />
+  </EntityType>
+  <EntityType Name="sub_menu">
+    <Key>
+      <PropertyRef Name="sub_m_id" />
+    </Key>
+    <Property Name="sub_m_id" Type="Int32" Nullable="false" />
+    <Property Name="Submenu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="m_id" Type="Int32" />
+    <NavigationProperty Name="menu_master" Relationship="Self.fk_m_id" FromRole="sub_menu" ToRole="menu_master" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="transaction_rejected">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="edi_code" Type="Int32" />
+    <Property Name="sent" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="received" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="t_partner_id" Type="Int32" />
+    <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_code" Type="Int32" />
+    <Property Name="a_doc_code" Type="Int32" />
+    <Property Name="store_no" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="date_rejected" Type="DateTime" Precision="0" />
+    <Property Name="d_acnoledgment" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_rejected" FromRole="transaction_rejected" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="transaction_sent">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="edi_code" Type="Int32" />
+    <Property Name="sent" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="received" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="t_partner_id" Type="Int32" />
+    <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_code" Type="Int32" />
+    <Property Name="a_doc_code" Type="Int32" />
+    <Property Name="store_no" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="date_send" Type="DateTime" Precision="0" />
+    <Property Name="d_acnoledgment" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_sent" FromRole="transaction_sent" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="u_first_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="u_last_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone_no" Type="Int32" Nullable="false" />
+    <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_company_id" FromRole="user_master" ToRole="company_master" />
+    <NavigationProperty Name="role_master" Relationship="Self.fk_role_id" FromRole="user_master" ToRole="role_master" />
+  </EntityType>
+  <EntityType Name="erp_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="c_id" />
+      <PropertyRef Name="erp_name" />
+    </Key>
+    <Property Name="c_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <Property Name="erp_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="technology" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="api_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="Self.fk_c_id" FromRole="erp_master" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="subscription_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="p_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="c_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="package_master" Relationship="Self.fk_package_id" FromRole="subscription_master" ToRole="package_master" />
+  </EntityType>
+  <Association Name="fk_c_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="1" />
+    <End Role="erp_master" Type="Self.erp_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="erp_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_company_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_edi_code">
+    <End Role="edi_format_master" Type="Self.edi_format_master" Multiplicity="0..1" />
+    <End Role="company_master" Type="Self.company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="edi_format_master">
+        <PropertyRef Name="edi_code" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="edi_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="company_master" Type="Self.company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rejected">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_rejected" Type="Self.transaction_rejected" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_rejected">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sent">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_sent" Type="Self.transaction_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_sent">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_m_id">
+    <End Role="menu_master" Type="Self.menu_master" Multiplicity="0..1" />
+    <End Role="sub_menu" Type="Self.sub_menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="sub_menu">
+        <PropertyRef Name="m_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_package_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="subscription_master" Type="Self.subscription_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="subscription_master">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_id">
+    <End Role="role_master" Type="Self.role_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EDIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="company_master" EntityType="Self.company_master" />
+    <EntitySet Name="edi_format_master" EntityType="Self.edi_format_master" />
+    <EntitySet Name="menu_master" EntityType="Self.menu_master" />
+    <EntitySet Name="package_master" EntityType="Self.package_master" />
+    <EntitySet Name="role_master" EntityType="Self.role_master" />
+    <EntitySet Name="sub_menu" EntityType="Self.sub_menu" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="transaction_rejected" EntityType="Self.transaction_rejected" />
+    <EntitySet Name="transaction_sent" EntityType="Self.transaction_sent" />
+    <EntitySet Name="user_master" EntityType="Self.user_master" />
+    <EntitySet Name="erp_master" EntityType="Self.erp_master" />
+    <EntitySet Name="subscription_master" EntityType="Self.subscription_master" />
+    <AssociationSet Name="fk_c_id" Association="Self.fk_c_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="erp_master" EntitySet="erp_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_company_id" Association="Self.fk_company_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_edi_code" Association="Self.fk_edi_code">
+      <End Role="edi_format_master" EntitySet="edi_format_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_id" Association="Self.fk_p_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rejected" Association="Self.fk_rejected">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_rejected" EntitySet="transaction_rejected" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sent" Association="Self.fk_sent">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_sent" EntitySet="transaction_sent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_m_id" Association="Self.fk_m_id">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="sub_menu" EntitySet="sub_menu" />
+    </AssociationSet>
+    <AssociationSet Name="fk_package_id" Association="Self.fk_package_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="subscription_master" EntitySet="subscription_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_id" Association="Self.fk_role_id">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <FunctionImport Name="SPO_getAllMenuByUserID" ReturnType="Collection(EDIModels.SPO_getAllMenuByUserID_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SPO_getAllMenuByUserID_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="roll_name" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Menu_Id" Nullable="true" />
+    <Property Type="String" Name="m_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Submenu_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="sub_m_id" Nullable="true" />
+    <Property Type="Int32" Name="PermissionTypeID" Nullable="false" />
+    <Property Type="String" Name="PermissionTypeDesc" Nullable="true" MaxLength="64" />
+  </ComplexType>
+</Schema>

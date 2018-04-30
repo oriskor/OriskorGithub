@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDIModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EDIEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SPO_getAllMenuByUserID" ReturnType="Collection(EDIModels.SPO_getAllMenuByUserID_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SPO_getRejectedFiles" ReturnType="Collection(EDIModels.SPO_getRejectedFiles_Result)" />
+    <FunctionImport Name="SPO_insertEDIFilesDetails" ReturnType="Collection(Decimal)">
+      <Parameter Name="fileNames" Mode="In" Type="String" />
+      <Parameter Name="FilePath" Mode="In" Type="String" />
+      <Parameter Name="StatusCode" Mode="In" Type="String" />
+      <Parameter Name="EdiFileTranSetNo" Mode="In" Type="String" />
+      <Parameter Name="CreatedDateTime" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="C810_Detail" EntityType="EDIModels.C810_Detail" />
+    <EntitySet Name="C810_Header" EntityType="EDIModels.C810_Header" />
+    <EntitySet Name="C850_Detail" EntityType="EDIModels.C850_Detail" />
+    <EntitySet Name="C850_Header" EntityType="EDIModels.C850_Header" />
+    <EntitySet Name="C856_Header" EntityType="EDIModels.C856_Header" />
+    <EntitySet Name="C856_Item" EntityType="EDIModels.C856_Item" />
+    <EntitySet Name="C856_Order" EntityType="EDIModels.C856_Order" />
+    <EntitySet Name="C856_Pack" EntityType="EDIModels.C856_Pack" />
+    <EntitySet Name="C856_Shipment" EntityType="EDIModels.C856_Shipment" />
+    <EntitySet Name="C856_Tare" EntityType="EDIModels.C856_Tare" />
+    <EntitySet Name="company_master" EntityType="EDIModels.company_master" />
+    <EntitySet Name="edi_format_master" EntityType="EDIModels.edi_format_master" />
+    <EntitySet Name="EDIFiles" EntityType="EDIModels.EDIFile" />
+    <EntitySet Name="FunctionalGroupInbounds" EntityType="EDIModels.FunctionalGroupInbound" />
+    <EntitySet Name="FunctionalGroupOutbounds" EntityType="EDIModels.FunctionalGroupOutbound" />
+    <EntitySet Name="InterchangeInbounds" EntityType="EDIModels.InterchangeInbound" />
+    <EntitySet Name="InterchangeOutbounds" EntityType="EDIModels.InterchangeOutbound" />
+    <EntitySet Name="menu_master" EntityType="EDIModels.menu_master" />
+    <EntitySet Name="MenuRoleMappings" EntityType="EDIModels.MenuRoleMapping" />
+    <EntitySet Name="package_master" EntityType="EDIModels.package_master" />
+    <EntitySet Name="PermissionTypes" EntityType="EDIModels.PermissionType" />
+    <EntitySet Name="role_master" EntityType="EDIModels.role_master" />
+    <EntitySet Name="Status" EntityType="EDIModels.Status" />
+    <EntitySet Name="sub_menu" EntityType="EDIModels.sub_menu" />
+    <EntitySet Name="sysdiagrams" EntityType="EDIModels.sysdiagram" />
+    <EntitySet Name="transaction_rejected" EntityType="EDIModels.transaction_rejected" />
+    <EntitySet Name="transaction_sent" EntityType="EDIModels.transaction_sent" />
+    <EntitySet Name="user_master" EntityType="EDIModels.user_master" />
+    <EntitySet Name="erp_master" EntityType="EDIModels.erp_master" />
+    <EntitySet Name="subscription_master" EntityType="EDIModels.subscription_master" />
+    <AssociationSet Name="FK_810_DetailInterReference" Association="EDIModels.FK_810_DetailInterReference">
+      <End Role="C810_Header" EntitySet="C810_Header" />
+      <End Role="C810_Detail" EntitySet="C810_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_850_DetailInterReference" Association="EDIModels.FK_850_DetailInterReference">
+      <End Role="C850_Header" EntitySet="C850_Header" />
+      <End Role="C850_Detail" EntitySet="C850_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_ShipmentInterReference" Association="EDIModels.FK_856_ShipmentInterReference">
+      <End Role="C856_Header" EntitySet="C856_Header" />
+      <End Role="C856_Shipment" EntitySet="C856_Shipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_ItemInterReference" Association="EDIModels.FK_856_ItemInterReference">
+      <End Role="C856_Pack" EntitySet="C856_Pack" />
+      <End Role="C856_Item" EntitySet="C856_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_OrderInterReference" Association="EDIModels.FK_856_OrderInterReference">
+      <End Role="C856_Shipment" EntitySet="C856_Shipment" />
+      <End Role="C856_Order" EntitySet="C856_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_PackInterReference" Association="EDIModels.FK_856_PackInterReference">
+      <End Role="C856_Order" EntitySet="C856_Order" />
+      <End Role="C856_Pack" EntitySet="C856_Pack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_TareInterReference" Association="EDIModels.FK_856_TareInterReference">
+      <End Role="C856_Order" EntitySet="C856_Order" />
+      <End Role="C856_Tare" EntitySet="C856_Tare" />
+    </AssociationSet>
+    <AssociationSet Name="fk_c_id" Association="EDIModels.fk_c_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="erp_master" EntitySet="erp_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_company_id" Association="EDIModels.fk_company_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_edi_code" Association="EDIModels.fk_edi_code">
+      <End Role="edi_format_master" EntitySet="edi_format_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_id" Association="EDIModels.fk_p_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rejected" Association="EDIModels.fk_rejected">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_rejected" EntitySet="transaction_rejected" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sent" Association="EDIModels.fk_sent">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_sent" EntitySet="transaction_sent" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EDIFiles__Status__3A4CA8FD" Association="EDIModels.FK__EDIFiles__Status__3A4CA8FD">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="EDIFile" EntitySet="EDIFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalGroupInbound_InterReference" Association="EDIModels.FK_FunctionalGroupInbound_InterReference">
+      <End Role="InterchangeInbound" EntitySet="InterchangeInbounds" />
+      <End Role="FunctionalGroupInbound" EntitySet="FunctionalGroupInbounds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalGroupOutbound_InterReference" Association="EDIModels.FK_FunctionalGroupOutbound_InterReference">
+      <End Role="InterchangeOutbound" EntitySet="InterchangeOutbounds" />
+      <End Role="FunctionalGroupOutbound" EntitySet="FunctionalGroupOutbounds" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Menu___5EBF139D" Association="EDIModels.FK__MenuRoleM__Menu___5EBF139D">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_m_id" Association="EDIModels.fk_m_id">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="sub_menu" EntitySet="sub_menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Permi__619B8048" Association="EDIModels.FK__MenuRoleM__Permi__619B8048">
+      <End Role="PermissionType" EntitySet="PermissionTypes" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Role___60A75C0F" Association="EDIModels.FK__MenuRoleM__Role___60A75C0F">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Sub_M__5FB337D6" Association="EDIModels.FK__MenuRoleM__Sub_M__5FB337D6">
+      <End Role="sub_menu" EntitySet="sub_menu" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_package_id" Association="EDIModels.fk_package_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="subscription_master" EntitySet="subscription_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_id" Association="EDIModels.fk_role_id">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <EntitySet Name="C852_Detail" EntityType="EDIModels.C852_Detail" />
+    <EntitySet Name="C852_Header" EntityType="EDIModels.C852_Header" />
+    <EntitySet Name="C852_ProdActivity" EntityType="EDIModels.C852_ProdActivity" />
+    <EntitySet Name="C860_Detail" EntityType="EDIModels.C860_Detail" />
+    <EntitySet Name="C860_Header" EntityType="EDIModels.C860_Header" />
+    <EntitySet Name="item_setup" EntityType="EDIModels.item_setup" />
+    <EntitySet Name="tradingPartnerSetups" EntityType="EDIModels.tradingPartnerSetup" />
+    <AssociationSet Name="FK_852_DetailInterReference" Association="EDIModels.FK_852_DetailInterReference">
+      <End Role="C852_Header" EntitySet="C852_Header" />
+      <End Role="C852_Detail" EntitySet="C852_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_852_ProdActivityInterReference" Association="EDIModels.FK_852_ProdActivityInterReference">
+      <End Role="C852_Detail" EntitySet="C852_Detail" />
+      <End Role="C852_ProdActivity" EntitySet="C852_ProdActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_860_DetailInterReference" Association="EDIModels.FK_860_DetailInterReference">
+      <End Role="C860_Header" EntitySet="C860_Header" />
+      <End Role="C860_Detail" EntitySet="C860_Detail" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="SPO_getAllMenuByUserID_Result">
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="roll_name" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Menu_Id" Nullable="true" />
+    <Property Type="String" Name="m_name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Submenu_name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="sub_m_id" Nullable="true" />
+    <Property Type="Int32" Name="PermissionTypeID" Nullable="false" />
+    <Property Type="String" Name="PermissionTypeDesc" Nullable="true" MaxLength="64" />
+  </ComplexType>
+  <ComplexType Name="SPO_getRejectedFiles_Result">
+    <Property Type="String" Name="fileNames" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="FilePath" Nullable="true" MaxLength="516" />
+    <Property Type="Int32" Name="StatusID" Nullable="true" />
+    <Property Type="String" Name="EdiFileTranSetNo" Nullable="true" />
+    <Property Type="String" Name="CreatedDateTime" Nullable="true" MaxLength="64" />
+    <Property Type="String" Name="File_Status" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <EntityType Name="C810_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeaderKey" Type="Int32" />
+    <Property Name="IT102_QtyInvoiced" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IT103_Unit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="IT104_UnitPrice" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IT107_PetSmartArticleNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="IT108_ProductServiceIdQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="IT109_ProductServiceId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SAC02_AllowanceCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SAC05_AllowanceAmount" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="SAC02_ChargeCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SAC05_ChargeAmount" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C810_Header" Relationship="EDIModels.FK_810_DetailInterReference" FromRole="C810_Detail" ToRole="C810_Header" />
+  </EntityType>
+  <EntityType Name="C810_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionalGroupKey" Type="Int32" />
+    <Property Name="ST01_TranSetIdfrCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ST02_TranSetControlNo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="BIG01_InvoiceDate" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BIG02_InvoiceNo" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="BIG04_PurchaseOrderNo" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="REF02_PetSmartVendorNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N104_PetSmartSiteNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ITD03_TermsDiscountPercent" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ITD05_TermsDiscountDaysDue" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="ITD07_TermsNetDays" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="ITD12_Description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TDS01_InvoiceTotalAmount" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="TXI02_HarmonizedSalesTax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TXI02_GoodsServicesTax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TXI02_StateTax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SAC02_TotalAllowanceCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SAC05_TotalAllowanceAmount" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="SAC02_TotalChargeCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SAC05_TotalChargeAmount" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="CTT01_NumberOfLineItems" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C810_Detail" Relationship="EDIModels.FK_810_DetailInterReference" FromRole="C810_Header" ToRole="C810_Detail" />
+  </EntityType>
+  <EntityType Name="C850_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeaderKey" Type="Int32" />
+    <Property Name="PO102_Quantity" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO103_UnitMeasurementCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PO104_UnitPrice" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO107_ArticleNo" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PO108_GTIN_Qlfr" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PO109_GTIN_DigitDatatructure" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PO111_VendorItemNo" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PO113_Case" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ01_UnitMeasurementCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ03_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ04_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ05_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ06_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ07_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ08_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ09_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ10_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ11_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ12_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ13_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ14_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ15_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ16_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ17_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ18_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ19_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ20_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ21_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ22_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C850_Header" Relationship="EDIModels.FK_850_DetailInterReference" FromRole="C850_Detail" ToRole="C850_Header" />
+  </EntityType>
+  <EntityType Name="C850_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionalGroupKey" Type="Int32" />
+    <Property Name="FGKeySave" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="ST01_TranSetIdfrCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ST02_TranSetControlNo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="BEG01_TransactionSetPurposeCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BEG02_PurchaseOrderTypeCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BEG03_PurchaseOrderNumber" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="BEG05_PODate" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CUR02_CurrencyCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="REF02_FreeFormText" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="REF02_InternalVendorNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="REF02_ProductGroup" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PER02_ContactPersonName" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_DeliveryRequestedDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_RequestedPickupDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="N104_ShipFromID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N401_ShipFromCity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="N402_ShipFromState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="N403_ShipFromPostalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="N404_ShipFromCountryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="N104_ShipToID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N401_ShipToCity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="N402_ShipToState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="N403_ShipToPostalCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="N404_ShipToCountryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CTT01_NumberOfPO1Segments" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C850_Detail" Relationship="EDIModels.FK_850_DetailInterReference" FromRole="C850_Header" ToRole="C850_Detail" />
+  </EntityType>
+  <EntityType Name="C856_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionalGroupKey" Type="Int32" />
+    <Property Name="ST01_TranSetIdfrCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ST02_TranSetControlNo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="BSN01_TranSetPurposeCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BSN02_ShipmentId" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BSN03_TranSetDate" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BSN04_TranSetTime" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BSN05_HierarchicalStructureCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CTT01_NumberOfLineItems" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Shipment" Relationship="EDIModels.FK_856_ShipmentInterReference" FromRole="C856_Header" ToRole="C856_Shipment" />
+  </EntityType>
+  <EntityType Name="C856_Item">
+    <Key>
+      <PropertyRef Name="ItemKey" />
+    </Key>
+    <Property Name="ItemKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PackKey" Type="Int32" />
+    <Property Name="LIN02_TypeSourceCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="LIN03_ProductServiceId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LIN05_BuyerItemNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LIN07_GTIN_EAN_UCC" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LIN09_LotNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SN102_UnitsShipped" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SN103_Unit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SLN01_AssignedId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SLN03_RelationshipCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SLN09_TypeSourceCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SLN10_ProductServiceId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_ExpirationDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Pack" Relationship="EDIModels.FK_856_ItemInterReference" FromRole="C856_Item" ToRole="C856_Pack" />
+  </EntityType>
+  <EntityType Name="C856_Order">
+    <Key>
+      <PropertyRef Name="OrderKey" />
+    </Key>
+    <Property Name="OrderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShipmentKey" Type="Int32" />
+    <Property Name="PRF01_RetailPurchaseOrderNo" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="PRF02_ReleaseNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Shipment" Relationship="EDIModels.FK_856_OrderInterReference" FromRole="C856_Order" ToRole="C856_Shipment" />
+    <NavigationProperty Name="C856_Pack" Relationship="EDIModels.FK_856_PackInterReference" FromRole="C856_Order" ToRole="C856_Pack" />
+    <NavigationProperty Name="C856_Tare" Relationship="EDIModels.FK_856_TareInterReference" FromRole="C856_Order" ToRole="C856_Tare" />
+  </EntityType>
+  <EntityType Name="C856_Pack">
+    <Key>
+      <PropertyRef Name="PackKey" />
+    </Key>
+    <Property Name="PackKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderKey" Type="Int32" />
+    <Property Name="LIN03_LotNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="MAN02_SerialShipContainerCode" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_ExpirationDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Item" Relationship="EDIModels.FK_856_ItemInterReference" FromRole="C856_Pack" ToRole="C856_Item" />
+    <NavigationProperty Name="C856_Order" Relationship="EDIModels.FK_856_PackInterReference" FromRole="C856_Pack" ToRole="C856_Order" />
+  </EntityType>
+  <EntityType Name="C856_Shipment">
+    <Key>
+      <PropertyRef Name="ShipmentKey" />
+    </Key>
+    <Property Name="ShipmentKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeaderKey" Type="Int32" />
+    <Property Name="TD101_PackagingCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TD102_LadingQuantity" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="REF02_BillOfLadingNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N104_ShipToId" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Header" Relationship="EDIModels.FK_856_ShipmentInterReference" FromRole="C856_Shipment" ToRole="C856_Header" />
+    <NavigationProperty Name="C856_Order" Relationship="EDIModels.FK_856_OrderInterReference" FromRole="C856_Shipment" ToRole="C856_Order" />
+  </EntityType>
+  <EntityType Name="C856_Tare">
+    <Key>
+      <PropertyRef Name="TareKey" />
+    </Key>
+    <Property Name="TareKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderKey" Type="Int32" />
+    <Property Name="LIN03_LotNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="MAN02_SerialShipContainerCode" Type="String" MaxLength="48" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_ExpirationDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C856_Order" Relationship="EDIModels.FK_856_TareInterReference" FromRole="C856_Tare" ToRole="C856_Order" />
+  </EntityType>
+  <EntityType Name="company_master">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <Property Name="c_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="c_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="logo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="c_address" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="contact_person" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="c_person_position" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="phone_no" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="package_id" Type="Int32" Nullable="false" />
+    <Property Name="edi_code" Type="Int32" />
+    <NavigationProperty Name="erp_master" Relationship="EDIModels.fk_c_id" FromRole="company_master" ToRole="erp_master" />
+    <NavigationProperty Name="user_master" Relationship="EDIModels.fk_company_id" FromRole="company_master" ToRole="user_master" />
+    <NavigationProperty Name="edi_format_master" Relationship="EDIModels.fk_edi_code" FromRole="company_master" ToRole="edi_format_master" />
+    <NavigationProperty Name="package_master" Relationship="EDIModels.fk_p_id" FromRole="company_master" ToRole="package_master" />
+    <NavigationProperty Name="transaction_rejected" Relationship="EDIModels.fk_rejected" FromRole="company_master" ToRole="transaction_rejected" />
+    <NavigationProperty Name="transaction_sent" Relationship="EDIModels.fk_sent" FromRole="company_master" ToRole="transaction_sent" />
+  </EntityType>
+  <EntityType Name="edi_format_master">
+    <Key>
+      <PropertyRef Name="edi_code" />
+    </Key>
+    <Property Name="edi_code" Type="Int32" Nullable="false" />
+    <Property Name="edi_type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="c_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="edi_foramt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_edi_code" FromRole="edi_format_master" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="EDIFile">
+    <Key>
+      <PropertyRef Name="RejectedFileID" />
+    </Key>
+    <Property Name="RejectedFileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fileNames" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="FilePath" Type="String" MaxLength="516" FixedLength="false" Unicode="true" />
+    <Property Name="StatusID" Type="Int32" />
+    <Property Name="EdiFileTranSetNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Status" Relationship="EDIModels.FK__EDIFiles__Status__3A4CA8FD" FromRole="EDIFile" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="FunctionalGroupInbound">
+    <Key>
+      <PropertyRef Name="FunctionalGroupKey" />
+    </Key>
+    <Property Name="FunctionalGroupKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterchangeKey" Type="Int32" Nullable="false" />
+    <Property Name="GS01_FunctionalIdfrCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="GS02_SendersCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="GS03_ReceiversCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="GS04_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="GS05_Time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="GS06_GroupControlNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="GS07_ResponsibleAgencyCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="GS08_VersionReleaseCode" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="GE01_NoOfTranSetsIncluded" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InterchangeInbound" Relationship="EDIModels.FK_FunctionalGroupInbound_InterReference" FromRole="FunctionalGroupInbound" ToRole="InterchangeInbound" />
+  </EntityType>
+  <EntityType Name="FunctionalGroupOutbound">
+    <Key>
+      <PropertyRef Name="FunctionalGroupKey" />
+    </Key>
+    <Property Name="FunctionalGroupKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterchangeKey" Type="Int32" Nullable="false" />
+    <Property Name="GS01_FunctionalIdfrCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="GS02_SendersCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="GS03_ReceiversCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="GS04_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="GS05_Time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="GS06_GroupControlNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="GS07_ResponsibleAgencyCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="GS08_VersionReleaseCode" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="GE01_NoOfTranSetsIncluded" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InterchangeOutbound" Relationship="EDIModels.FK_FunctionalGroupOutbound_InterReference" FromRole="FunctionalGroupOutbound" ToRole="InterchangeOutbound" />
+  </EntityType>
+  <EntityType Name="InterchangeInbound">
+    <Key>
+      <PropertyRef Name="InterchangeKey" />
+    </Key>
+    <Property Name="InterchangeKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ISA01_AuthorizationInfoQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA02_AuthorizationInfo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ISA03_SecurityInfoQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA04_SecurityInfo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ISA05_SenderIdQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA06_SenderId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ISA07_ReceiverIdQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA08_ReceiverId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ISA09_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="ISA10_Time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="ISA11_RepetitionSeparator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA12_ControlVersionNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ISA13_ControlNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="ISA14_AcknowledgmentRequested" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA15_UsageIndicator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA16_ComponentElementSeparator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="IEA01_NoOfIncludedFuncGroups" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FunctionalGroupInbounds" Relationship="EDIModels.FK_FunctionalGroupInbound_InterReference" FromRole="InterchangeInbound" ToRole="FunctionalGroupInbound" />
+  </EntityType>
+  <EntityType Name="InterchangeOutbound">
+    <Key>
+      <PropertyRef Name="InterchangeKey" />
+    </Key>
+    <Property Name="InterchangeKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ISA01_AuthorizationInfoQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA02_AuthorizationInfo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ISA03_SecurityInfoQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA04_SecurityInfo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ISA05_SenderIdQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA06_SenderId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ISA07_ReceiverIdQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ISA08_ReceiverId" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ISA09_Date" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="ISA10_Time" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="ISA11_RepetitionSeparator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA12_ControlVersionNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ISA13_ControlNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="ISA14_AcknowledgmentRequested" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA15_UsageIndicator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="ISA16_ComponentElementSeparator" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="IEA01_NoOfIncludedFuncGroups" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FunctionalGroupOutbounds" Relationship="EDIModels.FK_FunctionalGroupOutbound_InterReference" FromRole="InterchangeOutbound" ToRole="FunctionalGroupOutbound" />
+  </EntityType>
+  <EntityType Name="menu_master">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="Int32" Nullable="false" />
+    <Property Name="m_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MenuRoleMappings" Relationship="EDIModels.FK__MenuRoleM__Menu___5EBF139D" FromRole="menu_master" ToRole="MenuRoleMapping" />
+    <NavigationProperty Name="sub_menu" Relationship="EDIModels.fk_m_id" FromRole="menu_master" ToRole="sub_menu" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="MenuRoleMapping">
+    <Key>
+      <PropertyRef Name="MenuRoleMappingID" />
+    </Key>
+    <Property Name="MenuRoleMappingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Id" Type="Int32" />
+    <Property Name="Sub_Menu_Id" Type="Int32" />
+    <Property Name="Role_Id" Type="Int32" />
+    <Property Name="PermissionTypeID" Type="Int32" />
+    <NavigationProperty Name="menu_master" Relationship="EDIModels.FK__MenuRoleM__Menu___5EBF139D" FromRole="MenuRoleMapping" ToRole="menu_master" />
+    <NavigationProperty Name="PermissionType" Relationship="EDIModels.FK__MenuRoleM__Permi__619B8048" FromRole="MenuRoleMapping" ToRole="PermissionType" />
+    <NavigationProperty Name="role_master" Relationship="EDIModels.FK__MenuRoleM__Role___60A75C0F" FromRole="MenuRoleMapping" ToRole="role_master" />
+    <NavigationProperty Name="sub_menu" Relationship="EDIModels.FK__MenuRoleM__Sub_M__5FB337D6" FromRole="MenuRoleMapping" ToRole="sub_menu" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="package_master">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p_duration" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="discount" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_p_id" FromRole="package_master" ToRole="company_master" />
+    <NavigationProperty Name="subscription_master" Relationship="EDIModels.fk_package_id" FromRole="package_master" ToRole="subscription_master" />
+  </EntityType>
+  <EntityType Name="PermissionType">
+    <Key>
+      <PropertyRef Name="PermissionTypeID" />
+    </Key>
+    <Property Name="PermissionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PermissionTypeDesc" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MenuRoleMappings" Relationship="EDIModels.FK__MenuRoleM__Permi__619B8048" FromRole="PermissionType" ToRole="MenuRoleMapping" />
+  </EntityType>
+  <EntityType Name="role_master">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="roll_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Role_Id2" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="MenuRoleMappings" Relationship="EDIModels.FK__MenuRoleM__Role___60A75C0F" FromRole="role_master" ToRole="MenuRoleMapping" />
+    <NavigationProperty Name="user_master" Relationship="EDIModels.fk_role_id" FromRole="role_master" ToRole="user_master" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="StatusDesc" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EDIFiles" Relationship="EDIModels.FK__EDIFiles__Status__3A4CA8FD" FromRole="Status" ToRole="EDIFile" />
+  </EntityType>
+  <EntityType Name="sub_menu">
+    <Key>
+      <PropertyRef Name="sub_m_id" />
+    </Key>
+    <Property Name="sub_m_id" Type="Int32" Nullable="false" />
+    <Property Name="Submenu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="m_id" Type="Int32" />
+    <NavigationProperty Name="menu_master" Relationship="EDIModels.fk_m_id" FromRole="sub_menu" ToRole="menu_master" />
+    <NavigationProperty Name="MenuRoleMappings" Relationship="EDIModels.FK__MenuRoleM__Sub_M__5FB337D6" FromRole="sub_menu" ToRole="MenuRoleMapping" />
+    <Property Name="IsDeleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="transaction_rejected">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="edi_code" Type="Int32" />
+    <Property Name="sent" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="received" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="t_partner_id" Type="Int32" />
+    <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_code" Type="Int32" />
+    <Property Name="a_doc_code" Type="Int32" />
+    <Property Name="store_no" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="date_rejected" Type="DateTime" Precision="0" />
+    <Property Name="d_acnoledgment" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_rejected" FromRole="transaction_rejected" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="transaction_sent">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="edi_code" Type="Int32" />
+    <Property Name="sent" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="received" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="t_partner_id" Type="Int32" />
+    <Property Name="doc_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="doc_code" Type="Int32" />
+    <Property Name="a_doc_code" Type="Int32" />
+    <Property Name="store_no" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="date_send" Type="DateTime" Precision="0" />
+    <Property Name="d_acnoledgment" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_sent" FromRole="transaction_sent" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="u_first_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="u_last_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="c_id" Type="Int32" />
+    <Property Name="role_id" Type="Int32" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="phone_no" Type="Int32" Nullable="false" />
+    <Property Name="email_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_company_id" FromRole="user_master" ToRole="company_master" />
+    <NavigationProperty Name="role_master" Relationship="EDIModels.fk_role_id" FromRole="user_master" ToRole="role_master" />
+  </EntityType>
+  <EntityType Name="erp_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="c_id" />
+      <PropertyRef Name="erp_name" />
+    </Key>
+    <Property Name="c_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <Property Name="erp_name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="technology" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="api_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="company_master" Relationship="EDIModels.fk_c_id" FromRole="erp_master" ToRole="company_master" />
+  </EntityType>
+  <EntityType Name="subscription_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="p_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="c_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="package_master" Relationship="EDIModels.fk_package_id" FromRole="subscription_master" ToRole="package_master" />
+  </EntityType>
+  <Association Name="FK_810_DetailInterReference">
+    <End Type="EDIModels.C810_Header" Role="C810_Header" Multiplicity="0..1" />
+    <End Type="EDIModels.C810_Detail" Role="C810_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C810_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="C810_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_850_DetailInterReference">
+    <End Type="EDIModels.C850_Header" Role="C850_Header" Multiplicity="0..1" />
+    <End Type="EDIModels.C850_Detail" Role="C850_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C850_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="C850_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_ShipmentInterReference">
+    <End Type="EDIModels.C856_Header" Role="C856_Header" Multiplicity="0..1" />
+    <End Type="EDIModels.C856_Shipment" Role="C856_Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C856_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="C856_Shipment">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_ItemInterReference">
+    <End Type="EDIModels.C856_Pack" Role="C856_Pack" Multiplicity="0..1" />
+    <End Type="EDIModels.C856_Item" Role="C856_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C856_Pack">
+        <PropertyRef Name="PackKey" />
+      </Principal>
+      <Dependent Role="C856_Item">
+        <PropertyRef Name="PackKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_OrderInterReference">
+    <End Type="EDIModels.C856_Shipment" Role="C856_Shipment" Multiplicity="0..1" />
+    <End Type="EDIModels.C856_Order" Role="C856_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C856_Shipment">
+        <PropertyRef Name="ShipmentKey" />
+      </Principal>
+      <Dependent Role="C856_Order">
+        <PropertyRef Name="ShipmentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_PackInterReference">
+    <End Type="EDIModels.C856_Order" Role="C856_Order" Multiplicity="0..1" />
+    <End Type="EDIModels.C856_Pack" Role="C856_Pack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C856_Order">
+        <PropertyRef Name="OrderKey" />
+      </Principal>
+      <Dependent Role="C856_Pack">
+        <PropertyRef Name="OrderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_TareInterReference">
+    <End Type="EDIModels.C856_Order" Role="C856_Order" Multiplicity="0..1" />
+    <End Type="EDIModels.C856_Tare" Role="C856_Tare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C856_Order">
+        <PropertyRef Name="OrderKey" />
+      </Principal>
+      <Dependent Role="C856_Tare">
+        <PropertyRef Name="OrderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_c_id">
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="1" />
+    <End Type="EDIModels.erp_master" Role="erp_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="erp_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_company_id">
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="0..1" />
+    <End Type="EDIModels.user_master" Role="user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_edi_code">
+    <End Type="EDIModels.edi_format_master" Role="edi_format_master" Multiplicity="0..1" />
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="edi_format_master">
+        <PropertyRef Name="edi_code" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="edi_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_id">
+    <End Type="EDIModels.package_master" Role="package_master" Multiplicity="1" />
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rejected">
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="0..1" />
+    <End Type="EDIModels.transaction_rejected" Role="transaction_rejected" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_rejected">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sent">
+    <End Type="EDIModels.company_master" Role="company_master" Multiplicity="0..1" />
+    <End Type="EDIModels.transaction_sent" Role="transaction_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_sent">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EDIFiles__Status__3A4CA8FD">
+    <End Type="EDIModels.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="EDIModels.EDIFile" Role="EDIFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="EDIFile">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalGroupInbound_InterReference">
+    <End Type="EDIModels.InterchangeInbound" Role="InterchangeInbound" Multiplicity="1" />
+    <End Type="EDIModels.FunctionalGroupInbound" Role="FunctionalGroupInbound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterchangeInbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Principal>
+      <Dependent Role="FunctionalGroupInbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalGroupOutbound_InterReference">
+    <End Type="EDIModels.InterchangeOutbound" Role="InterchangeOutbound" Multiplicity="1" />
+    <End Type="EDIModels.FunctionalGroupOutbound" Role="FunctionalGroupOutbound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterchangeOutbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Principal>
+      <Dependent Role="FunctionalGroupOutbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Menu___5EBF139D">
+    <End Type="EDIModels.menu_master" Role="menu_master" Multiplicity="0..1" />
+    <End Type="EDIModels.MenuRoleMapping" Role="MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_m_id">
+    <End Type="EDIModels.menu_master" Role="menu_master" Multiplicity="0..1" />
+    <End Type="EDIModels.sub_menu" Role="sub_menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="sub_menu">
+        <PropertyRef Name="m_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Permi__619B8048">
+    <End Type="EDIModels.PermissionType" Role="PermissionType" Multiplicity="0..1" />
+    <End Type="EDIModels.MenuRoleMapping" Role="MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermissionType">
+        <PropertyRef Name="PermissionTypeID" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="PermissionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Role___60A75C0F">
+    <End Type="EDIModels.role_master" Role="role_master" Multiplicity="0..1" />
+    <End Type="EDIModels.MenuRoleMapping" Role="MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Sub_M__5FB337D6">
+    <End Type="EDIModels.sub_menu" Role="sub_menu" Multiplicity="0..1" />
+    <End Type="EDIModels.MenuRoleMapping" Role="MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sub_menu">
+        <PropertyRef Name="sub_m_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Sub_Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_package_id">
+    <End Type="EDIModels.package_master" Role="package_master" Multiplicity="1" />
+    <End Type="EDIModels.subscription_master" Role="subscription_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="subscription_master">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_id">
+    <End Type="EDIModels.role_master" Role="role_master" Multiplicity="0..1" />
+    <End Type="EDIModels.user_master" Role="user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="C852_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeaderKey" Type="Int32" />
+    <Property Name="LIN03_GTIN_UCC_Code" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LIN05_BuyerItemNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="LIN07_VendorItemNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CTP02_PriceCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CTP03_UnitPrice" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO406_WeightPerPack" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO407_Unit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C852_Header" Relationship="EDIModels.FK_852_DetailInterReference" FromRole="C852_Detail" ToRole="C852_Header" />
+    <NavigationProperty Name="C852_ProdActivity" Relationship="EDIModels.FK_852_ProdActivityInterReference" FromRole="C852_Detail" ToRole="C852_ProdActivity" />
+  </EntityType>
+  <EntityType Name="C852_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionalGroupKey" Type="Int32" />
+    <Property Name="ST01_TranSetIdfrCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ST02_TranSetControlNo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="XQ02_ReportingDate" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="XQ03_ReportingEndDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="N902_InternalVendorNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N903_FreeFormDesc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CTT01_NumberOfLineItems" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C852_Detail" Relationship="EDIModels.FK_852_DetailInterReference" FromRole="C852_Header" ToRole="C852_Detail" />
+  </EntityType>
+  <EntityType Name="C852_ProdActivity">
+    <Key>
+      <PropertyRef Name="ProdActivityKey" />
+    </Key>
+    <Property Name="ProdActivityKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DetailKey" Type="Int32" />
+    <Property Name="ZA01_ActivityCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ01_Unit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ02_IdCodeQlfr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ03_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ04_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ05_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ06_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ07_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ08_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ09_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ10_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ11_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ12_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ13_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ14_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ15_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ16_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ17_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ18_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ19_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ20_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ21_IdCode" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="SDQ22_Quantity" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C852_Detail" Relationship="EDIModels.FK_852_ProdActivityInterReference" FromRole="C852_ProdActivity" ToRole="C852_Detail" />
+  </EntityType>
+  <EntityType Name="C860_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HeaderKey" Type="Int32" />
+    <Property Name="POC02_ChangeTypeCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="POC06_UnitPrice" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="POC09_GTIN_EAN_UCC" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="POC09_GTIN_UCC" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="POC11_BuyerItemNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="POC13_VendorItemNo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="POC15_CommodityGroupingID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="POC17_CaseID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="PO406_WeightPerPack" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO407_WeightUnit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PO408_VolumePerPack" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="PO409_VolumeUnit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="QTY02_QuantityAdjusted" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="QTY03_01_Unit" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C860_Header" Relationship="EDIModels.FK_860_DetailInterReference" FromRole="C860_Detail" ToRole="C860_Header" />
+  </EntityType>
+  <EntityType Name="C860_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FunctionalGroupKey" Type="Int32" />
+    <Property Name="ST01_TranSetIdfrCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ST02_TranSetControlNo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="BCH01_TransactionSetPurposeCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BCH02_PurchaseOrderTypeCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BCH03_OriginalPO_No" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="BCH06_OriginalPO_Date" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BCH11_OriginalPO_DateChange" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_DeliveryRequestedDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_ShipNotBeforeDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_ShipNoLaterDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="DTM02_RequestedPickupDate" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="N104_ShipFromID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="N401_ShipFromCity" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="N402_ShipFromState" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="N403_ShipFromZip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="N404_ShipFromCountryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CTT01_NumberOfPOCSegments" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="C860_Detail" Relationship="EDIModels.FK_860_DetailInterReference" FromRole="C860_Header" ToRole="C860_Detail" />
+  </EntityType>
+  <EntityType Name="item_setup">
+    <Key>
+      <PropertyRef Name="item__id" />
+    </Key>
+    <Property Name="item__id" Type="Int32" Nullable="false" />
+    <Property Name="item_translation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Upc__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_Part_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Buyer_part" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price_basis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="C__of_Inner_packs" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="C__of_unit_in_cartoons" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Max__" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ucc_128__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vendor_Part__" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Gtin__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kmart_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Unique_product__" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Package_Indicator" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Ucc_Company_prifix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qty_Shipped" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pack_Size" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="weight" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="length" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="width" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Height" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer_Part" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Ean" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="income" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="expence" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Cost_of_Sales" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tradingPartnerSetup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_852_DetailInterReference">
+    <End Type="EDIModels.C852_Header" Role="C852_Header" Multiplicity="0..1" />
+    <End Type="EDIModels.C852_Detail" Role="C852_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C852_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="C852_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_852_ProdActivityInterReference">
+    <End Type="EDIModels.C852_Detail" Role="C852_Detail" Multiplicity="0..1" />
+    <End Type="EDIModels.C852_ProdActivity" Role="C852_ProdActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C852_Detail">
+        <PropertyRef Name="DetailKey" />
+      </Principal>
+      <Dependent Role="C852_ProdActivity">
+        <PropertyRef Name="DetailKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_860_DetailInterReference">
+    <End Type="EDIModels.C860_Header" Role="C860_Header" Multiplicity="0..1" />
+    <End Type="EDIModels.C860_Detail" Role="C860_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="C860_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="C860_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
