@@ -69,3 +69,15 @@ C:\Korbose\23-04_2018\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowServi
 C:\Korbose\23-04_2018\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.exe
 C:\Korbose\23-04_2018\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.pdb
 C:\Korbose\23-04_2018\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.csprojResolveAssemblyReference.cache
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\bin\Debug\EDIWindowService.exe.config
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\bin\Debug\EDIWindowService.exe
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\bin\Debug\EDIWindowService.pdb
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\bin\Debug\EDIdEv.FrameworkEDI.NET4.x64.dll
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.csprojResolveAssemblyReference.cache
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.ProjectInstaller.resources
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.Service1.resources
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.csproj.GenerateResource.cache
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.csproj.CoreCompileInputs.cache
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.csproj.CopyComplete
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.exe
+E:\EDIGITHUB\OriskorGithub\EDIWindowService\EDIWindowService\obj\Debug\EDIWindowService.pdb
