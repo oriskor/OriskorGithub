@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDIModelsStoreContainer" CdmEntityContainer="EDIEntities">
+    <EntitySetMapping Name="company_master">
+      <EntityTypeMapping TypeName="EDIModels.company_master">
+        <MappingFragment StoreEntitySet="company_master">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_type" ColumnName="c_type" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="c_address" ColumnName="c_address" />
+          <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+          <ScalarProperty Name="c_person_position" ColumnName="c_person_position" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="package_id" ColumnName="package_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edi_format_master">
+      <EntityTypeMapping TypeName="EDIModels.edi_format_master">
+        <MappingFragment StoreEntitySet="edi_format_master">
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="edi_type" ColumnName="edi_type" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="edi_foramt" ColumnName="edi_foramt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menu_master">
+      <EntityTypeMapping TypeName="EDIModels.menu_master">
+        <MappingFragment StoreEntitySet="menu_master">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="package_master">
+      <EntityTypeMapping TypeName="EDIModels.package_master">
+        <MappingFragment StoreEntitySet="package_master">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_duration" ColumnName="p_duration" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role_master">
+      <EntityTypeMapping TypeName="EDIModels.role_master">
+        <MappingFragment StoreEntitySet="role_master">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="roll_name" ColumnName="roll_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sub_menu">
+      <EntityTypeMapping TypeName="EDIModels.sub_menu">
+        <MappingFragment StoreEntitySet="sub_menu">
+          <ScalarProperty Name="sub_m_id" ColumnName="sub_m_id" />
+          <ScalarProperty Name="Submenu_name" ColumnName="Submenu_name" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EDIModels.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaction_rejected">
+      <EntityTypeMapping TypeName="EDIModels.transaction_rejected">
+        <MappingFragment StoreEntitySet="transaction_rejected">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="t_partner_id" ColumnName="t_partner_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="doc_code" ColumnName="doc_code" />
+          <ScalarProperty Name="a_doc_code" ColumnName="a_doc_code" />
+          <ScalarProperty Name="store_no" ColumnName="store_no" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="date_rejected" ColumnName="date_rejected" />
+          <ScalarProperty Name="d_acnoledgment" ColumnName="d_acnoledgment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaction_sent">
+      <EntityTypeMapping TypeName="EDIModels.transaction_sent">
+        <MappingFragment StoreEntitySet="transaction_sent">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="t_partner_id" ColumnName="t_partner_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="doc_code" ColumnName="doc_code" />
+          <ScalarProperty Name="a_doc_code" ColumnName="a_doc_code" />
+          <ScalarProperty Name="store_no" ColumnName="store_no" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="date_send" ColumnName="date_send" />
+          <ScalarProperty Name="d_acnoledgment" ColumnName="d_acnoledgment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_master">
+      <EntityTypeMapping TypeName="EDIModels.user_master">
+        <MappingFragment StoreEntitySet="user_master">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="u_first_name" ColumnName="u_first_name" />
+          <ScalarProperty Name="u_last_name" ColumnName="u_last_name" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="erp_master">
+      <EntityTypeMapping TypeName="EDIModels.erp_master">
+        <MappingFragment StoreEntitySet="erp_master">
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="erp_name" ColumnName="erp_name" />
+          <ScalarProperty Name="technology" ColumnName="technology" />
+          <ScalarProperty Name="api_details" ColumnName="api_details" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscription_master">
+      <EntityTypeMapping TypeName="EDIModels.subscription_master">
+        <MappingFragment StoreEntitySet="subscription_master">
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPO_getAllMenuByUserID" FunctionName="EDIModels.Store.SPO_getAllMenuByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIModels.SPO_getAllMenuByUserID_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="roll_name" ColumnName="roll_name" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="Submenu_name" ColumnName="Submenu_name" />
+          <ScalarProperty Name="sub_m_id" ColumnName="sub_m_id" />
+          <ScalarProperty Name="PermissionTypeID" ColumnName="PermissionTypeID" />
+          <ScalarProperty Name="PermissionTypeDesc" ColumnName="PermissionTypeDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

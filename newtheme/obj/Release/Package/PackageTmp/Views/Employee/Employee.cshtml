@@ -1,0 +1,126 @@
+﻿@model EDI.Models.RoleModel
+@{
+    ViewBag.Title = "Employee";
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="~/JQuery/jquery.btechco.excelexport.js"></script>
+<script src="~/JQuery/jquery.base64.js"></script>
+<script type="text/javascript">
+    function SelectedIndexChanged() {
+        //Form post
+        document.demoForm.submit();
+    }
+</script>
+<script>
+    function getCityList() {
+        debugger;
+        var stateId = $("#stateDropDown").val();
+        $.ajax
+            ({
+                url: '/Home/GetCityList',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    stateId: +stateId
+                }),
+                success: function (result) {
+                    $("#ddlMenu").html("");
+                    $.each($.parseJSON(result), function (i, city) {
+                        $("#ddlMenu").append
+                            ($('<option></option>').val(city.CityID).html(city.CityName))
+                    })
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+
+    function GetMenu1(_RoleId) {
+        debugger;
+        var RoleId = $("#ddlRole").val();
+        $.ajax
+            ({
+                url: '/ModuleRoleMapping/GetMenuByRoleId/',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    RoleId: +RoleId
+                }),
+                success: function (result) {
+                    console.log(result);
+                    var json_obj = $.parseJSON(response);
+                    for (var i in json_obj) {
+                        $("#ddlMenu1").append($("<option value=" + result[x].Value + ">" + result[x].Text + "</option>"));
+                    }
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+
+    function Employee(_RoleId) {
+        debugger;
+        var RoleId = _RoleId;
+        $.ajax
+            ({
+                url: '/ModuleRoleMapping/GetMenuByRoleId/',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    RoleId: +RoleId
+                }),
+                success: function (data) {
+                    var markup = "<option value='0'>Select Menu</option>";
+                    for (var x = 0; x < data.length; x++) {
+                        markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                    }
+                    $("#MenuId").html(markup).show();
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+</script>
+<h2>Employee</h2>
+@using (Html.BeginForm("Employee", "Employee", FormMethod.Post, new { id = "demoForm", name = "demoForm" }))
+{
+    @Html.DropDownListFor(m => m.RoleId, Model.RoleListItems, "---Select role---", new { Class = "ddlStyle", onchange = "GetMenu(this.value)" })
+    @Html.DropDownListFor(m => m.MenuId, Model.MenuListItems, "---Select menu---", new { Class = "ddlStyle", onchange = "SelectedIndexChanged()" })
+    // @Html.DropDownList("ddlRole", (MultiSelectList)ViewBag.ddlRole, new { @id = "ddlRole", onchange = "SelectedIndexChanged()", @multiple = "multiple", @placeholder = "Select Role Name", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;" })
+    <fieldset>
+        <legend>EmployeeModel</legend>
+        @*<div class="display-label">
+                @Html.DropDownListFor(m => m.RoleId, Model.RoleListItems, "---Select Employee---", new { Class = "ddlStyle", onchange = "SelectedIndexChanged()" })
+                <strong> @Html.DisplayNameFor(model => model.EmployeeId) </strong>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.EmployeeId)
+            </div>
+            <div class="display-label">
+                <strong> @Html.DisplayNameFor(model => model.EmpName) </strong>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.EmpName)
+            </div>
+            <div class="display-label">
+                <strong> @Html.DisplayNameFor(model => model.Salary) </strong>
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Salary)
+            </div>*@
+    </fieldset>
+}
+
+<script type="text/javascript">
+
+    function SelectedIndexChanged() {
+        //Form post
+        document.demoForm.submit();
+    }
+</script>  
