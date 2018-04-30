@@ -56,7 +56,7 @@ $(function() {
         fillOpacity: 0,
         pointStrokeColors: ['#1976d2', '#26c6da', '#1976d2'],
         behaveLikeLine: true,
-        gridLineColor: 'rgba(120, 130, 140, 0.13)',
+        gridLineColor: '#e0e0e0',
         lineWidth: 3,
         hideHover: 'auto',
         lineColors: ['#1976d2', '#26c6da', '#1976d2'],
