@@ -70,9 +70,44 @@
     //    window.location = "/Home/Details/" + customerId;
     //});
 </script>
+<style>
+    tr:hover {
+        background-color: #808080;
+        cursor: pointer;
+    }
+</style>
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Main" role="tab"><span><i class="mdi mdi-email"></i></span> Inbox</a> </li>
+</ul>
+<div class="tab-content tabcontent-border ">
+    <div class="tab-pane active" id="Main" role="tabpanel">
 
-<h2>Grid crud Demo</h2>
-@Html.InitCrudPopupsForGrid("DinnersGrid", "DinnersGridCrud")
+        @Html.InitCrudPopupsForGrid("DinnersGrid", "DinnersGridCrud")
+
+        @(Html.Awe().Grid("DinnersGrid")
+                                                                                .Mod(o => o.PageInfo().ColumnsSelector().ColumnsAutohide())
+                                                                                .Url(Url.Action("GridGetItems", "DinnersGridCrud"))
+                                                                                .Resizable()
+                                                                                .Reorderable()
+                                                                                .Height(350)
+                                                                                .PageSize(10)
+                                                                                .HtmlAttributes(new { @id = "WebGrid", @class = "Grid" })
+                                                                                .Columns(
+                                                                                    new Column { Name = "HeaderKey", Header = "Line #" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "Company" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "TradingPartner", Header = "Trading Partner" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "DocumentType", Header = "Document Type" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "DocumentNumber", Header = "Doc Number" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "AlternateDocument", Header = "Alt Document" },
+                                                                                    new Column { Name = "StoreNumber", Header = "Store Number" },
+                                                                                    new Column { Name = "Amount" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "DateRecieved", Header = "Date Recieved" }.Mod(o => o.Nohide()),
+                                                                                    new Column { Name = "DateAcknowledgement", Header = "Date Ack", }.Mod(o => o.Nohide())
+                                                                                   ))
+
+    </div>
+</div>
+                    
 @* popup names will be action + gridid; name is used when calling awe.open(name) *@
 <style>
     .awe-groupbar {
@@ -105,26 +140,6 @@
 
 
 
-@(Html.Awe().Grid("DinnersGrid")
-                                                .Mod(o => o.PageInfo().ColumnsSelector().ColumnsAutohide())
-                                                .Url(Url.Action("GridGetItems", "DinnersGridCrud"))
-                                                .Resizable()
-                                                .Reorderable()
-                                                .Height(350)
-                                                .PageSize(2)
-                                                .HtmlAttributes(new { @id = "WebGrid", @class = "Grid" })
-                                                .Columns(
-                                                    new Column { Name = "HeaderKey", Header = "Line #" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "Company" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "TradingPartner", Header = "Trading Partner" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "DocumentType", Header= "Document Type" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "DocumentNumber", Header = "Doc Number" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "AlternateDocument", Header = "Alt Document" },
-                                                    new Column { Name = "StoreNumber", Header="Store Number" },
-                                                    new Column { Name = "Amount" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "DateRecieved", Header="Date Recieved" }.Mod(o => o.Nohide()),
-                                                    new Column { Name = "DateAcknowledgement", Header = "Date Ack", }.Mod(o => o.Nohide())
-                                                   ))
 
 <br />
 
