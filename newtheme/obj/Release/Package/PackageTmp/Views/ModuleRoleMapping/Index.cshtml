@@ -1,0 +1,218 @@
+﻿@model EDI.Models.PermissionType
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+<script src="~/JQuery/jquery.btechco.excelexport.js"></script>
+<script src="~/JQuery/jquery.base64.js"></script>
+<script type="text/javascript">
+    function SelectedIndexChanged() {
+        //Form post   
+        document.demoForm.submit();
+    }
+</script>
+<script>
+    function getCityList() {
+        debugger;
+        var stateId = $("#stateDropDown").val();
+        $.ajax
+            ({
+                url: '/Home/GetCityList',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    stateId: +stateId
+                }),
+                success: function (result) {
+                    $("#ddlMenu").html("");
+                    $.each($.parseJSON(result), function (i, city) {
+                        $("#ddlMenu").append
+                            ($('<option></option>').val(city.CityID).html(city.CityName))
+                    })
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+
+    function GetMenu1(_RoleId) {
+        debugger;
+        var RoleId = $("#ddlRole").val();
+        $.ajax
+            ({
+                url: '/ModuleRoleMapping/GetMenuByRoleId/',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    RoleId: +RoleId
+                }),
+                success: function (result) {
+                    console.log(result);
+                    var json_obj = $.parseJSON(response);
+                    for (var i in json_obj) {
+                        $("#ddlMenu1").append($("<option value=" + result[x].Value + ">" + result[x].Text + "</option>"));
+                    }
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+
+    function GetMenu(_RoleId) {
+        debugger;
+        var RoleId = $("#ddlRole").val();
+        var ddlMenu1 = $("#ddlMenu1").val();
+        alert(ddlMenu1);
+        
+        $.ajax
+            ({
+                url: '/ModuleRoleMapping/GetMenuByRoleId/',
+                type: 'POST',
+                datatype: 'application/json',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    RoleId: +RoleId
+                }),
+                success: function (data) {
+                    debugger;
+                    var markup = "<option value='0'>Select Menu</option>";
+                    for (var x = 0; x < data.length; x++) {
+                        markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                    }
+                    $("#ddlMenu").html(markup).show();
+                },
+                error: function () {
+                    alert("Whooaaa! Something went wrong..")
+                },
+            });
+    }
+
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+         $("#ddlRole").change(function () {
+             var dID= $(this).val();
+             $.getJSON("../ModuleRoleMapping/LoadPhysiansByDepartment", { deptId: dID },
+                    function (data) {
+                        var select = $("#physiciansList");
+                        select.empty();
+                        select.append($('<option/>', {
+                            value: 0,
+                            text: "Select a Physian"
+                        }));
+                        $.each(data, function (index, itemData) {
+                            select.append($('<option/>', {
+                                value: itemData.Value,
+                                text: itemData.Text
+                            }));
+                        });
+                    });
+         });
+    });
+    </script>
+
+<h2>Module Role Mapping</h2>
+<style>
+    .lableAlign {
+        text-align: end;
+    }
+</style>
+<link href="~/css/dropdownliststyle.css" rel="stylesheet" />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<hr />
+<div>
+    @using (Html.BeginForm("Index", "ModuleRoleMapping", FormMethod.Post, new { id = "demoForm", name = "demoForm" }))
+    {
+        @*@Html.DropDownList("firstddlRole", (MultiSelectList)ViewBag.ddlRole, new { @multiple = "multiple", @placeholder = "Please select Medicine Type", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;", @onchange = "javascript:(this.value);" })
+
+            @Html.DropDownList("ddlRole", (MultiSelectList)ViewBag.ddlRole, new { @multiple = "multiple", @placeholder = "Please select Medicine Type", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;" })*@
+
+        <div>
+            <div class="row">
+                <div class="col-md-5 lableAlign">   <label>Role Name :</label> </div>
+                <div class="col-md-7">
+                    @*// @Html.DropDownListFor(m => m.EmployeeId, Model.EmployeeListItems, "---Select Employee---", new { Class = "ddlStyle", onchange = "SelectedIndexChanged()" })*@
+
+                    @*   @Html.DropDownListFor(m => m., new SelectList(Model.StateModel, "Id", "StateName"), new { @id = "ddlstate", @style = "width:200px;", @onchange = "javascript:GetCity(this.value);" })*@
+                    @*  @Html.DropDownList("ddlRole", (MultiSelectList)ViewBag.ddlRole, new { @id = "ddlRole", @onchange = "javascript:GetMenu(this.value);", @placeholder = "Select Role Name", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;" })*@
+                    @Html.DropDownList("ddlRole", (MultiSelectList)ViewBag.ddlRole, new { @id = "ddlRole", @onchange = "javascript:GetMenu(this.value);", @placeholder = "Select Role Name", @class = "SlectBox form-control active col-md-6", Style = "width:250px; border-radius: 0px;" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 lableAlign">   <label>Menu :</label> </div>
+                <div class="col-md-7">
+                      @*@Html.DropDownListFor(Model=> Model.PermissionTypeID, new SelectList(Enumerable.Empty<SelectListItem>(), "phyID", "phyName"),
+            "Select a Physican", new { id = "physiciansList" })*@
+                    @Html.DropDownList("ddlMenu", null, new { @id = "physiciansList", @multiple = "multiple", @placeholder = "Select Menu", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 lableAlign">   <label>Permission : </label> </div>
+                <div class="col-md-7">
+
+                    @Html.DropDownList("ddlPermission", (MultiSelectList)ViewBag.ddlPermission, new {  @placeholder = "Select Permission", @class = "SlectBox form-control col-md-6", Style = "width:250px; border-radius: 0px;" })
+                </div>
+            </div>
+            <select id="ddlcity" name="ddlcity" title="Select Menu" class="form-control col-md-6" placeholder="Select Menu" style="width: 200px"></select>
+        </div>
+
+        @*<table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PermissionTypeDesc)
+                    </th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Role Name</label>
+                    </td>
+                    <td>
+                        @Html.DropDownList("ddlRole", "Select Role")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Role Name</label>
+                    </td>
+                    <td>
+                        @Html.DropDownList("ddlMenu", "Select Menu")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Role Name</label>
+                    </td>
+                    <td>
+                        @Html.DropDownList("ddlPermission", "Select Permission")
+                    </td>
+                </tr>
+
+
+            </table>*@
+        @section scripts{
+            <script>
+                $(document).ready(function () {
+                    window.asd = $('.SlectBox').SumoSelect();
+                })
+</script>
+            @*<script src="~/js/Multiddl/jquery.min.js"></script>*@
+            <script src="~/js/Multiddl/jquery.sumoselect.js"></script>
+            <script src="~/js/Multiddl/jquery.unobtrusive-ajax.js"></script>
+
+
+        </div>
+        }
+    }

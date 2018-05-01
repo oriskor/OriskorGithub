@@ -1,0 +1,129 @@
+﻿@{
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+@using EDI.Helpers.Awesome
+@using Omu.AwesomeMvc
+@using EDI.Utils
+@using Omu.Awem.Helpers
+
+
+<script>
+    @*$(document).ready(function () {
+            $('table tbody tr').dblclick(function (args) {
+                debugger;
+                var id = $(this).closest("tr").find('td:eq(0)').text().trim();
+    
+                url = '@Url.Action("Details", "C850_Header")' + '?id=' + id;
+                window.open(
+                    url,
+                    '_blank' // <- This is what makes it open in a new window.
+                );
+            });
+    
+        });*@
+    
+       $(document).ready(function () {
+            $("body").on("click", "#WebGrid td", function () {
+                debugger;
+                var id = $(this).closest("tr").find('td:eq(0)').text().trim();
+                var customerId = $(this).closest("tr").find("td:first").html();
+             var row_index = $(this).parent().index();
+                if (id == "Line #" || id == "") {
+                    return false;
+                }
+                url = '/C850_Header/Details' + '?id=' + id;
+                window.open(
+                    url,
+                    '_blank' // <- This is what makes it open in a new window.
+                );
+            });
+        });
+    
+        //$("body").on("click", "#WebGrid td", function () {
+        //    debugger;
+        //    var customerId = $(this).closest("tr").find("td:first").html();
+        //    window.location = "/Home/Details/" + customerId;
+        //});
+</script>
+
+@Html.InitCrudPopupsForGrid("DinnersGrid", "DinnersGridCrud")
+
+@* popup names will be action + gridid; name is used when calling awe.open(name) *@
+<style>
+    .awe-groupbar {
+        display: none;
+    }
+
+    .dis {
+        display: none;
+    }
+</style>
+    @*<div class="bar">
+        <button type="button" onclick="awe.open('createDinnersGrid')" class="awe-btn mbtn">Create</button>
+    </div>*@
+        @*@(Html.Awe().Grid("DinnersGrid")
+            .Mod(o => o.PageInfo().ColumnsSelector().ColumnsAutohide())
+            .Url(Url.Action("GridGetItems", "DinnersGridCrud"))
+            .Resizable()
+            .Reorderable()
+            .Height(350)
+            .Columns(
+                new Column { Name = "Id", Width = 55 },
+                new Column { Name = "Name" }.Mod(o => o.Nohide()),
+                new Column { Name = "Date" },
+                new Column { Name = "Chef.FirstName,Chef.LastName", ClientFormat = ".ChefName", Header = "Chef" },
+                new Column { ClientFormat = ".Meals", Header = "Meals" },
+                new Column { ClientFormat = GridUtils.EditFormatForGrid("DinnersGrid"), Width = 50 }.Mod(o => o.Nohide()),
+                new Column { ClientFormat = GridUtils.DeleteFormatForGrid("DinnersGrid"), Width = 50 }.Mod(o => o.Nohide())))
+    <br />*@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor">Dashboard</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </div>
+    <div>
+        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+    </div>
+</div>
+<div class="container-fluid">
+<div class="card-group">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                @(Html.Awe().Grid("DinnersGrid")
+                    .Mod(o => o.PageInfo().ColumnsSelector().ColumnsAutohide())
+                    .Url(Url.Action("GridGetItems", "DinnersGridCrud"))
+                    .Resizable()
+                    .Reorderable()
+                    .Height(350)
+                    .PageSize(2)
+                    .HtmlAttributes(new { @id = "WebGrid", @class = "Grid" })
+                    .Columns(
+                        new Column { Name = "HeaderKey", Header = "Line #" }.Mod(o => o.Nohide()),
+                        new Column { Name = "Company" }.Mod(o => o.Nohide()),
+                        new Column { Name = "TradingPartner", Header = "Trading Partner" }.Mod(o => o.Nohide()),
+                        new Column { Name = "DocumentType", Header= "Document Type" }.Mod(o => o.Nohide()),
+                        new Column { Name = "DocumentNumber", Header = "Doc Number" }.Mod(o => o.Nohide()),
+                        new Column { Name = "AlternateDocument", Header = "Alt Document" },
+                        new Column { Name = "StoreNumber", Header="Store Number" },
+                        new Column { Name = "Amount" }.Mod(o => o.Nohide()),
+                        new Column { Name = "DateRecieved", Header="Date Recieved" }.Mod(o => o.Nohide()),
+                        new Column { Name = "DateAcknowledgement", Header = "Date Ack", }.Mod(o => o.Nohide())
+                    ))
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+<br />
+
+
+

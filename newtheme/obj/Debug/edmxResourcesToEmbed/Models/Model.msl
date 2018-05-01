@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDIEntitiesStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C810_Detail">
+      <EntityTypeMapping TypeName="EDIEntities.C810_Detail">
+        <MappingFragment StoreEntitySet="810_Detail">
+          <ScalarProperty Name="DetailKey" ColumnName="DetailKey" />
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="IT102_QtyInvoiced" ColumnName="IT102_QtyInvoiced" />
+          <ScalarProperty Name="IT103_Unit" ColumnName="IT103_Unit" />
+          <ScalarProperty Name="IT104_UnitPrice" ColumnName="IT104_UnitPrice" />
+          <ScalarProperty Name="IT107_PetSmartArticleNo" ColumnName="IT107_PetSmartArticleNo" />
+          <ScalarProperty Name="IT108_ProductServiceIdQlfr" ColumnName="IT108_ProductServiceIdQlfr" />
+          <ScalarProperty Name="IT109_ProductServiceId" ColumnName="IT109_ProductServiceId" />
+          <ScalarProperty Name="SAC02_AllowanceCode" ColumnName="SAC02_AllowanceCode" />
+          <ScalarProperty Name="SAC05_AllowanceAmount" ColumnName="SAC05_AllowanceAmount" />
+          <ScalarProperty Name="SAC02_ChargeCode" ColumnName="SAC02_ChargeCode" />
+          <ScalarProperty Name="SAC05_ChargeAmount" ColumnName="SAC05_ChargeAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C810_Header">
+      <EntityTypeMapping TypeName="EDIEntities.C810_Header">
+        <MappingFragment StoreEntitySet="810_Header">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="ST01_TranSetIdfrCode" ColumnName="ST01_TranSetIdfrCode" />
+          <ScalarProperty Name="ST02_TranSetControlNo" ColumnName="ST02_TranSetControlNo" />
+          <ScalarProperty Name="BIG01_InvoiceDate" ColumnName="BIG01_InvoiceDate" />
+          <ScalarProperty Name="BIG02_InvoiceNo" ColumnName="BIG02_InvoiceNo" />
+          <ScalarProperty Name="BIG04_PurchaseOrderNo" ColumnName="BIG04_PurchaseOrderNo" />
+          <ScalarProperty Name="REF02_PetSmartVendorNo" ColumnName="REF02_PetSmartVendorNo" />
+          <ScalarProperty Name="N104_PetSmartSiteNo" ColumnName="N104_PetSmartSiteNo" />
+          <ScalarProperty Name="ITD03_TermsDiscountPercent" ColumnName="ITD03_TermsDiscountPercent" />
+          <ScalarProperty Name="ITD05_TermsDiscountDaysDue" ColumnName="ITD05_TermsDiscountDaysDue" />
+          <ScalarProperty Name="ITD07_TermsNetDays" ColumnName="ITD07_TermsNetDays" />
+          <ScalarProperty Name="ITD12_Description" ColumnName="ITD12_Description" />
+          <ScalarProperty Name="TDS01_InvoiceTotalAmount" ColumnName="TDS01_InvoiceTotalAmount" />
+          <ScalarProperty Name="TXI02_HarmonizedSalesTax" ColumnName="TXI02_HarmonizedSalesTax" />
+          <ScalarProperty Name="TXI02_GoodsServicesTax" ColumnName="TXI02_GoodsServicesTax" />
+          <ScalarProperty Name="TXI02_StateTax" ColumnName="TXI02_StateTax" />
+          <ScalarProperty Name="SAC02_TotalAllowanceCode" ColumnName="SAC02_TotalAllowanceCode" />
+          <ScalarProperty Name="SAC05_TotalAllowanceAmount" ColumnName="SAC05_TotalAllowanceAmount" />
+          <ScalarProperty Name="SAC02_TotalChargeCode" ColumnName="SAC02_TotalChargeCode" />
+          <ScalarProperty Name="SAC05_TotalChargeAmount" ColumnName="SAC05_TotalChargeAmount" />
+          <ScalarProperty Name="CTT01_NumberOfLineItems" ColumnName="CTT01_NumberOfLineItems" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C850_Detail">
+      <EntityTypeMapping TypeName="EDIEntities.C850_Detail">
+        <MappingFragment StoreEntitySet="850_Detail">
+          <ScalarProperty Name="DetailKey" ColumnName="DetailKey" />
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="PO102_Quantity" ColumnName="PO102_Quantity" />
+          <ScalarProperty Name="PO103_UnitMeasurementCode" ColumnName="PO103_UnitMeasurementCode" />
+          <ScalarProperty Name="PO104_UnitPrice" ColumnName="PO104_UnitPrice" />
+          <ScalarProperty Name="PO107_ArticleNo" ColumnName="PO107_ArticleNo" />
+          <ScalarProperty Name="PO108_GTIN_Qlfr" ColumnName="PO108_GTIN_Qlfr" />
+          <ScalarProperty Name="PO109_GTIN_DigitDatatructure" ColumnName="PO109_GTIN_DigitDatatructure" />
+          <ScalarProperty Name="PO111_VendorItemNo" ColumnName="PO111_VendorItemNo" />
+          <ScalarProperty Name="PO113_Case" ColumnName="PO113_Case" />
+          <ScalarProperty Name="SDQ01_UnitMeasurementCode" ColumnName="SDQ01_UnitMeasurementCode" />
+          <ScalarProperty Name="SDQ03_IdCode" ColumnName="SDQ03_IdCode" />
+          <ScalarProperty Name="SDQ04_Quantity" ColumnName="SDQ04_Quantity" />
+          <ScalarProperty Name="SDQ05_IdCode" ColumnName="SDQ05_IdCode" />
+          <ScalarProperty Name="SDQ06_Quantity" ColumnName="SDQ06_Quantity" />
+          <ScalarProperty Name="SDQ07_IdCode" ColumnName="SDQ07_IdCode" />
+          <ScalarProperty Name="SDQ08_Quantity" ColumnName="SDQ08_Quantity" />
+          <ScalarProperty Name="SDQ09_IdCode" ColumnName="SDQ09_IdCode" />
+          <ScalarProperty Name="SDQ10_Quantity" ColumnName="SDQ10_Quantity" />
+          <ScalarProperty Name="SDQ11_IdCode" ColumnName="SDQ11_IdCode" />
+          <ScalarProperty Name="SDQ12_Quantity" ColumnName="SDQ12_Quantity" />
+          <ScalarProperty Name="SDQ13_IdCode" ColumnName="SDQ13_IdCode" />
+          <ScalarProperty Name="SDQ14_Quantity" ColumnName="SDQ14_Quantity" />
+          <ScalarProperty Name="SDQ15_IdCode" ColumnName="SDQ15_IdCode" />
+          <ScalarProperty Name="SDQ16_Quantity" ColumnName="SDQ16_Quantity" />
+          <ScalarProperty Name="SDQ17_IdCode" ColumnName="SDQ17_IdCode" />
+          <ScalarProperty Name="SDQ18_Quantity" ColumnName="SDQ18_Quantity" />
+          <ScalarProperty Name="SDQ19_IdCode" ColumnName="SDQ19_IdCode" />
+          <ScalarProperty Name="SDQ20_Quantity" ColumnName="SDQ20_Quantity" />
+          <ScalarProperty Name="SDQ21_IdCode" ColumnName="SDQ21_IdCode" />
+          <ScalarProperty Name="SDQ22_Quantity" ColumnName="SDQ22_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C850_Header">
+      <EntityTypeMapping TypeName="EDIEntities.C850_Header">
+        <MappingFragment StoreEntitySet="850_Header">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="FGKeySave" ColumnName="FGKeySave" />
+          <ScalarProperty Name="ST01_TranSetIdfrCode" ColumnName="ST01_TranSetIdfrCode" />
+          <ScalarProperty Name="ST02_TranSetControlNo" ColumnName="ST02_TranSetControlNo" />
+          <ScalarProperty Name="BEG01_TransactionSetPurposeCode" ColumnName="BEG01_TransactionSetPurposeCode" />
+          <ScalarProperty Name="BEG02_PurchaseOrderTypeCode" ColumnName="BEG02_PurchaseOrderTypeCode" />
+          <ScalarProperty Name="BEG03_PurchaseOrderNumber" ColumnName="BEG03_PurchaseOrderNumber" />
+          <ScalarProperty Name="BEG05_PODate" ColumnName="BEG05_PODate" />
+          <ScalarProperty Name="CUR02_CurrencyCode" ColumnName="CUR02_CurrencyCode" />
+          <ScalarProperty Name="REF02_FreeFormText" ColumnName="REF02_FreeFormText" />
+          <ScalarProperty Name="REF02_InternalVendorNo" ColumnName="REF02_InternalVendorNo" />
+          <ScalarProperty Name="REF02_ProductGroup" ColumnName="REF02_ProductGroup" />
+          <ScalarProperty Name="PER02_ContactPersonName" ColumnName="PER02_ContactPersonName" />
+          <ScalarProperty Name="DTM02_DeliveryRequestedDate" ColumnName="DTM02_DeliveryRequestedDate" />
+          <ScalarProperty Name="DTM02_RequestedPickupDate" ColumnName="DTM02_RequestedPickupDate" />
+          <ScalarProperty Name="N104_ShipFromID" ColumnName="N104_ShipFromID" />
+          <ScalarProperty Name="N401_ShipFromCity" ColumnName="N401_ShipFromCity" />
+          <ScalarProperty Name="N402_ShipFromState" ColumnName="N402_ShipFromState" />
+          <ScalarProperty Name="N403_ShipFromPostalCode" ColumnName="N403_ShipFromPostalCode" />
+          <ScalarProperty Name="N404_ShipFromCountryCode" ColumnName="N404_ShipFromCountryCode" />
+          <ScalarProperty Name="N104_ShipToID" ColumnName="N104_ShipToID" />
+          <ScalarProperty Name="N401_ShipToCity" ColumnName="N401_ShipToCity" />
+          <ScalarProperty Name="N402_ShipToState" ColumnName="N402_ShipToState" />
+          <ScalarProperty Name="N403_ShipToPostalCode" ColumnName="N403_ShipToPostalCode" />
+          <ScalarProperty Name="N404_ShipToCountryCode" ColumnName="N404_ShipToCountryCode" />
+          <ScalarProperty Name="CTT01_NumberOfPO1Segments" ColumnName="CTT01_NumberOfPO1Segments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C852_Detail">
+      <EntityTypeMapping TypeName="EDIEntities.C852_Detail">
+        <MappingFragment StoreEntitySet="852_Detail">
+          <ScalarProperty Name="DetailKey" ColumnName="DetailKey" />
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="LIN03_GTIN_UCC_Code" ColumnName="LIN03_GTIN_UCC_Code" />
+          <ScalarProperty Name="LIN05_BuyerItemNo" ColumnName="LIN05_BuyerItemNo" />
+          <ScalarProperty Name="LIN07_VendorItemNo" ColumnName="LIN07_VendorItemNo" />
+          <ScalarProperty Name="CTP02_PriceCode" ColumnName="CTP02_PriceCode" />
+          <ScalarProperty Name="CTP03_UnitPrice" ColumnName="CTP03_UnitPrice" />
+          <ScalarProperty Name="PO406_WeightPerPack" ColumnName="PO406_WeightPerPack" />
+          <ScalarProperty Name="PO407_Unit" ColumnName="PO407_Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C852_Header">
+      <EntityTypeMapping TypeName="EDIEntities.C852_Header">
+        <MappingFragment StoreEntitySet="852_Header">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="ST01_TranSetIdfrCode" ColumnName="ST01_TranSetIdfrCode" />
+          <ScalarProperty Name="ST02_TranSetControlNo" ColumnName="ST02_TranSetControlNo" />
+          <ScalarProperty Name="XQ02_ReportingDate" ColumnName="XQ02_ReportingDate" />
+          <ScalarProperty Name="XQ03_ReportingEndDate" ColumnName="XQ03_ReportingEndDate" />
+          <ScalarProperty Name="N902_InternalVendorNo" ColumnName="N902_InternalVendorNo" />
+          <ScalarProperty Name="N903_FreeFormDesc" ColumnName="N903_FreeFormDesc" />
+          <ScalarProperty Name="CTT01_NumberOfLineItems" ColumnName="CTT01_NumberOfLineItems" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C852_ProdActivity">
+      <EntityTypeMapping TypeName="EDIEntities.C852_ProdActivity">
+        <MappingFragment StoreEntitySet="852_ProdActivity">
+          <ScalarProperty Name="ProdActivityKey" ColumnName="ProdActivityKey" />
+          <ScalarProperty Name="DetailKey" ColumnName="DetailKey" />
+          <ScalarProperty Name="ZA01_ActivityCode" ColumnName="ZA01_ActivityCode" />
+          <ScalarProperty Name="SDQ01_Unit" ColumnName="SDQ01_Unit" />
+          <ScalarProperty Name="SDQ02_IdCodeQlfr" ColumnName="SDQ02_IdCodeQlfr" />
+          <ScalarProperty Name="SDQ03_IdCode" ColumnName="SDQ03_IdCode" />
+          <ScalarProperty Name="SDQ04_Quantity" ColumnName="SDQ04_Quantity" />
+          <ScalarProperty Name="SDQ05_IdCode" ColumnName="SDQ05_IdCode" />
+          <ScalarProperty Name="SDQ06_Quantity" ColumnName="SDQ06_Quantity" />
+          <ScalarProperty Name="SDQ07_IdCode" ColumnName="SDQ07_IdCode" />
+          <ScalarProperty Name="SDQ08_Quantity" ColumnName="SDQ08_Quantity" />
+          <ScalarProperty Name="SDQ09_IdCode" ColumnName="SDQ09_IdCode" />
+          <ScalarProperty Name="SDQ10_Quantity" ColumnName="SDQ10_Quantity" />
+          <ScalarProperty Name="SDQ11_IdCode" ColumnName="SDQ11_IdCode" />
+          <ScalarProperty Name="SDQ12_Quantity" ColumnName="SDQ12_Quantity" />
+          <ScalarProperty Name="SDQ13_IdCode" ColumnName="SDQ13_IdCode" />
+          <ScalarProperty Name="SDQ14_Quantity" ColumnName="SDQ14_Quantity" />
+          <ScalarProperty Name="SDQ15_IdCode" ColumnName="SDQ15_IdCode" />
+          <ScalarProperty Name="SDQ16_Quantity" ColumnName="SDQ16_Quantity" />
+          <ScalarProperty Name="SDQ17_IdCode" ColumnName="SDQ17_IdCode" />
+          <ScalarProperty Name="SDQ18_Quantity" ColumnName="SDQ18_Quantity" />
+          <ScalarProperty Name="SDQ19_IdCode" ColumnName="SDQ19_IdCode" />
+          <ScalarProperty Name="SDQ20_Quantity" ColumnName="SDQ20_Quantity" />
+          <ScalarProperty Name="SDQ21_IdCode" ColumnName="SDQ21_IdCode" />
+          <ScalarProperty Name="SDQ22_Quantity" ColumnName="SDQ22_Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Header">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Header">
+        <MappingFragment StoreEntitySet="856_Header">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="ST01_TranSetIdfrCode" ColumnName="ST01_TranSetIdfrCode" />
+          <ScalarProperty Name="ST02_TranSetControlNo" ColumnName="ST02_TranSetControlNo" />
+          <ScalarProperty Name="BSN01_TranSetPurposeCode" ColumnName="BSN01_TranSetPurposeCode" />
+          <ScalarProperty Name="BSN02_ShipmentId" ColumnName="BSN02_ShipmentId" />
+          <ScalarProperty Name="BSN03_TranSetDate" ColumnName="BSN03_TranSetDate" />
+          <ScalarProperty Name="BSN04_TranSetTime" ColumnName="BSN04_TranSetTime" />
+          <ScalarProperty Name="BSN05_HierarchicalStructureCode" ColumnName="BSN05_HierarchicalStructureCode" />
+          <ScalarProperty Name="CTT01_NumberOfLineItems" ColumnName="CTT01_NumberOfLineItems" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Item">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Item">
+        <MappingFragment StoreEntitySet="856_Item">
+          <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+          <ScalarProperty Name="PackKey" ColumnName="PackKey" />
+          <ScalarProperty Name="LIN02_TypeSourceCode" ColumnName="LIN02_TypeSourceCode" />
+          <ScalarProperty Name="LIN03_ProductServiceId" ColumnName="LIN03_ProductServiceId" />
+          <ScalarProperty Name="LIN05_BuyerItemNo" ColumnName="LIN05_BuyerItemNo" />
+          <ScalarProperty Name="LIN07_GTIN_EAN_UCC" ColumnName="LIN07_GTIN_EAN_UCC" />
+          <ScalarProperty Name="LIN09_LotNo" ColumnName="LIN09_LotNo" />
+          <ScalarProperty Name="SN102_UnitsShipped" ColumnName="SN102_UnitsShipped" />
+          <ScalarProperty Name="SN103_Unit" ColumnName="SN103_Unit" />
+          <ScalarProperty Name="SLN01_AssignedId" ColumnName="SLN01_AssignedId" />
+          <ScalarProperty Name="SLN03_RelationshipCode" ColumnName="SLN03_RelationshipCode" />
+          <ScalarProperty Name="SLN09_TypeSourceCode" ColumnName="SLN09_TypeSourceCode" />
+          <ScalarProperty Name="SLN10_ProductServiceId" ColumnName="SLN10_ProductServiceId" />
+          <ScalarProperty Name="DTM02_ExpirationDate" ColumnName="DTM02_ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Order">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Order">
+        <MappingFragment StoreEntitySet="856_Order">
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="ShipmentKey" ColumnName="ShipmentKey" />
+          <ScalarProperty Name="PRF01_RetailPurchaseOrderNo" ColumnName="PRF01_RetailPurchaseOrderNo" />
+          <ScalarProperty Name="PRF02_ReleaseNumber" ColumnName="PRF02_ReleaseNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Pack">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Pack">
+        <MappingFragment StoreEntitySet="856_Pack">
+          <ScalarProperty Name="PackKey" ColumnName="PackKey" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="LIN03_LotNo" ColumnName="LIN03_LotNo" />
+          <ScalarProperty Name="MAN02_SerialShipContainerCode" ColumnName="MAN02_SerialShipContainerCode" />
+          <ScalarProperty Name="DTM02_ExpirationDate" ColumnName="DTM02_ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Shipment">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Shipment">
+        <MappingFragment StoreEntitySet="856_Shipment">
+          <ScalarProperty Name="ShipmentKey" ColumnName="ShipmentKey" />
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="TD101_PackagingCode" ColumnName="TD101_PackagingCode" />
+          <ScalarProperty Name="TD102_LadingQuantity" ColumnName="TD102_LadingQuantity" />
+          <ScalarProperty Name="REF02_BillOfLadingNo" ColumnName="REF02_BillOfLadingNo" />
+          <ScalarProperty Name="N104_ShipToId" ColumnName="N104_ShipToId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C856_Tare">
+      <EntityTypeMapping TypeName="EDIEntities.C856_Tare">
+        <MappingFragment StoreEntitySet="856_Tare">
+          <ScalarProperty Name="TareKey" ColumnName="TareKey" />
+          <ScalarProperty Name="OrderKey" ColumnName="OrderKey" />
+          <ScalarProperty Name="LIN03_LotNo" ColumnName="LIN03_LotNo" />
+          <ScalarProperty Name="MAN02_SerialShipContainerCode" ColumnName="MAN02_SerialShipContainerCode" />
+          <ScalarProperty Name="DTM02_ExpirationDate" ColumnName="DTM02_ExpirationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C860_Detail">
+      <EntityTypeMapping TypeName="EDIEntities.C860_Detail">
+        <MappingFragment StoreEntitySet="860_Detail">
+          <ScalarProperty Name="DetailKey" ColumnName="DetailKey" />
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="POC02_ChangeTypeCode" ColumnName="POC02_ChangeTypeCode" />
+          <ScalarProperty Name="POC06_UnitPrice" ColumnName="POC06_UnitPrice" />
+          <ScalarProperty Name="POC09_GTIN_EAN_UCC" ColumnName="POC09_GTIN_EAN_UCC" />
+          <ScalarProperty Name="POC09_GTIN_UCC" ColumnName="POC09_GTIN_UCC" />
+          <ScalarProperty Name="POC11_BuyerItemNo" ColumnName="POC11_BuyerItemNo" />
+          <ScalarProperty Name="POC13_VendorItemNo" ColumnName="POC13_VendorItemNo" />
+          <ScalarProperty Name="POC15_CommodityGroupingID" ColumnName="POC15_CommodityGroupingID" />
+          <ScalarProperty Name="POC17_CaseID" ColumnName="POC17_CaseID" />
+          <ScalarProperty Name="PO406_WeightPerPack" ColumnName="PO406_WeightPerPack" />
+          <ScalarProperty Name="PO407_WeightUnit" ColumnName="PO407_WeightUnit" />
+          <ScalarProperty Name="PO408_VolumePerPack" ColumnName="PO408_VolumePerPack" />
+          <ScalarProperty Name="PO409_VolumeUnit" ColumnName="PO409_VolumeUnit" />
+          <ScalarProperty Name="QTY02_QuantityAdjusted" ColumnName="QTY02_QuantityAdjusted" />
+          <ScalarProperty Name="QTY03_01_Unit" ColumnName="QTY03_01_Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="C860_Header">
+      <EntityTypeMapping TypeName="EDIEntities.C860_Header">
+        <MappingFragment StoreEntitySet="860_Header">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="ST01_TranSetIdfrCode" ColumnName="ST01_TranSetIdfrCode" />
+          <ScalarProperty Name="ST02_TranSetControlNo" ColumnName="ST02_TranSetControlNo" />
+          <ScalarProperty Name="BCH01_TransactionSetPurposeCode" ColumnName="BCH01_TransactionSetPurposeCode" />
+          <ScalarProperty Name="BCH02_PurchaseOrderTypeCode" ColumnName="BCH02_PurchaseOrderTypeCode" />
+          <ScalarProperty Name="BCH03_OriginalPO_No" ColumnName="BCH03_OriginalPO_No" />
+          <ScalarProperty Name="BCH06_OriginalPO_Date" ColumnName="BCH06_OriginalPO_Date" />
+          <ScalarProperty Name="BCH11_OriginalPO_DateChange" ColumnName="BCH11_OriginalPO_DateChange" />
+          <ScalarProperty Name="DTM02_DeliveryRequestedDate" ColumnName="DTM02_DeliveryRequestedDate" />
+          <ScalarProperty Name="DTM02_ShipNotBeforeDate" ColumnName="DTM02_ShipNotBeforeDate" />
+          <ScalarProperty Name="DTM02_ShipNoLaterDate" ColumnName="DTM02_ShipNoLaterDate" />
+          <ScalarProperty Name="DTM02_RequestedPickupDate" ColumnName="DTM02_RequestedPickupDate" />
+          <ScalarProperty Name="N104_ShipFromID" ColumnName="N104_ShipFromID" />
+          <ScalarProperty Name="N401_ShipFromCity" ColumnName="N401_ShipFromCity" />
+          <ScalarProperty Name="N402_ShipFromState" ColumnName="N402_ShipFromState" />
+          <ScalarProperty Name="N403_ShipFromZip" ColumnName="N403_ShipFromZip" />
+          <ScalarProperty Name="N404_ShipFromCountryCode" ColumnName="N404_ShipFromCountryCode" />
+          <ScalarProperty Name="CTT01_NumberOfPOCSegments" ColumnName="CTT01_NumberOfPOCSegments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="company_master">
+      <EntityTypeMapping TypeName="EDIEntities.company_master">
+        <MappingFragment StoreEntitySet="company_master">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_type" ColumnName="c_type" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="c_address" ColumnName="c_address" />
+          <ScalarProperty Name="contact_person" ColumnName="contact_person" />
+          <ScalarProperty Name="c_person_position" ColumnName="c_person_position" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="package_id" ColumnName="package_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="docu_type">
+      <EntityTypeMapping TypeName="EDIEntities.docu_type">
+        <MappingFragment StoreEntitySet="docu_type">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="d_type" ColumnName="d_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="docu_type_sub">
+      <EntityTypeMapping TypeName="EDIEntities.docu_type_sub">
+        <MappingFragment StoreEntitySet="docu_type_sub">
+          <ScalarProperty Name="d_id" ColumnName="d_id" />
+          <ScalarProperty Name="d_num" ColumnName="d_num" />
+          <ScalarProperty Name="alt_number" ColumnName="alt_number" />
+          <ScalarProperty Name="d_subid" ColumnName="d_subid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edi_format_master">
+      <EntityTypeMapping TypeName="EDIEntities.edi_format_master">
+        <MappingFragment StoreEntitySet="edi_format_master">
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="edi_type" ColumnName="edi_type" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="edi_foramt" ColumnName="edi_foramt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EDIFiles">
+      <EntityTypeMapping TypeName="EDIEntities.EDIFile">
+        <MappingFragment StoreEntitySet="EDIFiles">
+          <ScalarProperty Name="RejectedFileID" ColumnName="RejectedFileID" />
+          <ScalarProperty Name="fileNames" ColumnName="fileNames" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="EdiFileTranSetNo" ColumnName="EdiFileTranSetNo" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionalGroupInbounds">
+      <EntityTypeMapping TypeName="EDIEntities.FunctionalGroupInbound">
+        <MappingFragment StoreEntitySet="FunctionalGroupInbound">
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="InterchangeKey" ColumnName="InterchangeKey" />
+          <ScalarProperty Name="GS01_FunctionalIdfrCode" ColumnName="GS01_FunctionalIdfrCode" />
+          <ScalarProperty Name="GS02_SendersCode" ColumnName="GS02_SendersCode" />
+          <ScalarProperty Name="GS03_ReceiversCode" ColumnName="GS03_ReceiversCode" />
+          <ScalarProperty Name="GS04_Date" ColumnName="GS04_Date" />
+          <ScalarProperty Name="GS05_Time" ColumnName="GS05_Time" />
+          <ScalarProperty Name="GS06_GroupControlNumber" ColumnName="GS06_GroupControlNumber" />
+          <ScalarProperty Name="GS07_ResponsibleAgencyCode" ColumnName="GS07_ResponsibleAgencyCode" />
+          <ScalarProperty Name="GS08_VersionReleaseCode" ColumnName="GS08_VersionReleaseCode" />
+          <ScalarProperty Name="GE01_NoOfTranSetsIncluded" ColumnName="GE01_NoOfTranSetsIncluded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FunctionalGroupOutbounds">
+      <EntityTypeMapping TypeName="EDIEntities.FunctionalGroupOutbound">
+        <MappingFragment StoreEntitySet="FunctionalGroupOutbound">
+          <ScalarProperty Name="FunctionalGroupKey" ColumnName="FunctionalGroupKey" />
+          <ScalarProperty Name="InterchangeKey" ColumnName="InterchangeKey" />
+          <ScalarProperty Name="GS01_FunctionalIdfrCode" ColumnName="GS01_FunctionalIdfrCode" />
+          <ScalarProperty Name="GS02_SendersCode" ColumnName="GS02_SendersCode" />
+          <ScalarProperty Name="GS03_ReceiversCode" ColumnName="GS03_ReceiversCode" />
+          <ScalarProperty Name="GS04_Date" ColumnName="GS04_Date" />
+          <ScalarProperty Name="GS05_Time" ColumnName="GS05_Time" />
+          <ScalarProperty Name="GS06_GroupControlNumber" ColumnName="GS06_GroupControlNumber" />
+          <ScalarProperty Name="GS07_ResponsibleAgencyCode" ColumnName="GS07_ResponsibleAgencyCode" />
+          <ScalarProperty Name="GS08_VersionReleaseCode" ColumnName="GS08_VersionReleaseCode" />
+          <ScalarProperty Name="GE01_NoOfTranSetsIncluded" ColumnName="GE01_NoOfTranSetsIncluded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterchangeInbounds">
+      <EntityTypeMapping TypeName="EDIEntities.InterchangeInbound">
+        <MappingFragment StoreEntitySet="InterchangeInbound">
+          <ScalarProperty Name="InterchangeKey" ColumnName="InterchangeKey" />
+          <ScalarProperty Name="ISA01_AuthorizationInfoQlfr" ColumnName="ISA01_AuthorizationInfoQlfr" />
+          <ScalarProperty Name="ISA02_AuthorizationInfo" ColumnName="ISA02_AuthorizationInfo" />
+          <ScalarProperty Name="ISA03_SecurityInfoQlfr" ColumnName="ISA03_SecurityInfoQlfr" />
+          <ScalarProperty Name="ISA04_SecurityInfo" ColumnName="ISA04_SecurityInfo" />
+          <ScalarProperty Name="ISA05_SenderIdQlfr" ColumnName="ISA05_SenderIdQlfr" />
+          <ScalarProperty Name="ISA06_SenderId" ColumnName="ISA06_SenderId" />
+          <ScalarProperty Name="ISA07_ReceiverIdQlfr" ColumnName="ISA07_ReceiverIdQlfr" />
+          <ScalarProperty Name="ISA08_ReceiverId" ColumnName="ISA08_ReceiverId" />
+          <ScalarProperty Name="ISA09_Date" ColumnName="ISA09_Date" />
+          <ScalarProperty Name="ISA10_Time" ColumnName="ISA10_Time" />
+          <ScalarProperty Name="ISA11_RepetitionSeparator" ColumnName="ISA11_RepetitionSeparator" />
+          <ScalarProperty Name="ISA12_ControlVersionNumber" ColumnName="ISA12_ControlVersionNumber" />
+          <ScalarProperty Name="ISA13_ControlNumber" ColumnName="ISA13_ControlNumber" />
+          <ScalarProperty Name="ISA14_AcknowledgmentRequested" ColumnName="ISA14_AcknowledgmentRequested" />
+          <ScalarProperty Name="ISA15_UsageIndicator" ColumnName="ISA15_UsageIndicator" />
+          <ScalarProperty Name="ISA16_ComponentElementSeparator" ColumnName="ISA16_ComponentElementSeparator" />
+          <ScalarProperty Name="IEA01_NoOfIncludedFuncGroups" ColumnName="IEA01_NoOfIncludedFuncGroups" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterchangeOutbounds">
+      <EntityTypeMapping TypeName="EDIEntities.InterchangeOutbound">
+        <MappingFragment StoreEntitySet="InterchangeOutbound">
+          <ScalarProperty Name="InterchangeKey" ColumnName="InterchangeKey" />
+          <ScalarProperty Name="ISA01_AuthorizationInfoQlfr" ColumnName="ISA01_AuthorizationInfoQlfr" />
+          <ScalarProperty Name="ISA02_AuthorizationInfo" ColumnName="ISA02_AuthorizationInfo" />
+          <ScalarProperty Name="ISA03_SecurityInfoQlfr" ColumnName="ISA03_SecurityInfoQlfr" />
+          <ScalarProperty Name="ISA04_SecurityInfo" ColumnName="ISA04_SecurityInfo" />
+          <ScalarProperty Name="ISA05_SenderIdQlfr" ColumnName="ISA05_SenderIdQlfr" />
+          <ScalarProperty Name="ISA06_SenderId" ColumnName="ISA06_SenderId" />
+          <ScalarProperty Name="ISA07_ReceiverIdQlfr" ColumnName="ISA07_ReceiverIdQlfr" />
+          <ScalarProperty Name="ISA08_ReceiverId" ColumnName="ISA08_ReceiverId" />
+          <ScalarProperty Name="ISA09_Date" ColumnName="ISA09_Date" />
+          <ScalarProperty Name="ISA10_Time" ColumnName="ISA10_Time" />
+          <ScalarProperty Name="ISA11_RepetitionSeparator" ColumnName="ISA11_RepetitionSeparator" />
+          <ScalarProperty Name="ISA12_ControlVersionNumber" ColumnName="ISA12_ControlVersionNumber" />
+          <ScalarProperty Name="ISA13_ControlNumber" ColumnName="ISA13_ControlNumber" />
+          <ScalarProperty Name="ISA14_AcknowledgmentRequested" ColumnName="ISA14_AcknowledgmentRequested" />
+          <ScalarProperty Name="ISA15_UsageIndicator" ColumnName="ISA15_UsageIndicator" />
+          <ScalarProperty Name="ISA16_ComponentElementSeparator" ColumnName="ISA16_ComponentElementSeparator" />
+          <ScalarProperty Name="IEA01_NoOfIncludedFuncGroups" ColumnName="IEA01_NoOfIncludedFuncGroups" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_setup">
+      <EntityTypeMapping TypeName="EDIEntities.item_setup">
+        <MappingFragment StoreEntitySet="item_setup">
+          <ScalarProperty Name="item__id" ColumnName="item#_id" />
+          <ScalarProperty Name="item_translation" ColumnName="item_translation" />
+          <ScalarProperty Name="Upc__" ColumnName="Upc_#" />
+          <ScalarProperty Name="Vendor_Part_id" ColumnName="Vendor_Part_id" />
+          <ScalarProperty Name="Buyer_part" ColumnName="Buyer_part" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Price_basis" ColumnName="Price_basis" />
+          <ScalarProperty Name="C__of_Inner_packs" ColumnName="#_of_Inner_packs" />
+          <ScalarProperty Name="C__of_unit_in_cartoons" ColumnName="#_of_unit_in_cartoons" />
+          <ScalarProperty Name="Max__" ColumnName="Max_#" />
+          <ScalarProperty Name="ucc_128__" ColumnName="ucc_128_#" />
+          <ScalarProperty Name="Vendor_Part__" ColumnName="Vendor_Part_#" />
+          <ScalarProperty Name="Gtin__" ColumnName="Gtin_#" />
+          <ScalarProperty Name="Kmart_Code" ColumnName="Kmart_Code" />
+          <ScalarProperty Name="Unique_product__" ColumnName="Unique_product_#" />
+          <ScalarProperty Name="Package_Indicator" ColumnName="Package_Indicator" />
+          <ScalarProperty Name="Ucc_Company_prifix" ColumnName="Ucc_Company_prifix" />
+          <ScalarProperty Name="Qty_Shipped" ColumnName="Qty_Shipped" />
+          <ScalarProperty Name="Pack_Size" ColumnName="Pack_Size" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Manufacturer_Part" ColumnName="Manufacturer_Part" />
+          <ScalarProperty Name="Ean" ColumnName="Ean" />
+          <ScalarProperty Name="income" ColumnName="income" />
+          <ScalarProperty Name="expence" ColumnName="expence" />
+          <ScalarProperty Name="Cost_of_Sales" ColumnName="Cost_of_Sales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menu_master">
+      <EntityTypeMapping TypeName="EDIEntities.menu_master">
+        <MappingFragment StoreEntitySet="menu_master">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuRoleMappings">
+      <EntityTypeMapping TypeName="EDIEntities.MenuRoleMapping">
+        <MappingFragment StoreEntitySet="MenuRoleMapping">
+          <ScalarProperty Name="MenuRoleMappingID" ColumnName="MenuRoleMappingID" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="Sub_Menu_Id" ColumnName="Sub_Menu_Id" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="PermissionTypeID" ColumnName="PermissionTypeID" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="package_master">
+      <EntityTypeMapping TypeName="EDIEntities.package_master">
+        <MappingFragment StoreEntitySet="package_master">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_duration" ColumnName="p_duration" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermissionTypes">
+      <EntityTypeMapping TypeName="EDIEntities.PermissionType">
+        <MappingFragment StoreEntitySet="PermissionType">
+          <ScalarProperty Name="PermissionTypeID" ColumnName="PermissionTypeID" />
+          <ScalarProperty Name="PermissionTypeDesc" ColumnName="PermissionTypeDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role_master">
+      <EntityTypeMapping TypeName="EDIEntities.role_master">
+        <MappingFragment StoreEntitySet="role_master">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="roll_name" ColumnName="roll_name" />
+          <ScalarProperty Name="Role_Id2" ColumnName="Role_Id2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="EDIEntities.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusDesc" ColumnName="StatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sub_menu">
+      <EntityTypeMapping TypeName="EDIEntities.sub_menu">
+        <MappingFragment StoreEntitySet="sub_menu">
+          <ScalarProperty Name="sub_m_id" ColumnName="sub_m_id" />
+          <ScalarProperty Name="Submenu_name" ColumnName="Submenu_name" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EDIEntities.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tradingPartnerSetups">
+      <EntityTypeMapping TypeName="EDIEntities.tradingPartnerSetup">
+        <MappingFragment StoreEntitySet="tradingPartnerSetup">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaction_rejected">
+      <EntityTypeMapping TypeName="EDIEntities.transaction_rejected">
+        <MappingFragment StoreEntitySet="transaction_rejected">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="t_partner_id" ColumnName="t_partner_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="doc_code" ColumnName="doc_code" />
+          <ScalarProperty Name="a_doc_code" ColumnName="a_doc_code" />
+          <ScalarProperty Name="store_no" ColumnName="store_no" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="date_rejected" ColumnName="date_rejected" />
+          <ScalarProperty Name="d_acnoledgment" ColumnName="d_acnoledgment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaction_sent">
+      <EntityTypeMapping TypeName="EDIEntities.transaction_sent">
+        <MappingFragment StoreEntitySet="transaction_sent">
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="edi_code" ColumnName="edi_code" />
+          <ScalarProperty Name="sent" ColumnName="sent" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="t_partner_id" ColumnName="t_partner_id" />
+          <ScalarProperty Name="doc_type" ColumnName="doc_type" />
+          <ScalarProperty Name="doc_code" ColumnName="doc_code" />
+          <ScalarProperty Name="a_doc_code" ColumnName="a_doc_code" />
+          <ScalarProperty Name="store_no" ColumnName="store_no" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="date_send" ColumnName="date_send" />
+          <ScalarProperty Name="d_acnoledgment" ColumnName="d_acnoledgment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_master">
+      <EntityTypeMapping TypeName="EDIEntities.user_master">
+        <MappingFragment StoreEntitySet="user_master">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="u_first_name" ColumnName="u_first_name" />
+          <ScalarProperty Name="u_last_name" ColumnName="u_last_name" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="phone_no" ColumnName="phone_no" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="erp_master">
+      <EntityTypeMapping TypeName="EDIEntities.erp_master">
+        <MappingFragment StoreEntitySet="erp_master">
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="erp_name" ColumnName="erp_name" />
+          <ScalarProperty Name="technology" ColumnName="technology" />
+          <ScalarProperty Name="api_details" ColumnName="api_details" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscription_master">
+      <EntityTypeMapping TypeName="EDIEntities.subscription_master">
+        <MappingFragment StoreEntitySet="subscription_master">
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetHeaderDetailInformation" FunctionName="EDIEntities.Store.GetHeaderDetailInformation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.GetHeaderDetailInformation_Result">
+          <ScalarProperty Name="HeaderKey" ColumnName="HeaderKey" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="AltDocument" ColumnName="AltDocument" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateRecieved" ColumnName="DateRecieved" />
+          <ScalarProperty Name="DateAcknowledgement" ColumnName="DateAcknowledgement" />
+          <ScalarProperty Name="StoreNumber" ColumnName="StoreNumber" />
+          <ScalarProperty Name="StoreNumber1" ColumnName="StoreNumber1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="EDIEntities.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="EDIEntities.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="EDIEntities.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="EDIEntities.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="EDIEntities.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="EDIEntities.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="EDIEntities.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SPO_getAllMenuByUserID" FunctionName="EDIEntities.Store.SPO_getAllMenuByUserID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.SPO_getAllMenuByUserID_Result">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="roll_name" ColumnName="roll_name" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="Submenu_name" ColumnName="Submenu_name" />
+          <ScalarProperty Name="sub_m_id" ColumnName="sub_m_id" />
+          <ScalarProperty Name="PermissionTypeID" ColumnName="PermissionTypeID" />
+          <ScalarProperty Name="PermissionTypeDesc" ColumnName="PermissionTypeDesc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPO_getAllMenuWhichNotAssignedToTheRole" FunctionName="EDIEntities.Store.SPO_getAllMenuWhichNotAssignedToTheRole">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.SPO_getAllMenuWhichNotAssignedToTheRole_Result">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPO_getRejectedFiles" FunctionName="EDIEntities.Store.SPO_getRejectedFiles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EDIEntities.SPO_getRejectedFiles_Result">
+          <ScalarProperty Name="fileNames" ColumnName="fileNames" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="EdiFileTranSetNo" ColumnName="EdiFileTranSetNo" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="File_Status" ColumnName="File_Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPO_insertEDIFilesDetails" FunctionName="EDIEntities.Store.SPO_insertEDIFilesDetails" />
+  </EntityContainerMapping>
+</Mapping>

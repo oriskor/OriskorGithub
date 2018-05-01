@@ -1,0 +1,301 @@
+﻿@model IEnumerable<EDI.Models.C850_Header>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Inbox</h2>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('table tbody tr').db(function (args) {
+            debugger;
+            var id = $(this).closest("tr").find('td:eq(0)').text().trim();
+
+            url = '@Url.Action("Details", "C850_Header")' + '?id=' + id;
+            window.open(
+                url,
+                '_blank' // <- This is what makes it open in a new window.
+            );
+        });
+    });
+
+</script>
+<style>
+    .linkone {
+        font-size: 12px;
+    }
+</style>
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+
+<div class="col-lg-12 linkone">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table full-color-table full-inverse-table hover-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <label>Company </label>
+                            </th>
+                            <th>
+                                <label>Trading Partner </label>
+                            </th>
+                            <th>
+                                <label>Document Type </label>
+                            </th>
+                            <th>
+                                <label>Document Number </label>
+                            </th>
+                            <th>
+                                <label>Alt Document </label>
+                            </th>
+                            <th>
+                                <label>Stor Number </label>
+                            </th>
+                            <th>
+                                <label>Amount </label>
+                            </th>
+                            <th>
+                                <label>Date Recieved </label>
+                            </th>
+                            <th>
+                                <label>Date Acknowledgement</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td style="display:none">
+                                    @Html.DisplayFor(id => item.HeaderKey)
+                                </td>
+                                <td>
+                                    Company
+                                </td>
+                                <td>
+                                    Trading Partner
+                                </td>
+                                <td>
+                                    Document Type
+                                </td>
+                                <td>
+                                    Document Number
+                                </td>
+                                <td>
+                                    Alt Document
+                                </td>
+                                <td>
+                                    Stor Number
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CUR02_CurrencyCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DTM02_RequestedPickupDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BEG05_PODate)
+                                </td>
+                             
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="col-lg-12 linkone">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table full-color-table full-inverse-table hover-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FunctionalGroupKey)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FGKeySave)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ST01_TranSetIdfrCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ST02_TranSetControlNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BEG01_TransactionSetPurposeCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BEG02_PurchaseOrderTypeCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BEG03_PurchaseOrderNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.BEG05_PODate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CUR02_CurrencyCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.REF02_FreeFormText)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.REF02_InternalVendorNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.REF02_ProductGroup)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PER02_ContactPersonName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DTM02_DeliveryRequestedDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DTM02_RequestedPickupDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N104_ShipFromID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N401_ShipFromCity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N402_ShipFromState)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N403_ShipFromPostalCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N404_ShipFromCountryCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N104_ShipToID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N401_ShipToCity)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N402_ShipToState)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N403_ShipToPostalCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.N404_ShipToCountryCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CTT01_NumberOfPO1Segments)
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                         
+                                <td style="display:none">
+                                    @Html.DisplayFor(id => item.HeaderKey)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FunctionalGroupKey)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FGKeySave)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ST01_TranSetIdfrCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ST02_TranSetControlNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BEG01_TransactionSetPurposeCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BEG02_PurchaseOrderTypeCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BEG03_PurchaseOrderNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BEG05_PODate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CUR02_CurrencyCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.REF02_FreeFormText)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.REF02_InternalVendorNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.REF02_ProductGroup)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PER02_ContactPersonName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DTM02_DeliveryRequestedDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DTM02_RequestedPickupDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N104_ShipFromID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N401_ShipFromCity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N402_ShipFromState)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N403_ShipFromPostalCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N404_ShipFromCountryCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N104_ShipToID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N401_ShipToCity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N402_ShipToState)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N403_ShipToPostalCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.N404_ShipToCountryCode)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CTT01_NumberOfPO1Segments)
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>*@
+

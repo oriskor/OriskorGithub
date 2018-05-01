@@ -1,0 +1,46 @@
+﻿@model EDI.Models.role_master
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>New Role</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.role_id, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.role_id)
+                @Html.ValidationMessageFor(model => model.role_id)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.roll_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.roll_name)
+                @Html.ValidationMessageFor(model => model.roll_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+                @Html.ActionLink("Back to List", "Index", "RolesAddEdit", new object { }, new { @class = "btn waves-effect waves-light  btn-secondary" })
+            </div>
+        </div>
+    </div>
+}
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

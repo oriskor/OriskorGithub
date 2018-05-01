@@ -1,0 +1,13 @@
+﻿@model  IEnumerable<EDI.Models.tradingPartnerSetup>
+<ul aria-expanded="false" class="collapse">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href='@Url.Action("Details", "TradingPartner", new { id = item.ID })'>
+                <i></i> <span>
+                    <span> @Html.DisplayFor(model => item.Name)</span>
+                </span>
+            </a>
+        </li>
+    }
+</ul>

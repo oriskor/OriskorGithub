@@ -1,0 +1,236 @@
+﻿@model EDI.Models.C850_Header
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>C850_Header</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.FunctionalGroupKey, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FunctionalGroupKey)
+                @Html.ValidationMessageFor(model => model.FunctionalGroupKey)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FGKeySave, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FGKeySave)
+                @Html.ValidationMessageFor(model => model.FGKeySave)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ST01_TranSetIdfrCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ST01_TranSetIdfrCode)
+                @Html.ValidationMessageFor(model => model.ST01_TranSetIdfrCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ST02_TranSetControlNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ST02_TranSetControlNo)
+                @Html.ValidationMessageFor(model => model.ST02_TranSetControlNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BEG01_TransactionSetPurposeCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BEG01_TransactionSetPurposeCode)
+                @Html.ValidationMessageFor(model => model.BEG01_TransactionSetPurposeCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BEG02_PurchaseOrderTypeCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BEG02_PurchaseOrderTypeCode)
+                @Html.ValidationMessageFor(model => model.BEG02_PurchaseOrderTypeCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BEG03_PurchaseOrderNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BEG03_PurchaseOrderNumber)
+                @Html.ValidationMessageFor(model => model.BEG03_PurchaseOrderNumber)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BEG05_PODate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BEG05_PODate)
+                @Html.ValidationMessageFor(model => model.BEG05_PODate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CUR02_CurrencyCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CUR02_CurrencyCode)
+                @Html.ValidationMessageFor(model => model.CUR02_CurrencyCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.REF02_FreeFormText, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.REF02_FreeFormText)
+                @Html.ValidationMessageFor(model => model.REF02_FreeFormText)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.REF02_InternalVendorNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.REF02_InternalVendorNo)
+                @Html.ValidationMessageFor(model => model.REF02_InternalVendorNo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.REF02_ProductGroup, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.REF02_ProductGroup)
+                @Html.ValidationMessageFor(model => model.REF02_ProductGroup)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PER02_ContactPersonName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PER02_ContactPersonName)
+                @Html.ValidationMessageFor(model => model.PER02_ContactPersonName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DTM02_DeliveryRequestedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DTM02_DeliveryRequestedDate)
+                @Html.ValidationMessageFor(model => model.DTM02_DeliveryRequestedDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DTM02_RequestedPickupDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DTM02_RequestedPickupDate)
+                @Html.ValidationMessageFor(model => model.DTM02_RequestedPickupDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N104_ShipFromID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N104_ShipFromID)
+                @Html.ValidationMessageFor(model => model.N104_ShipFromID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N401_ShipFromCity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N401_ShipFromCity)
+                @Html.ValidationMessageFor(model => model.N401_ShipFromCity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N402_ShipFromState, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N402_ShipFromState)
+                @Html.ValidationMessageFor(model => model.N402_ShipFromState)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N403_ShipFromPostalCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N403_ShipFromPostalCode)
+                @Html.ValidationMessageFor(model => model.N403_ShipFromPostalCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N404_ShipFromCountryCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N404_ShipFromCountryCode)
+                @Html.ValidationMessageFor(model => model.N404_ShipFromCountryCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N104_ShipToID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N104_ShipToID)
+                @Html.ValidationMessageFor(model => model.N104_ShipToID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N401_ShipToCity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N401_ShipToCity)
+                @Html.ValidationMessageFor(model => model.N401_ShipToCity)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N402_ShipToState, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N402_ShipToState)
+                @Html.ValidationMessageFor(model => model.N402_ShipToState)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N403_ShipToPostalCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N403_ShipToPostalCode)
+                @Html.ValidationMessageFor(model => model.N403_ShipToPostalCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.N404_ShipToCountryCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.N404_ShipToCountryCode)
+                @Html.ValidationMessageFor(model => model.N404_ShipToCountryCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CTT01_NumberOfPO1Segments, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CTT01_NumberOfPO1Segments)
+                @Html.ValidationMessageFor(model => model.CTT01_NumberOfPO1Segments)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

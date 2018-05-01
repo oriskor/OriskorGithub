@@ -1,0 +1,94 @@
+﻿@model EDI.Models.user_master
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>user_master</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.user_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.u_first_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.u_first_name)
+                @Html.ValidationMessageFor(model => model.u_first_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.u_last_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.u_last_name)
+                @Html.ValidationMessageFor(model => model.u_last_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.c_id, "c_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("c_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.c_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.role_id, "role_id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("role_id", String.Empty)
+                @Html.ValidationMessageFor(model => model.role_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.phone_no, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.phone_no)
+                @Html.ValidationMessageFor(model => model.phone_no)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.email_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email_id)
+                @Html.ValidationMessageFor(model => model.email_id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
