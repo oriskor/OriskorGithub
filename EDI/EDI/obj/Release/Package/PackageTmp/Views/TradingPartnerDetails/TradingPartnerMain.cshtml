@@ -30,8 +30,8 @@
         <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Options" role="tab"><span><i class="ti-email"></i> Options</span></a> </li>
     </ul>
     <!-- Tab panes -->
-    <div class="tab-content tabcontent-border">
-        <div class="tab-pane active" id="Identifiers" role="tabpanel">
+    <div class="tab-content tabcontent-border ">
+        <div class="tab-pane active p-20" id="Identifiers" role="tabpanel">
             <div class="p-20">
                 <div style="border:1px solid rgb(49, 55, 62); padding:10px">
                     <fieldset>
@@ -103,14 +103,14 @@
                     <fieldset>
                         <legend>Transaction Level Control Numbers </legend>
                         <div class="row">
-                           @Html.Action("BindGridPartnerTestECIdentifier", "TradingPartner", new { id =  Model.id })
+                            @Html.Action("BindGridPartnerTestECIdentifier", "TradingPartner", new { id = Model.ID })
                         </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Transaction Group Lelel Control Numbers </legend>
                         <div class="row">
-                            @Html.Action("BindgridTransactionGroupLelelControlNumbers", "TradingPartner", new { id =  Model.id })
+                            @Html.Action("BindgridTransactionGroupLelelControlNumbers", "TradingPartner", new { id = Model.ID })
                         </div>
                     </fieldset>
 

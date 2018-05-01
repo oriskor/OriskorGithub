@@ -10,13 +10,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="assets/animate.min.css">
-      <publishTime>04/26/2018 13:38:11</publishTime>
+      <publishTime>04/04/2018 13:02:57</publishTime>
     </File>
     <File Include="assets/blank.gif">
-      <publishTime>04/26/2018 13:38:11</publishTime>
+      <publishTime>04/04/2018 13:02:58</publishTime>
     </File>
     <File Include="assets/blue.css">
-      <publishTime>04/26/2018 13:38:11</publishTime>
+      <publishTime>04/04/2018 13:02:58</publishTime>
     </File>
     <File Include="assets/bootstrap.min.css">
       <publishTime>04/04/2018 13:02:58</publishTime>
@@ -235,7 +235,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 15:25:43</publishTime>
     </File>
     <File Include="assets/plugins/jquery/jquery.min.js">
-      <publishTime>04/25/2018 12:21:03</publishTime>
+      <publishTime>04/04/2018 15:26:22</publishTime>
     </File>
     <File Include="assets/plugins/morrisjs/.bower.json">
       <publishTime>04/06/2018 12:30:53</publishTime>
@@ -322,10 +322,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 12:46:31</publishTime>
     </File>
     <File Include="bin/EDI.dll">
-      <publishTime>04/30/2018 16:15:05</publishTime>
+      <publishTime>04/24/2018 19:12:56</publishTime>
     </File>
     <File Include="bin/EDI.pdb">
-      <publishTime>04/30/2018 16:15:05</publishTime>
+      <publishTime>04/24/2018 19:12:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -375,18 +375,6 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>04/04/2018 12:46:30</publishTime>
     </File>
-    <File Include="bin/Omu.Awem.dll">
-      <publishTime>12/29/2017 18:52:19</publishTime>
-    </File>
-    <File Include="bin/Omu.AwesomeMvc.dll">
-      <publishTime>12/29/2017 18:52:15</publishTime>
-    </File>
-    <File Include="bin/Omu.ValueInjecter.dll">
-      <publishTime>10/03/2017 22:38:48</publishTime>
-    </File>
-    <File Include="bin/Omu.ValueInjecter.pdb">
-      <publishTime>10/03/2017 22:38:48</publishTime>
-    </File>
     <File Include="bin/Owin.dll">
       <publishTime>04/04/2018 12:46:43</publishTime>
     </File>
@@ -420,32 +408,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css">
       <publishTime>04/04/2018 12:46:13</publishTime>
     </File>
-    <File Include="Content/Common.css">
-      <publishTime>04/27/2018 12:24:29</publishTime>
-    </File>
     <File Include="Content/Site.css">
       <publishTime>04/04/2018 12:46:33</publishTime>
-    </File>
-    <File Include="Content/themes/wui/awem.css">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/AwesomeMvc.css">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/awe_icons.png">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/editdel.png">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/loading.gif">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/pm.png">
-      <publishTime>04/27/2018 12:24:02</publishTime>
-    </File>
-    <File Include="Content/themes/wui/pm3.png">
-      <publishTime>04/27/2018 12:24:02</publishTime>
     </File>
     <File Include="css/animate.css">
       <publishTime>04/04/2018 15:31:34</publishTime>
@@ -493,7 +457,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 15:31:34</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>04/25/2018 19:08:33</publishTime>
+      <publishTime>04/18/2018 13:07:55</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>04/04/2018 12:46:04</publishTime>
@@ -762,20 +726,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="js/widget-data.js">
       <publishTime>04/04/2018 15:32:00</publishTime>
     </File>
-    <File Include="Models/EDIEntities.edmx.diagram">
-      <publishTime>04/28/2018 16:16:00</publishTime>
-    </File>
     <File Include="Models/EDIModel.edmx.diagram">
       <publishTime>04/23/2018 18:53:29</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>04/12/2018 14:36:05</publishTime>
-    </File>
-    <File Include="Scripts/awem.js">
-      <publishTime>04/27/2018 12:25:02</publishTime>
-    </File>
-    <File Include="Scripts/AwesomeMvc.js">
-      <publishTime>04/27/2018 12:25:02</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>04/04/2018 12:46:12</publishTime>
@@ -813,11 +768,8 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/respond.min.js">
       <publishTime>04/04/2018 12:46:32</publishTime>
     </File>
-    <File Include="Scripts/utils.js">
-      <publishTime>04/27/2018 12:25:02</publishTime>
-    </File>
     <File Include="Scripts/_references.js">
-      <publishTime>04/26/2018 13:48:59</publishTime>
+      <publishTime>04/06/2018 16:44:00</publishTime>
     </File>
     <File Include="scss/app.scss">
       <publishTime>04/04/2018 15:37:51</publishTime>
@@ -1729,7 +1681,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 15:37:51</publishTime>
     </File>
     <File Include="scss/pages.scss">
-      <publishTime>04/25/2018 19:14:10</publishTime>
+      <publishTime>04/04/2018 15:37:51</publishTime>
     </File>
     <File Include="scss/prepros-6.config">
       <publishTime>04/04/2018 15:37:51</publishTime>
@@ -1804,19 +1756,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2018 17:24:45</publishTime>
     </File>
     <File Include="Views/C850_Header/Details.cshtml">
-      <publishTime>04/30/2018 12:07:33</publishTime>
+      <publishTime>04/23/2018 10:44:02</publishTime>
     </File>
     <File Include="Views/C850_Header/Edit.cshtml">
       <publishTime>04/12/2018 17:24:46</publishTime>
     </File>
     <File Include="Views/C850_Header/Index.cshtml">
-      <publishTime>04/27/2018 17:36:29</publishTime>
-    </File>
-    <File Include="Views/C850_Header/mainGrid.cshtml">
-      <publishTime>04/30/2018 12:43:03</publishTime>
-    </File>
-    <File Include="Views/DinnersGridCrud/Create.cshtml">
-      <publishTime>04/27/2018 12:53:32</publishTime>
+      <publishTime>04/24/2018 17:54:33</publishTime>
     </File>
     <File Include="Views/Employee/Employee.cshtml">
       <publishTime>04/20/2018 19:30:18</publishTime>
@@ -1828,7 +1774,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 12:46:04</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>04/25/2018 18:55:13</publishTime>
+      <publishTime>04/05/2018 11:38:17</publishTime>
     </File>
     <File Include="Views/Login/Create.cshtml">
       <publishTime>04/04/2018 18:17:16</publishTime>
@@ -1875,89 +1821,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/RolesAddEdit/Index.cshtml">
       <publishTime>04/20/2018 11:43:33</publishTime>
     </File>
-    <File Include="Views/Shared/EditorTemplates/AjaxCheckboxList.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/AjaxDropdown.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/AjaxRadioList.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Autocomplete.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Boolean.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/ButtonGroupCheckbox.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/ButtonGroupRadio.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/ColorDropdown.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Combobox.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
-    </File>
     <File Include="Views/Shared/EditorTemplates/DateTime.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Hidden.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Int32.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Lookup.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/LookupDropdown.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/MealsOdropdown.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/MultiLookup.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/MultiLookupDropdown.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Multiselect.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Odropdown.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Single.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/String.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/Textarea.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/TimePicker.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/TimePickerm.cshtml">
-      <publishTime>04/27/2018 12:46:34</publishTime>
-    </File>
-    <File Include="Views/Shared/EditorTemplates/_FieldLayout.cshtml">
-      <publishTime>04/27/2018 12:46:28</publishTime>
+      <publishTime>04/13/2018 17:22:19</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>04/04/2018 12:46:33</publishTime>
     </File>
     <File Include="Views/Shared/SidebarNavigation.cshtml">
-      <publishTime>04/26/2018 13:07:17</publishTime>
+      <publishTime>04/06/2018 10:50:02</publishTime>
     </File>
     <File Include="Views/Shared/Transactions.cshtml">
-      <publishTime>04/25/2018 12:17:51</publishTime>
+      <publishTime>04/12/2018 19:39:21</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>04/19/2018 18:18:42</publishTime>
@@ -1969,52 +1843,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/04/2018 12:46:33</publishTime>
     </File>
     <File Include="Views/Shared/_MasterPage.cshtml">
-      <publishTime>04/28/2018 12:14:29</publishTime>
+      <publishTime>04/24/2018 15:22:18</publishTime>
     </File>
     <File Include="Views/Shared/_SideMenu.cshtml">
-      <publishTime>04/30/2018 12:52:03</publishTime>
+      <publishTime>04/23/2018 19:25:30</publishTime>
     </File>
     <File Include="Views/TradingPartner/Details.cshtml">
-      <publishTime>04/28/2018 15:56:28</publishTime>
+      <publishTime>04/24/2018 18:51:18</publishTime>
     </File>
     <File Include="Views/TradingPartner/Index.cshtml">
-      <publishTime>04/25/2018 11:10:07</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/Address.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
+      <publishTime>04/23/2018 19:35:19</publishTime>
     </File>
     <File Include="Views/TradingPartnerDetails/BindGridPartnerTestECIdentifier.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
+      <publishTime>04/24/2018 15:40:31</publishTime>
     </File>
     <File Include="Views/TradingPartnerDetails/BindgridTransactionGroupLelelControlNumbers.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/GLAccounts.cshtml">
-      <publishTime>04/26/2018 12:43:02</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/IntegrationSetup.cshtml">
-      <publishTime>04/26/2018 12:53:03</publishTime>
+      <publishTime>04/24/2018 15:43:17</publishTime>
     </File>
     <File Include="Views/TradingPartnerDetails/ItemSetup.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/LabelSetup.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/LookupTables.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/PartnerSetup.cshtml">
-      <publishTime>04/25/2018 17:33:56</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/Tamplate.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
+      <publishTime>04/24/2018 18:44:13</publishTime>
     </File>
     <File Include="Views/TradingPartnerDetails/TradingPartnerMain.cshtml">
-      <publishTime>04/28/2018 16:01:57</publishTime>
-    </File>
-    <File Include="Views/TradingPartnerDetails/Transaction.cshtml">
-      <publishTime>04/28/2018 16:03:05</publishTime>
+      <publishTime>04/24/2018 18:46:28</publishTime>
     </File>
     <File Include="Views/TransactionInbox/Details.cshtml">
       <publishTime>04/12/2018 17:24:40</publishTime>
@@ -2053,13 +1903,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/19/2018 12:39:23</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>04/27/2018 12:32:10</publishTime>
+      <publishTime>04/05/2018 11:51:20</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>04/12/2018 15:45:59</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/30/2018 16:14:24</publishTime>
+      <publishTime>04/24/2018 19:12:57</publishTime>
     </File>
   </ItemGroup>
 </Project>
