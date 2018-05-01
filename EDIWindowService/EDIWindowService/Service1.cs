@@ -13,7 +13,8 @@ using System.Reflection;
 using System.IO;
 using System.Net;
 using Edidev.FrameworkEDIx64;
-
+using System.Collections;
+using EDIWindowService.EDIFileTypeClasses;
 
 namespace EDIWindowService
 {
@@ -114,8 +115,10 @@ namespace EDIWindowService
         private void ProcessFile()
         {
 
-            AcknowledgeInboundEDIFiles();
-            TranslateEdiFiles();
+            AcknowledgeInboundEDIFiles();// Step -1 Inbound file Process
+            TranslateEdiFiles();// Step -2 Inbound file Process
+
+
         }
         protected void AcknowledgeInboundEDIFiles()
         {
@@ -417,7 +420,7 @@ namespace EDIWindowService
         {
             try
             {
-                using (SqlConnection oConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["EdiDbConnectionString"].ConnectionString))
+                using (SqlConnection oConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["EdiDb"].ConnectionString))
                 {
                     SqlCommand cmd = new SqlCommand("SPO_insertEDIFilesDetails", oConnection);
                     oConnection.Open();
@@ -437,6 +440,50 @@ namespace EDIWindowService
                 LogLibrary.WriteErrorLog("Error = " + ex.Message);
                 throw ex;
             }
+        }
+        private List<FileStatus> GetFileStatus(int FileTypeStatusID)
+        {
+            DataTable dt = new DataTable();
+            List<FileStatus> objFileStatus = new List<FileStatus>();
+            try
+            {
+                SqlHelper objSqlHelper = new SqlHelper();
+                Hashtable parms = new Hashtable();
+                parms.Add("@FileTypeStatusID", FileTypeStatusID);
+                DataSet ds = new DataSet();                
+                ds=objSqlHelper.ExecuteProcudere("SPO_GetFileStatus", parms);
+                dt = ds.Tables[0];
+                if(dt.Rows.Count>0)
+                {
+                    objFileStatus = dt.AsEnumerable()
+                                     .Select(x =>
+                                     new FileStatus
+                                     {
+                                         ID = x.Field<int>("ID"),
+                                         HeaderKey = x.Field<int>("HeaderKey"),
+                                         docType = x.Field<string>("docType"),
+                                         senderID = x.Field<string>("senderID"),
+                                         recieverID = x.Field<string>("recieverID"),
+                                         statusID = x.Field<int>("statusID"),
+                                         ProcessDateTime = x.Field<DateTime>("ProcessDateTime"),
+                                         isExportImport = x.Field<int>("ProcessDateTime"),
+                                     }
+                                     ).ToList();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                LogLibrary.WriteErrorLog("Error = " + ex.Message);
+                throw ex;
+            }
+            return objFileStatus;
+        }
+        protected void OutboundProcess()
+        {
+            DataTable dt=GetFileStatus(2);
+            if(dt.)
+            if(dt.)
         }
 
         protected void TranslateEdiFiles()

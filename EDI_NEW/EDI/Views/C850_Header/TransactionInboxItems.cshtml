@@ -1,0 +1,134 @@
+﻿@model List<EDI.Structure.TransactionInboxDetailsItem>
+
+<div class="col-lg-12 linkone">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table full-color-table full-inverse-table hover-table">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                <label>Line # </label>
+                            </th>
+                            <th>
+                                <label>Vendor Style #</label>
+                            </th>
+                            <th>
+                                <label>Buyer's Part</label>
+                            </th>
+                            <th>
+                                <label>UPC #</label>
+                            </th>
+                            <th>
+                                <label>UPC Case Code</label>
+                            </th>
+                            <th>
+                                <label>Description </label>
+                            </th>
+                            <th>
+                                <label>Qty</label>
+                            </th>
+                            <th>
+                                <label>UOM</label>
+                            </th>
+                            <th>
+                                <label>Price</label>
+                            </th>
+                            <th>
+                                <label>Price Basis</label>
+                            </th>
+                            <th>
+                                <label># of Inner Packs </label>
+                            </th>
+                            <th>
+                                <label>Pack Size</label>
+                            </th>
+                            <th>
+                                <label>Price </label>
+                            </th>
+                            <th>
+                                <label>
+                                    Delivery Request
+                                </label>
+                            </th>
+                            <th>
+                                <label>Delivery Required </label>
+                            </th>
+                            <th>
+                                <label>Scheduled Qty</label>
+                            </th>
+                            <th>
+                                <label>Schedule Delivery </label>
+                            </th>
+                            <th>
+                                <label>Item Po </label>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Qty)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem => item.UOM)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem => item.PriceBasis)
+                                </td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                  
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelitem => item.ItemPo)
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

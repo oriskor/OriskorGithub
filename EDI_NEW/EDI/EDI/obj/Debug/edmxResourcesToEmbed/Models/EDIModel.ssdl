@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDIModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="company_master">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_type" Type="varchar" MaxLength="20" />
+    <Property Name="logo" Type="varbinary(max)" />
+    <Property Name="c_address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contact_person" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_person_position" Type="varchar" MaxLength="15" />
+    <Property Name="phone_no" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" />
+    <Property Name="package_id" Type="int" Nullable="false" />
+    <Property Name="edi_code" Type="int" />
+  </EntityType>
+  <EntityType Name="edi_format_master">
+    <Key>
+      <PropertyRef Name="edi_code" />
+    </Key>
+    <Property Name="edi_code" Type="int" Nullable="false" />
+    <Property Name="edi_type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="edi_foramt" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'edi_portal.dbo.erp_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="erp_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="c_id" />
+      <PropertyRef Name="erp_name" />
+    </Key>
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_id" Type="int" Nullable="false" />
+    <Property Name="erp_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="technology" Type="varchar" MaxLength="50" />
+    <Property Name="api_details" Type="varchar(max)" />
+    <Property Name="description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="menu_master">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="int" Nullable="false" />
+    <Property Name="m_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="package_master">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_duration" Type="nvarchar" MaxLength="20" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" />
+    <Property Name="discount" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="role_master">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="roll_name" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sub_menu">
+    <Key>
+      <PropertyRef Name="sub_m_id" />
+    </Key>
+    <Property Name="sub_m_id" Type="int" Nullable="false" />
+    <Property Name="Submenu_name" Type="varchar" MaxLength="50" />
+    <Property Name="m_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'edi_portal.dbo.subscription_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="subscription_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="p_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="transaction_rejected">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="int" Nullable="false" />
+    <Property Name="c_id" Type="int" />
+    <Property Name="edi_code" Type="int" />
+    <Property Name="sent" Type="varchar" MaxLength="5" />
+    <Property Name="received" Type="varchar" MaxLength="5" />
+    <Property Name="t_partner_id" Type="int" />
+    <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_code" Type="int" />
+    <Property Name="a_doc_code" Type="int" />
+    <Property Name="store_no" Type="int" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="date_rejected" Type="date" />
+    <Property Name="d_acnoledgment" Type="date" />
+  </EntityType>
+  <EntityType Name="transaction_sent">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="int" Nullable="false" />
+    <Property Name="c_id" Type="int" />
+    <Property Name="edi_code" Type="int" />
+    <Property Name="sent" Type="varchar" MaxLength="5" />
+    <Property Name="received" Type="varchar" MaxLength="5" />
+    <Property Name="t_partner_id" Type="int" />
+    <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_code" Type="int" />
+    <Property Name="a_doc_code" Type="int" />
+    <Property Name="store_no" Type="int" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="date_send" Type="date" />
+    <Property Name="d_acnoledgment" Type="date" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="u_first_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="u_last_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="c_id" Type="int" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="phone_no" Type="int" Nullable="false" />
+    <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <Association Name="fk_c_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="1" />
+    <End Role="erp_master" Type="Self.erp_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="erp_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_company_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_edi_code">
+    <End Role="edi_format_master" Type="Self.edi_format_master" Multiplicity="0..1" />
+    <End Role="company_master" Type="Self.company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="edi_format_master">
+        <PropertyRef Name="edi_code" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="edi_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_m_id">
+    <End Role="menu_master" Type="Self.menu_master" Multiplicity="0..1" />
+    <End Role="sub_menu" Type="Self.sub_menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="sub_menu">
+        <PropertyRef Name="m_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="company_master" Type="Self.company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_package_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="subscription_master" Type="Self.subscription_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="subscription_master">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rejected">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_rejected" Type="Self.transaction_rejected" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_rejected">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_id">
+    <End Role="role_master" Type="Self.role_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sent">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_sent" Type="Self.transaction_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_sent">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SPO_getAllMenuByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EDIModelsStoreContainer">
+    <EntitySet Name="company_master" EntityType="Self.company_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="edi_format_master" EntityType="Self.edi_format_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menu_master" EntityType="Self.menu_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="package_master" EntityType="Self.package_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="role_master" EntityType="Self.role_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sub_menu" EntityType="Self.sub_menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaction_rejected" EntityType="Self.transaction_rejected" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaction_sent" EntityType="Self.transaction_sent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_master" EntityType="Self.user_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="erp_master" EntityType="Self.erp_master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [erp_master].[c_name] AS [c_name], 
+    [erp_master].[c_id] AS [c_id], 
+    [erp_master].[erp_name] AS [erp_name], 
+    [erp_master].[technology] AS [technology], 
+    [erp_master].[api_details] AS [api_details], 
+    [erp_master].[description] AS [description]
+    FROM [dbo].[erp_master] AS [erp_master]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="subscription_master" EntityType="Self.subscription_master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [subscription_master].[c_name] AS [c_name], 
+    [subscription_master].[p_id] AS [p_id], 
+    [subscription_master].[p_name] AS [p_name]
+    FROM [dbo].[subscription_master] AS [subscription_master]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_c_id" Association="Self.fk_c_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="erp_master" EntitySet="erp_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_company_id" Association="Self.fk_company_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_edi_code" Association="Self.fk_edi_code">
+      <End Role="edi_format_master" EntitySet="edi_format_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_m_id" Association="Self.fk_m_id">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="sub_menu" EntitySet="sub_menu" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_id" Association="Self.fk_p_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_package_id" Association="Self.fk_package_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="subscription_master" EntitySet="subscription_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rejected" Association="Self.fk_rejected">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_rejected" EntitySet="transaction_rejected" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_id" Association="Self.fk_role_id">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sent" Association="Self.fk_sent">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_sent" EntitySet="transaction_sent" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
