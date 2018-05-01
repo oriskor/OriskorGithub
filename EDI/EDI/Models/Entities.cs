@@ -54,8 +54,9 @@ namespace EDI.Models
         public string DocumentNumber { get; set; }
         public string AlternateDocument { get; set; }
         public string StoreNumber { get; set; }
-        public decimal Amount { get; set; }
+        public string Amount { get; set; }
         public string DateRecieved { get; set; }
+        public string DateChanged { get; set; }
         public string DateAcknowledgement { get; set; }
     }
 
