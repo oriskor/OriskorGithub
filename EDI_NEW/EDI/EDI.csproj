@@ -172,7 +172,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Class Structure\Header_Details_Information.cs" />
+<<<<<<< HEAD
     <Compile Include="Class Structure\TradingPartner.cs" />
+=======
+    <Compile Include="Class Structure\TradingPartners.cs" />
+>>>>>>> 1d2a6f5de8ba7acb25ed9a8416a2f56a3e7a5cb2
     <Compile Include="Class Structure\UserRole.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminDashboardController.cs" />

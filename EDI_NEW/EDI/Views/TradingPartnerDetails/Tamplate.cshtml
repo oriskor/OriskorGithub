@@ -1,4 +1,4 @@
-﻿@model EDI.Models.tradingPartnerSetup
+﻿@model List<EDI.Structure.Templates>
 <div class="card-body">
     <div class="table-responsive">
         <table class="table full-color-table full-inverse-table hover-table">
@@ -16,18 +16,23 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.id)
-                    </td>
+                @foreach (var item in Model)
+                {
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.id)
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dcument_Type)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Version)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date_Changed)
+                        </td>
+                    </tr>
+
+                }
             </tbody>
         </table>
     </div>

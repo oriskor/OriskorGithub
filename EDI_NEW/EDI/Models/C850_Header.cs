@@ -47,6 +47,7 @@ namespace EDI.Models
         public string N403_ShipToPostalCode { get; set; }
         public string N404_ShipToCountryCode { get; set; }
         public string CTT01_NumberOfPO1Segments { get; set; }
+        public Nullable<int> ConfigID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<C850_Detail> C850_Detail { get; set; }
