@@ -7,7 +7,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -23,10 +23,11 @@
     <link href="~/assets/plugins/morrisjs/morris.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/css/style.css" rel="stylesheet">
-    
+
     <!-- You can change the theme colors from here -->
+    @*<link href="~/css/colors/default.css" id="theme" rel="stylesheet">*@
+
     <link href="~/css/colors/default.css" id="theme" rel="stylesheet">
-    
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
@@ -413,11 +414,9 @@
                         <li>
                             <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-view-grid"></i><span class="hide-menu"> Transactions </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href='@Url.Action("mainGrid" +
-                                            "" +
-                                            "", "C850_Header")'><i></i> <span> Inbox </span></a></li>
+                                <li><a href='@Url.Action("mainGrid" + "" + "", "C850_Header")'><i></i> <span> Inbox </span></a></li>
                                 <li><a href='@Url.Action("Index", "Recieved")' )'><i></i> <span> Recieved </span></a></li>
-                                <li><a href='@Url.Action("Index", "Outbox")'><i></i> <span> Outbox </span></a></li>
+                                <li><a href='@Url.Action("Index", "TransactionOutbox")'><i></i> <span> Outbox </span></a></li>
                                 <li><a href='@Url.Action("Index", "Sent")' )'><i></i> <span> Sent </span></a></li>
 
 

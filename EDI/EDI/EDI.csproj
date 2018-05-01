@@ -188,6 +188,7 @@
     <Compile Include="Controllers\RolesAddEditController.cs" />
     <Compile Include="Controllers\TradingPartnerController.cs" />
     <Compile Include="Controllers\TransactionInboxController.cs" />
+    <Compile Include="Controllers\TransactionOutboxController.cs" />
     <Compile Include="Controllers\UserManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1034,6 +1035,8 @@
     <Content Include="Views\Shared\EditorTemplates\TimePicker.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimePickerm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_FieldLayout.cshtml" />
+    <Content Include="Views\C850_Header\TransactionInboxItems.cshtml" />
+    <Content Include="Views\TransactionOutbox\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
