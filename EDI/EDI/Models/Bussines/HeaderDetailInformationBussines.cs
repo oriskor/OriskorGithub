@@ -55,14 +55,12 @@ namespace EDI.Models.Bussines
                 ListHeader_Details_Information = dt.AsEnumerable()
                                                .Select(x => new HeaderDetailInformation
                                                {
-                                                   HeaderKey = x.Field<int>("HeaderKey"),
                                                    Company = x.Field<string>("CompanyName"),
                                                    DocumentNumber = x.Field<string>("DocumentNumber"),
                                                    AlternateDocument = x.Field<string>("AltDocument"),
                                                    DocumentType = x.Field<string>("DocumentType"),
                                                    Amount = x.Field<string>("Amount"),
-                                                   DateRecieved = x.Field<string>("DateRecieved"),
-                                                   DateAcknowledgement = x.Field<string>("DateAcknowledgement"),
+                                                   DateChanged = x.Field<string>("DateChanged"),
                                                    StoreNumber = x.Field<string>("StoreNumber"),
                                                    TradingPartner = x.Field<string>("TradingPartner")
                                                }).ToList();

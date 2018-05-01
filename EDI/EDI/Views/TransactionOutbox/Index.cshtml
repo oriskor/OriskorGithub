@@ -69,14 +69,14 @@
 
         @(Html.Awe().Grid("DinnersGrid")
                                                                                         .Mod(o => o.PageInfo().ColumnsSelector().ColumnsAutohide())
-                                                                                        .Url(Url.Action("GridGetItems", "DinnersGridCrud"))
+                                                                                        .Url(Url.Action("getOutboxItems", "DinnersGridCrud"))
                                                                                         .Resizable()
                                                                                         .Reorderable()
                                                                                         .Height(450)
                                                                                         .PageSize(10)
                                                                                         .HtmlAttributes(new { @id = "WebGrid", @class = "Grid" })
                                                                                         .Columns(
-                                                                                            new Column { Name = "HeaderKey", Header = "Line #" }.Mod(o => o.Nohide()),
+                                                                                        
                                                                                             new Column { Name = "Company" }.Mod(o => o.Nohide()),
                                                                                             new Column { Name = "TradingPartner", Header = "Trading Partner" }.Mod(o => o.Nohide()),
                                                                                             new Column { Name = "DocumentType", Header = "Document Type" }.Mod(o => o.Nohide()),
@@ -84,8 +84,8 @@
                                                                                             new Column { Name = "AlternateDocument", Header = "Alt Document" },
                                                                                             new Column { Name = "StoreNumber", Header = "Store Number" },
                                                                                             new Column { Name = "Amount" }.Mod(o => o.Nohide()),
-                                                                                            new Column { Name = "DateRecieved", Header = "Date Recieved" }.Mod(o => o.Nohide()),
-                                                                                            new Column { Name = "DateAcknowledgement", Header = "Date Ack", }.Mod(o => o.Nohide())
+                                                                                            new Column { Name = "DateChanged", Header = "Date Changed" }.Mod(o => o.Nohide())
+                                                                                           
                                                                                            ))
 
     </div>

@@ -48,6 +48,22 @@ namespace EDI.Controllers
                      o.DateAcknowledgement
                  };
         }
+        private static object MapToGridModelOutbox(HeaderDetailInformation o)
+        {
+            return
+                
+                 new
+                 {
+                     o.Company,
+                     o.TradingPartner,
+                     o.DocumentType,
+                     o.DocumentNumber,
+                     o.AlternateDocument,
+                     o.StoreNumber,
+                     o.Amount,
+                     o.DateChanged,
+                 };
+        }
 
         //public ActionResult GridGetItems(GridParams g, string search)
         //{
@@ -95,13 +111,11 @@ namespace EDI.Controllers
         {
             HeaderDetailInformationBussines objHeaderDetailInformationBussines = new HeaderDetailInformationBussines();
             search = (search ?? "").ToLower();
-            //  var items1 = Db.Dinners.Where(o => o.Name.ToLower().Contains(search)).AsQueryable();
             var items = objHeaderDetailInformationBussines.getOutboxItems().AsQueryable();
             return Json(new GridModelBuilder<HeaderDetailInformation>(items, g)
             {
-                Key = "Id", // needed for api select, update, tree, nesting, EF
-                            // GetItem = () => Db.Get<HeaderDetailInformation>(Convert.ToInt32(g.Key)), // called by the grid.api.update ( edit popupform success js func )
-                Map = MapToGridModel
+                Key = "Id",
+                Map = MapToGridModelOutbox
             }.Build());
         }
 
