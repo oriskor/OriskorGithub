@@ -1,0 +1,218 @@
+﻿@model EDI.Models.tradingPartnerSetup
+
+<style>
+    [type=checkbox] + label {
+        padding-left: 26px;
+        height: 25px;
+        font-size: 12px;
+        line-height: 21px;
+        font-weight: normal;
+    }
+        [type=checkbox] + label:before, [type=checkbox]:not(.filled-in) + label:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            z-index: 0;
+            border: 1px solid rgb(30, 136, 229);
+            border-radius: 1px;
+            margin-top: 2px;
+            transition: .2s;
+        }
+</style>
+<div style="border:1px solid rgb(49, 55, 62); padding:10px">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Identifiers" role="tab"><span><i class="ti-home"></i></span> Identifiers</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#FunctionalControlNumbering" role="tab"><span><i class="ti-user"></i></span> Functional Control Numbering</a> </li>
+        <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Options" role="tab"><span><i class="ti-email"></i> Options</span></a> </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content tabcontent-border ">
+        <div class="tab-pane active p-20" id="Identifiers" role="tabpanel">
+            <div class="p-20">
+                <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                    <fieldset>
+                        <legend>Trading Partner PlugIn </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>ISA Control : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2"> <label>GS Control : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2"> <label>ST Control : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Partner Test EC Identifier </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Identifier : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Identifier Type : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Partner Production EC Identifier </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Identifier : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Identifier Type : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Trading Partner Numbering </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Identifier : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane  p-20" id="FunctionalControlNumbering" role="tabpanel">
+            <div class="p-20">
+
+                <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                    <fieldset>
+                        <legend>Partner Level Control Number </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Name : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+
+                            <div class="col-md-2"> <label>Version : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+
+                            <div class="col-md-2"> <label>Version : </label> </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Transaction Level Control Numbers </legend>
+                        <div class="row">
+                            @Html.Action("BindGridPartnerTestECIdentifier", "TradingPartner", new { id = Model.ID })
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Transaction Group Lelel Control Numbers </legend>
+                        <div class="row">
+                            @Html.Action("BindgridTransactionGroupLelelControlNumbers", "TradingPartner", new { id = Model.ID })
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane p-20" id="Options" role="tabpanel">
+            <div class="p-20">
+                <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                    <fieldset>
+                        <legend>Shipping : </legend>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Default Export Type :  </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                <input id="HideTrading" type="checkbox">
+                                <label for="HideTrading"> Hide Trading Paartner PlugIn </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend> Automatic List Updating </legend>
+                        <div class="row">
+                            <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                <input id="AutomaticallyAddress" type="checkbox">
+                                <label for="AutomaticallyAddress"> Automatically add new addresses to the address List  (Company level set to "Always add new addresses to the address Lists") </label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                <input id="AutomaticallyItems" type="checkbox">
+                                <label for="AutomaticallyItems">  Automatically add new items to the Item Catalogs (Company level set to "Always add new Items to the Item Catalogs") </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Alert</legend>
+                      
+                            <div class="row" style="margin: 4px;">
+                                <fieldset>
+                                    <legend>Address Lists</legend>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="Automatically1" type="checkbox">
+                                            <label for="Automatically1">  Always Warn on export for new addresses </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="Automatically2" type="checkbox">
+                                            <label for="Automatically2"> Never warn on export for new addresses </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="Automatically3" type="checkbox">
+                                            <label for="Automatically3">  Configure new address warnings at the transations level </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="row" style="margin: 4px;">
+                                <fieldset>
+                                    <legend>Item Catalogs</legend>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="AutomaticallyCatalogs" type="checkbox">
+                                            <label for="AutomaticallyCatalogs">  Always warn on export for new items </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="AutomaticallyCatalogs1" type="checkbox">
+                                            <label for="AutomaticallyCatalogs1">  Never warn on export for new items  </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="AutomaticallyCatalogs2" type="checkbox">
+                                            <label for="AutomaticallyCatalogs2">  Configure new item warnings at the transaction level </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                           
+                            <div class="row">
+                                <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                    <input id="Keeptransactions" type="checkbox">
+                                    <label for="Keeptransactions">  Keep transactions with warnings in Inbox when exporting </label>
+                                </div>
+                            </div>
+                    </fieldset>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

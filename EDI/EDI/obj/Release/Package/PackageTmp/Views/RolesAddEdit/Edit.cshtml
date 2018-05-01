@@ -1,0 +1,41 @@
+﻿@model EDI.Models.role_master
+
+@{
+    ViewBag.Title = "Edit Role";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Edit Role</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.role_id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.roll_name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.roll_name)
+                @Html.ValidationMessageFor(model => model.roll_name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5">
+                <input type="submit" value="Save" class="btn btn-default" />
+                @Html.ActionLink("Back to List", "Index", "RolesAddEdit", new object { }, new { @class = "btn waves-effect waves-light  btn-secondary" })
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

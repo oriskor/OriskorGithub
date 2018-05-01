@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24d2c35ce853409b8076e3d0b51ed4c0" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="EDIModels.C810_Detail" Width="1.5" PointX="20" PointY="19" />
+        <EntityTypeShape EntityType="EDIModels.C810_Header" Width="1.5" PointX="17.75" PointY="18.125" />
+        <EntityTypeShape EntityType="EDIModels.C850_Detail" Width="1.5" PointX="15" PointY="18.125" />
+        <EntityTypeShape EntityType="EDIModels.C850_Header" Width="1.5" PointX="12.75" PointY="18.625" />
+        <EntityTypeShape EntityType="EDIModels.C856_Header" Width="1.5" PointX="10.75" PointY="12" />
+        <EntityTypeShape EntityType="EDIModels.C856_Item" Width="1.5" PointX="19.75" PointY="10.125" />
+        <EntityTypeShape EntityType="EDIModels.C856_Order" Width="1.5" PointX="15.25" PointY="12.375" />
+        <EntityTypeShape EntityType="EDIModels.C856_Pack" Width="1.5" PointX="17.5" PointY="10.875" />
+        <EntityTypeShape EntityType="EDIModels.C856_Shipment" Width="1.5" PointX="13" PointY="12.25" />
+        <EntityTypeShape EntityType="EDIModels.C856_Tare" Width="1.5" PointX="17.5" PointY="14.875" />
+        <EntityTypeShape EntityType="EDIModels.company_master" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="EDIModels.edi_format_master" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="EDIModels.EDIFile" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="EDIModels.FunctionalGroupInbound" Width="1.5" PointX="10" PointY="17.75" />
+        <EntityTypeShape EntityType="EDIModels.FunctionalGroupOutbound" Width="1.5" PointX="17" PointY="1.75" />
+        <EntityTypeShape EntityType="EDIModels.InterchangeInbound" Width="1.5" PointX="7.75" PointY="17" />
+        <EntityTypeShape EntityType="EDIModels.InterchangeOutbound" Width="1.5" PointX="14.75" PointY="1" />
+        <EntityTypeShape EntityType="EDIModels.menu_master" Width="1.5" PointX="7.75" PointY="3" />
+        <EntityTypeShape EntityType="EDIModels.MenuRoleMapping" Width="1.5" PointX="12.25" PointY="5.375" />
+        <EntityTypeShape EntityType="EDIModels.package_master" Width="1.5" PointX="0.75" PointY="9.375" />
+        <EntityTypeShape EntityType="EDIModels.PermissionType" Width="1.5" PointX="10" PointY="5.875" />
+        <EntityTypeShape EntityType="EDIModels.role_master" Width="1.5" PointX="6" PointY="8.625" />
+        <EntityTypeShape EntityType="EDIModels.Status" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="EDIModels.sub_menu" Width="1.5" PointX="10" PointY="2.875" />
+        <EntityTypeShape EntityType="EDIModels.sysdiagram" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="EDIModels.transaction_rejected" Width="1.5" PointX="5.25" PointY="16.375" />
+        <EntityTypeShape EntityType="EDIModels.transaction_sent" Width="1.5" PointX="5.25" PointY="11.875" />
+        <EntityTypeShape EntityType="EDIModels.user_master" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="EDIModels.erp_master" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="EDIModels.subscription_master" Width="1.5" PointX="3" PointY="21.75" />
+        <AssociationConnector Association="EDIModels.FK_810_DetailInterReference" />
+        <AssociationConnector Association="EDIModels.FK_850_DetailInterReference" />
+        <AssociationConnector Association="EDIModels.FK_856_ShipmentInterReference" />
+        <AssociationConnector Association="EDIModels.FK_856_ItemInterReference" />
+        <AssociationConnector Association="EDIModels.FK_856_OrderInterReference" />
+        <AssociationConnector Association="EDIModels.FK_856_PackInterReference" />
+        <AssociationConnector Association="EDIModels.FK_856_TareInterReference" />
+        <AssociationConnector Association="EDIModels.fk_c_id" />
+        <AssociationConnector Association="EDIModels.fk_company_id" />
+        <AssociationConnector Association="EDIModels.fk_edi_code" />
+        <AssociationConnector Association="EDIModels.fk_p_id" />
+        <AssociationConnector Association="EDIModels.fk_rejected" />
+        <AssociationConnector Association="EDIModels.fk_sent" />
+        <AssociationConnector Association="EDIModels.FK__EDIFiles__Status__3A4CA8FD" />
+        <AssociationConnector Association="EDIModels.FK_FunctionalGroupInbound_InterReference" />
+        <AssociationConnector Association="EDIModels.FK_FunctionalGroupOutbound_InterReference" />
+        <AssociationConnector Association="EDIModels.FK__MenuRoleM__Menu___5EBF139D" />
+        <AssociationConnector Association="EDIModels.fk_m_id" />
+        <AssociationConnector Association="EDIModels.FK__MenuRoleM__Permi__619B8048" />
+        <AssociationConnector Association="EDIModels.FK__MenuRoleM__Role___60A75C0F" />
+        <AssociationConnector Association="EDIModels.FK__MenuRoleM__Sub_M__5FB337D6" />
+        <AssociationConnector Association="EDIModels.fk_package_id" />
+        <AssociationConnector Association="EDIModels.fk_role_id" />
+        <EntityTypeShape EntityType="EDIModels.C852_Detail" Width="1.5" PointX="21.625" PointY="2.625" />
+        <EntityTypeShape EntityType="EDIModels.C852_Header" Width="1.5" PointX="19.375" PointY="2.625" />
+        <EntityTypeShape EntityType="EDIModels.C852_ProdActivity" Width="1.5" PointX="23.875" PointY="1.125" />
+        <EntityTypeShape EntityType="EDIModels.C860_Detail" Width="1.5" PointX="7.625" PointY="23.375" />
+        <EntityTypeShape EntityType="EDIModels.C860_Header" Width="1.5" PointX="5.375" PointY="23.125" />
+        <EntityTypeShape EntityType="EDIModels.item_setup" Width="1.5" PointX="22.375" PointY="8.75" />
+        <EntityTypeShape EntityType="EDIModels.tradingPartnerSetup" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="EDIModels.FK_852_DetailInterReference" />
+        <AssociationConnector Association="EDIModels.FK_852_ProdActivityInterReference" />
+        <AssociationConnector Association="EDIModels.FK_860_DetailInterReference" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

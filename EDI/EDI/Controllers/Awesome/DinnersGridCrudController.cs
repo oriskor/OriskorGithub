@@ -91,20 +91,6 @@ namespace EDI.Controllers
                 Map = MapToGridModel
             }.Build());
         }
-        public ActionResult getOutboxItems(GridParams g, string search)
-        {
-            HeaderDetailInformationBussines objHeaderDetailInformationBussines = new HeaderDetailInformationBussines();
-            search = (search ?? "").ToLower();
-            //  var items1 = Db.Dinners.Where(o => o.Name.ToLower().Contains(search)).AsQueryable();
-            var items = objHeaderDetailInformationBussines.getOutboxItems().AsQueryable();
-            return Json(new GridModelBuilder<HeaderDetailInformation>(items, g)
-            {
-                Key = "Id", // needed for api select, update, tree, nesting, EF
-                            // GetItem = () => Db.Get<HeaderDetailInformation>(Convert.ToInt32(g.Key)), // called by the grid.api.update ( edit popupform success js func )
-                Map = MapToGridModel
-            }.Build());
-        }
-
         public ActionResult Create()
         {
             return PartialView();

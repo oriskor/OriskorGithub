@@ -8,6 +8,7 @@ File: scss
 @import 'variable';
 
 
+
 /*============================================================== 
  For all pages 
  ============================================================== */
@@ -37,6 +38,7 @@ File: scss
 .container-fluid {
     padding: 0 30px 25px 30px;
 }
+
 
 
 
@@ -205,12 +207,13 @@ File: scss
 
 
 
+
 /*******************
  Breadcrumb and page title
 *******************/
 
 .page-titles {
-    background: $white;
+    background: #2f343c;
     margin: 0 0px 30px;
     padding: 15px 10px;
     position: relative;
@@ -239,6 +242,7 @@ File: scss
         }
     }
 }
+
 
 
 
@@ -370,6 +374,7 @@ File: scss
 
 
 
+
 /*******************
  Right side toggle
 *******************/
@@ -445,7 +450,7 @@ ul#themecolors {
 
 .green-dark-theme {
     background: $dark;
-    ;
+
     /* Old browsers */
     background: -moz-linear-gradient(left, $dark 0%, $dark 23%, $success 23%, $success 99%);
     /* FF3.6-15 */
@@ -508,6 +513,7 @@ ul#themecolors {
 
 
 
+
 /*******************
  page title
 *******************/
@@ -515,6 +521,7 @@ ul#themecolors {
 .page-titles {
     padding-bottom: 20px;
 }
+
 
 
 
@@ -532,6 +539,7 @@ ul#themecolors {
     border-top: 1px solid $border;
     background: $white;
 }
+
 
 
 
@@ -592,6 +600,7 @@ ul#themecolors {
 
 
 
+
 /*============================================================== 
  Buttons page
  ============================================================== */
@@ -621,6 +630,7 @@ ul#themecolors {
         display: none;
     }
 }
+
 
 
 
@@ -711,6 +721,7 @@ ul#themecolors {
 
 
 
+
 /*============================================================== 
 Breadcrumb
  ============================================================== */
@@ -731,6 +742,7 @@ Breadcrumb
 .breadcrumb {
     margin-bottom: 0px;
 }
+
 
 
 
@@ -775,6 +787,7 @@ ul.two-part {
 
 
 
+
 /*Accordion*/
 
 html body .accordion {
@@ -782,6 +795,7 @@ html body .accordion {
         margin-bottom: 0px;
     }
 }
+
 
 
 
@@ -814,6 +828,7 @@ body .jqstooltip {
     border-color: transparent;
     border-radius: 60px;
 }
+
 
 
 
@@ -880,6 +895,7 @@ Easy pie chart
 
 
 
+
 /*============================================================== 
 Dashboard1 chart
  ============================================================== */
@@ -936,6 +952,7 @@ html body #visitor .c3-chart-arcs-title {
         }
     }
 }
+
 
 
 
@@ -998,6 +1015,7 @@ Dashboard2 chart
     stroke-width: 3px;
     stroke: rgba(255, 255, 255, 0.5);
 }
+
 
 
 
@@ -1064,6 +1082,7 @@ Dashboard3 chart
 
 
 
+
 /*============================================================== 
 Dashboard4 chart
  ============================================================== */
@@ -1104,6 +1123,7 @@ Dashboard4 chart
 
 
 
+
 /*============================================================== 
 Dashboard6 chart
  ============================================================== */
@@ -1114,6 +1134,7 @@ Dashboard6 chart
 
 
 
+
 /*============================================================== 
 Widget-data
  ============================================================== */
@@ -1121,6 +1142,7 @@ Widget-data
 .sparkchart {
     margin-bottom: -2px;
 }
+
 
 
 
@@ -1152,10 +1174,12 @@ File upload
     .input-group-addon {
         border: none;
         border-bottom: 1px solid $border;
-        background: $white;
+        background: transparent;
         margin-bottom: 1px;
+        color: $bodytext;
     }
 }
+
 
 .fileinput .form-control {
     padding-top: 7px;
@@ -1212,6 +1236,7 @@ File upload
 
 
 
+
 /*============================================================== 
 widget-chart-page product review
  ============================================================== */
@@ -1256,6 +1281,7 @@ widget-chart-page product review
 
 
 
+
 /*============================================================== 
 Form addons page
 ============================================================== */
@@ -1284,12 +1310,6 @@ Form addons page
             }
         }
     }
-    .show>.dropdown-menu {
-        display: block;
-    }
-    .dropdown-toggle.bs-placeholder:hover {
-        color: $white;
-    }
 }
 
 .bootstrap-touchspin .input-group-btn-vertical>.btn {
@@ -1312,6 +1332,8 @@ Form addons page
 .input-form .btn {
     padding: 8px 12px;
 }
+
+
 
 
 /*============================================================== 
@@ -1364,6 +1386,7 @@ Form Material page
         border-bottom: 1px solid $themecolor;
     }
 }
+
 
 
 
@@ -1544,6 +1567,7 @@ Form Material page
 
 
 
+
 /*******************
 Pagination
 ******************/
@@ -1576,6 +1600,7 @@ Pagination
 
 
 
+
 /*******************
 Form Dropzone
 ******************/
@@ -1587,6 +1612,7 @@ Form Dropzone
         margin: 0px;
     }
 }
+
 
 
 
@@ -1636,6 +1662,7 @@ table th {
 .datepicker th {
     padding: 5px 10px;
 }
+
 
 
 
@@ -1715,6 +1742,7 @@ Form icheck
 
 
 
+
 /*******************
 Form summernote
 ******************/
@@ -1735,6 +1763,7 @@ Form summernote
 .label {
     display: inline-block;
 }
+
 
 
 
@@ -2044,6 +2073,7 @@ Table-Layout
 
 
 
+
 /*******************
 Table-Data Table
 ******************/
@@ -2202,6 +2232,7 @@ table.dataTable thead .sorting:after {
 
 
 
+
 /*******************
 Table- responsive
 ******************/
@@ -2209,6 +2240,7 @@ Table- responsive
 .tablesaw-bar .btn-group label {
     color: $bodytext!important;
 }
+
 
 
 
@@ -2240,6 +2272,7 @@ Table- editable table
         }
     }
 }
+
 
 
 
@@ -2331,6 +2364,7 @@ Table- Footable
 
 
 
+
 /*******************
 Icon list fontawesom
 ******************/
@@ -2376,6 +2410,7 @@ Icon list fontawesom
 
 
 
+
 /*******************
 Icon list material icon
 ******************/
@@ -2383,6 +2418,7 @@ Icon list material icon
 .material-icon-list-demo .mdi {
     font-size: 21px;
 }
+
 
 
 
@@ -2400,6 +2436,7 @@ Gridstack Dragable portlet
 .grid-stack>.grid-stack-item>.grid-stack-item-content {
     border: 1px solid $border;
 }
+
 
 
 
@@ -2537,6 +2574,7 @@ Bootstrap Switch
 
 
 
+
 /*******************
 Date paginator page
 ******************/
@@ -2563,6 +2601,7 @@ Date paginator page
 
 
 
+
 /*******************
 sweet alert page
 ******************/
@@ -2570,6 +2609,7 @@ sweet alert page
 .model_img {
     cursor: pointer;
 }
+
 
 
 
@@ -2588,6 +2628,7 @@ Grid page
     border: 1px solid $form-brd;
     background-color: $light;
 }
+
 
 
 
@@ -2627,6 +2668,7 @@ Vertical tabs
 
 
 
+
 /*Custom vertical tab*/
 
 .customvtab .tabs-vertical li .nav-link.active,
@@ -2661,6 +2703,7 @@ Vertical tabs
         }
     }
 }
+
 
 
 
@@ -2717,6 +2760,7 @@ Progress bar
 
 
 
+
 /*******************
 Notification page Jquery toaster
 ******************/
@@ -2747,6 +2791,7 @@ Notification page Jquery toaster
 
 
 
+
 /*******************
 list and media
 ******************/
@@ -2771,6 +2816,7 @@ list and media
     margin-bottom: 10px;
     padding: 15px;
 }
+
 
 
 
@@ -2887,6 +2933,7 @@ User card page
         height: 100%;
     }
 }
+
 
 
 
@@ -3044,6 +3091,7 @@ Timeline page
 
 
 
+
 /*******************
 Horizontal Timeline page
 ******************/
@@ -3092,6 +3140,7 @@ Horizontal Timeline page
     color: $bodytext;
     top: 7px;
 }
+
 
 
 
@@ -3507,6 +3556,7 @@ ribbons page
 
 
 
+
 /*******************
 session ideal timeout page
 ******************/
@@ -3535,6 +3585,7 @@ session ideal timeout page
 #idletimeout span {
     font-weight: bold
 }
+
 
 
 
@@ -3954,6 +4005,7 @@ a.mytooltip {
 
 
 
+
 /*******************
 Error Page
 ******************/
@@ -3978,6 +4030,7 @@ Error Page
         line-height: 210px;
     }
 }
+
 
 
 
@@ -4032,6 +4085,7 @@ google map Page
 
 
 
+
 /*******************
 vector map Page
 ******************/
@@ -4046,6 +4100,7 @@ vector map Page
 .jvectormap-zoomout {
     top: 40px;
 }
+
 
 
 
@@ -4075,6 +4130,7 @@ Seach listing Page
         }
     }
 }
+
 
 
 
@@ -4122,6 +4178,7 @@ Login register and recover password Page
 
 
 
+
 /*******************
 FAQs Page
 ******************/
@@ -4139,6 +4196,7 @@ FAQs Page
         }
     }
 }
+
 
 
 
@@ -4210,6 +4268,7 @@ Pricing Page
     left: 0px;
     right: 0px;
 }
+
 
 
 
@@ -4302,6 +4361,7 @@ chat application Page
 
 
 
+
 /*******************
 Email inbox Page
 ******************/
@@ -4349,17 +4409,6 @@ Email inbox Page
     }
 }
 
-.calendar-events {
-    padding: 8px 10px;
-    border: 1px solid $white;
-    cursor: move;
-    &:hover {
-        border: 1px dashed $border;
-    }
-    i {
-        margin-right: 8px;
-    }
-}
 
 
 
@@ -4437,6 +4486,7 @@ Contact app Page
 
 
 
+
 /*Documentation page*/
 
 .plugin-details {
@@ -4461,6 +4511,7 @@ Contact app Page
 
 
 
+
 /*******************
 Table-Jsgrid table
 ******************/
@@ -4477,7 +4528,7 @@ Table-Jsgrid table
     text-decoration: none;
     cursor: pointer;
     color: #67757c;
-    border: 1px solid #ddd;
+    border: 1px solid $border;
 }
 
 .jsgrid-pager-page a:hover,
@@ -4498,4 +4549,16 @@ Table-Jsgrid table
 
 .jsgrid-pager-page.jsgrid-pager-current-page {
     padding: 0.5em 1em !important;
+}
+
+.calendar-events {
+    padding: 8px 10px;
+    border: 1px solid $white;
+    cursor: move;
+    &:hover {
+        border: 1px dashed $border;
+    }
+    i {
+        margin-right: 8px;
+    }
 }

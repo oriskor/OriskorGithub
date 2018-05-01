@@ -1,5 +1,5 @@
 /*
-Template Name: Admin Press Admin
+Template Name: Material Press Admin
 Author: Themedesigner
 Email: niravjoshi87@gmail.com
 File: scss
@@ -13,31 +13,32 @@ $headingfont:'Poppins', sans-serif;
 
 /*Theme Colors*/
 
-$topbar: #1976d2;
+$topbar: #2196f3;
 $sidebar: #fff;
 $sidebar-white: #e5edef;
 $sidebar-alt:#f2f6f8;
-$bodycolor: #eef5f9;
+$bodycolor: #383f48;
 $headingtext: #455a64;
-$bodytext: #67757c; 
+$bodytext: #747d8a;
 $sidebar-text: #607d8b;
-$sidebar-icons: #99abb4 ;
+$sidebar-icons: #99abb4;
+$card-dark: #272c33;
 
 $light-text: #a6b7bf;
-$themecolor: #1976d2;
+$themecolor: #009efb;
 $themecolor-alt: #26c6da;
 $themecolor-dark: #028ee1;
 
 /*bootstrap Color*/
-$danger: #ef5350;
-$success: #26dad2;
+$danger: #fc4b6c;
+$success: #26c6da;
 $warning: #ffb22b;
-$primary: #5c4ac7;
-$info: #1976d2;
+$primary: #7460ee;
+$info: #1e88e5;
 $inverse: #2f3d4a;
-$muted: #99abb4;
+$muted: #757e8a;
 $dark: #263238;
-$light: #f2f4f8;
+$light: #323840;
 $extra-light: #ebf3f5;
 $bglight:rgba(0, 0, 0, 0.02);
 
@@ -92,10 +93,10 @@ $rgt: right;
 $lft: left;
 $border: rgba(120, 130, 140, 0.13);
 $table-border:#f3f1f1;
-$card-brd:#d7dfe3;
+$card-brd:#3e4e56;
 $dark-text: #848a96;
 $radius: 4px;
-$form-brd: #b1b8bb;
+$form-brd: #d9d9d9;
 /*Preloader*/
 .preloader{
     width: 100%;

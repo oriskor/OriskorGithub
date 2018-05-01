@@ -191,7 +191,7 @@ form p:last-child {
   width: 18px;
   height: 18px;
   z-index: 0;
-  border: 1px solid $form-brd;
+  border: 1px solid $border;
   border-radius: 1px;
   margin-top: 2px;
   transition: .2s;
@@ -439,8 +439,8 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
     transform-origin: right 0px;
 }
 .scale-up-left{ 
-    -webkit-transition: all 0.3s ease-out;
-    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     -webkit-transform: scale(0);
     transform: scale(0);
     display:inline-block;
@@ -452,7 +452,6 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 }
 .show>.scale-up-left{
     transform: scale(1);
-    -webkit-transform: scale(1);
   transform-origin: left 0px;
 }
 /*panels*/

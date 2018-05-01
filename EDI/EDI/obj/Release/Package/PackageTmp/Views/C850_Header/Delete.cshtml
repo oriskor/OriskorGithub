@@ -1,0 +1,233 @@
+﻿@model EDI.Models.C850_Header
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>C850_Header</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FunctionalGroupKey)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FunctionalGroupKey)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FGKeySave)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FGKeySave)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ST01_TranSetIdfrCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST01_TranSetIdfrCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ST02_TranSetControlNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ST02_TranSetControlNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEG01_TransactionSetPurposeCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEG01_TransactionSetPurposeCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEG02_PurchaseOrderTypeCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEG02_PurchaseOrderTypeCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEG03_PurchaseOrderNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEG03_PurchaseOrderNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEG05_PODate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEG05_PODate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUR02_CurrencyCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUR02_CurrencyCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REF02_FreeFormText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REF02_FreeFormText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REF02_InternalVendorNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REF02_InternalVendorNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REF02_ProductGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REF02_ProductGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PER02_ContactPersonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PER02_ContactPersonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTM02_DeliveryRequestedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTM02_DeliveryRequestedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DTM02_RequestedPickupDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DTM02_RequestedPickupDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N104_ShipFromID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N104_ShipFromID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N401_ShipFromCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N401_ShipFromCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N402_ShipFromState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N402_ShipFromState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N403_ShipFromPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N403_ShipFromPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N404_ShipFromCountryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N404_ShipFromCountryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N104_ShipToID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N104_ShipToID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N401_ShipToCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N401_ShipToCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N402_ShipToState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N402_ShipToState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N403_ShipToPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N403_ShipToPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N404_ShipToCountryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N404_ShipToCountryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTT01_NumberOfPO1Segments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTT01_NumberOfPO1Segments)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

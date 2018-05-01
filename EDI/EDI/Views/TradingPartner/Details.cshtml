@@ -43,7 +43,7 @@
     }
 
     label {
-        color: #3a3c40;
+        color: aliceblue;
     }
 
     .col-md-10 {
@@ -65,7 +65,7 @@
     legend {
         font-size: 1rem;
         font-weight: 500;
-        color: #3a3c40;
+        color: white;
     }
 </style>
 <!-- row -->
@@ -80,28 +80,27 @@
                 </div>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#TradingPartnerDetails1" role="tab"><span><i class="ti-user"></i></span> @Html.DisplayFor(model => model.Name)</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#ItemSetup1" role="tab"><span><i class="fa fa-bars"></i></span> Item Setup </a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Templates1" role="tab"><span><i class="fa fa-file"></i> Templates</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Adresses11" role="tab"><span><i class="fa fa-address-book"></i></span> Adresses</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#EDITransactions1" role="tab"><span><i class="fa fa-train"></i></span> Transactions</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PartnerSetup11" role="tab"><span><i class="fa fa-paragraph"></i></span> Partner Setup</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LookupTables1" role="tab"><span><i class="ti-list-ol"></i> Lookup Tables</span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LabelSetup1" role="tab"><span><i class="ti-settings"></i></span> Label Setup</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#GLAccount11" role="tab"><span><i class="fa fa-address-card-o"></i></span> GL Account</a> </li>
-                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#InteGrationSetup1" role="tab"><span><i class="fa fa-asl-interpreting"></i></span> InteGration Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#TradingPartnerDetails" role="tab"><span><i class="ti-user"></i></span> @Html.DisplayFor(model => model.Name)</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#ItemSetup" role="tab"><span><i class="fa fa-bars"></i></span> Item Setup </a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Templates" role="tab"><span><i class="fa fa-file"></i> Templates</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Adresses" role="tab"><span><i class="fa fa-address-book"></i></span> Adresses</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#EDITransactions" role="tab"><span><i class="fa fa-train"></i></span> Transactions</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PartnerSetup" role="tab"><span><i class="fa fa-paragraph"></i></span> Partner Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LookupTables" role="tab"><span><i class="ti-list-ol"></i> Lookup Tables</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LabelSetup" role="tab"><span><i class="ti-settings"></i></span> Label Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#GLAccount" role="tab"><span><i class="fa fa-address-card-o"></i></span> GL Account</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#InteGrationSetup" role="tab"><span><i class="fa fa-asl-interpreting"></i></span> InteGration Setup</a> </li>
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content  tabcontent-border">
-
-                    <div class="tab-pane active" id="TradingPartnerDetails1" role="tabpanel">
+                    <div class="tab-pane active" id="TradingPartnerDetails" role="tabpanel">
                         <div class="p-20">
-                            @Html.Action("TradingPartnerDetail", "TradingPartner", new { id = Model.id })
+                            @Html.Action("TradingPartnerDetail", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
 
-                    <div class="tab-pane  p-20" id="ItemSetup1" role="tabpanel">
-                        <div class="p-20">
+                    <div class="tab-pane  p-20"id="ItemSetup" role="tabpanel">
+                        <div>
                             <div class="row">
                                 <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
                                     <input id="HideTrading1" type="checkbox">
@@ -110,77 +109,53 @@
                                 </div>
                             </div>
                             <div class="row">
-                                @Html.Action("ItemSetup", "TradingPartner", new { id = Model.id })
+                                @Html.Action("ItemSetup", "TradingPartner", new { id =  Model.id })
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane  p-20" id="Templates1" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row"><div> Tamplates </div> </div>
-                            <div class="row">
-                                @Html.Action("Tamplate", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20" id="Templates" role="tabpanel">
+                        <div class="row"><div> Tamplates </div> </div>
+                        <div class="row">
+                           @Html.Action("Tamplate", "TradingPartner", new { id=  Model.id})
                         </div>
                     </div>
 
-                    <div class="tab-pane  p-20" id="Adresses11" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row"><div> Address </div> </div>
-                            <div class="row">
-                                @Html.Action("Address", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20" id="Adresses" role="tabpanel">
+                        <div class="row"><div> Address </div> </div>
+                        <div class="row">
+                            @Html.Action("Address", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="EDITransactions1" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row"><div> Transaction </div> </div>
-                            <div class="row">
-                                @Html.Action("Transaction", "TradingPartner", new { id = Model.id })
-                            </div>
-
+                    <div class="tab-pane  p-20" id="EDITransactions" role="tabpanel">
+                        <div class="row"><div> Transaction </div> </div>
+                        <div class="row">
+                            @Html.Action("Transaction", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="PartnerSetup11" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row">
-                                @Html.Action("PartnerSetup", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20"id="PartnerSetup" role="tabpanel">
+                        <div class="row">
+                            @Html.Action("PartnerSetup", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="LookupTables1" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row">
-                                @Html.Action("LookupTables", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20" id="LookupTables" role="tabpanel">
+                        <div class="row">
+                            @Html.Action("LookupTables", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="LabelSetup1" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row">
-                                @Html.Action("LabelSetup", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20" id="LabelSetup" role="tabpanel">
+                        <div class="row">
+                            @Html.Action("LabelSetup", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="GLAccount11" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row">
-                                @Html.Action("GLAccounts", "TradingPartner", new { id = Model.id })
-                            </div>
+                    <div class="tab-pane  p-20" id="GLAccount" role="tabpanel">
+                        <div class="row">
+                            @Html.Action("GLAccounts", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
-
-                    <div class="tab-pane  p-20" id="InteGrationSetup1" role="tabpanel">
-                        <div class="p-20">
-                            <div class="row">
-                                @Html.Action("IntegrationSetup", "TradingPartner", new { id = Model.id })
-                            </div>
-
+                    <div class="tab-pane  p-20" id="InteGrationSetup" role="tabpanel">
+                        <div class="row">
+                            @Html.Action("IntegrationSetup", "TradingPartner", new { id =  Model.id })
                         </div>
                     </div>
                 </div>

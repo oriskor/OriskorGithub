@@ -8,8 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using EDI.Models;
 using EDI.Helpers.Awesome;
-using EDI.Structure;
-using EDI.Models.Bussines;
+
 
 namespace EDI.Controllers
 {
@@ -35,15 +34,12 @@ namespace EDI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            HeaderDetailInformationBussines objHeaderDetailInformationBussines = new HeaderDetailInformationBussines();
-            TransactionInboxDetails transactionInboxDetails = new TransactionInboxDetails();
-            transactionInboxDetails = objHeaderDetailInformationBussines.transactionInboxDetails(id);
             C850_Header c850_Header = db.C850_Header.Find(id);
-            if (transactionInboxDetails == null)
+            if (c850_Header == null)
             {
                 return HttpNotFound();
             }
-            return View(transactionInboxDetails);
+            return View(c850_Header);
         }
 
         // GET: C850_Header/Create
@@ -52,13 +48,6 @@ namespace EDI.Controllers
             return View();
         }
 
-        public PartialViewResult GetItems(int id)
-        {
-            HeaderDetailInformationBussines objHeaderDetailInformationBussines = new HeaderDetailInformationBussines();
-            List<TransactionInboxDetailsItem> transactionInboxDetails = new List<TransactionInboxDetailsItem>();
-            transactionInboxDetails = objHeaderDetailInformationBussines.transactionInboxDetailsGetItems(id);
-            return PartialView("~/Views/C850_Header/TransactionInboxItems.cshtml", transactionInboxDetails);
-        }
         // POST: C850_Header/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
