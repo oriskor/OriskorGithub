@@ -27,7 +27,7 @@ namespace EDI.Models.Bussines
                                                .Select(x => new HeaderDetailInformation
                                                {
                                                    HeaderKey= x.Field<int>("HeaderKey"),
-                                                   Company = x.Field<string>("DocumentType"),
+                                                   Company = x.Field<string>("CompanyName"),
                                                    DocumentNumber = x.Field<string>("DocumentNumber"),
                                                    AlternateDocument = x.Field<string>("AltDocument"),
                                                    DocumentType = x.Field<string>("DocumentType"),
@@ -35,7 +35,7 @@ namespace EDI.Models.Bussines
                                                    DateRecieved = x.Field<string>("DateRecieved"),
                                                    DateAcknowledgement = x.Field<string>("DateAcknowledgement") ,
                                                    StoreNumber = x.Field<string>("StoreNumber"),
-                                                   TradingPartner = x.Field<string>("StoreNumber")
+                                                   TradingPartner = x.Field<string>("TradingPartner")
                                                }).ToList();
 
 

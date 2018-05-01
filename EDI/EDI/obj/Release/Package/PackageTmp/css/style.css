@@ -2215,17 +2215,11 @@ ul#themecolors {
 }
 
 .default-dark-theme {
-    background: #263238;
-    background: -moz-linear-gradient(left, #263238 0%, #263238 23%, #757e8a 23%, #757e8a 99%);
-    background: -webkit-linear-gradient(left, #263238 0%, #263238 23%, #757e8a 23%, #757e8a 99%);
-    background: linear-gradient(to right, #263238 0%, #263238 23%, #757e8a 23%, #757e8a 99%)
+    background: #7460ee
 }
 
 .green-dark-theme {
-    background: #263238;
-    background: -moz-linear-gradient(left, #263238 0%, #263238 23%, #26c6da 23%, #26c6da 99%);
-    background: -webkit-linear-gradient(left, #263238 0%, #263238 23%, #00c292 23%, #26c6da 99%);
-    background: linear-gradient(to right, #263238 0%, #263238 23%, #26c6da 23%, #26c6da 99%)
+    background: #7460ee
 }
 
 .yellow-dark-theme {

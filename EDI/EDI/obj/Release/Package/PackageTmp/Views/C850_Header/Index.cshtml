@@ -9,7 +9,7 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        $('table tbody tr').db(function (args) {
+        $('table tbody tr').dblclick(function (args) {
             debugger;
             var id = $(this).closest("tr").find('td:eq(0)').text().trim();
 

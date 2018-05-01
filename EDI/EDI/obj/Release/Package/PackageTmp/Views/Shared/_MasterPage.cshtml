@@ -270,7 +270,7 @@
                                                 <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name">
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Enter email">
+                                                <input type="email" class="form-control" autocomplete="email" placeholder="Enter email">
                                             </div>
                                             <div class="form-group">
                                                 <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
@@ -405,15 +405,19 @@
                         <li>
                             <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-view-grid"></i><span class="hide-menu"> Transactions </span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href='@Url.Action("Index", "C850_Header")'><i></i> <span> Inbox </span></a></li>
+                                <li><a href='@Url.Action("mainGrid" +
+                                            "" +
+                                            "", "C850_Header")'><i></i> <span> Inbox </span></a></li>
                                 <li><a href='@Url.Action("Index", "Recieved")' )'><i></i> <span> Recieved </span></a></li>
                                 <li><a href='@Url.Action("Index", "Outbox")'><i></i> <span> Outbox </span></a></li>
                                 <li><a href='@Url.Action("Index", "Sent")' )'><i></i> <span> Sent </span></a></li>
+
+
                             </ul>
                             @*  @Html.ActionLink("Add Role", "Index", "RolesAddEdit", new { @class = "waves-effect waves-dark mdi mdi-bullseye" });*@
                         </li>
                         <li>
-                         
+
 
                             @* @Html.Action("GetMenu", "Home")*@
 
@@ -427,18 +431,18 @@
 
 
 
-            @foreach (var item in Model)
-                {
-                    <li>
-                        <a href='@Url.Action("Index", "C850_Header")'>
-                            <i></i> <span>
+                                    @foreach (var item in Model)
+                                        {
+                                            <li>
+                                                <a href='@Url.Action("Index", "C850_Header")'>
+                                                    <i></i> <span>
 
-                                <span> @Html.DisplayNameFor(model => model.m_name)</span>
-                            </span>
-                        </a>
-                    </li>
-                }
-        </ul>*@
+                                                        <span> @Html.DisplayNameFor(model => model.m_name)</span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        }
+                                </ul>*@
                             @*  @Html.ActionLink("Add Role", "Index", "RolesAddEdit", new { @class = "waves-effect waves-dark mdi mdi-bullseye" });*@
                         </li>
                         <li>
@@ -697,15 +701,15 @@
     <!--sparkline JavaScript -->
     <script src="~/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!--morris JavaScript -->
-    <script src="~/assets/plugins/raphael/raphael-min.js"></script>
-    <script src="~/assets/plugins/morrisjs/morris.min.js"></script>
+    @*<script src="~/assets/plugins/raphael/raphael-min.js"></script>*@
+    @*<script src="~/assets/plugins/morrisjs/morris.min.js"></script>*@
     <!-- Chart JS -->
-    <script src="~/js/dashboard1.js"></script>
+    @*<script src="~/js/dashboard1.js"></script>*@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="~/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
+    <script src="~/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
     <!--Wave Effects -->
     <!--Menu sidebar -->

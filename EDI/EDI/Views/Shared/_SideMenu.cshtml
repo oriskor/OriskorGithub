@@ -4,8 +4,8 @@
     {
         <li>
             <a href='@Url.Action("Details", "TradingPartner", new { id = item.id})'>
-                <i></i> <span>
-                    <span> @Html.DisplayFor(model => item.Name)</span>
+                <i class="fa fa-share"></i> <span>
+                    @Html.DisplayFor(model => item.Name)
                 </span>
             </a>
         </li>

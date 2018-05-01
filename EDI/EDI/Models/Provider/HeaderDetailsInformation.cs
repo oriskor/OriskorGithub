@@ -17,7 +17,7 @@ namespace EDI.Provider
         public DataSet GetHeaderDetailInformation()
         {
             DataSet ds = new DataSet();
-            ds=SqlHelper.ExecuteProcudere("GetHeaderDetailInformation", null);
+            ds=SqlHelper.ExecuteProcudere("SPO_GetHeaderDetailInformation", null);
             return ds;
 
         }
