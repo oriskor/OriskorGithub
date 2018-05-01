@@ -1,4 +1,4 @@
-﻿@model EDI.Models.tradingPartnerSetup
+﻿@model EDI.Class_Structure.TradingPartnerIdentifire
 
 <style>
     [type=checkbox] + label {
@@ -34,27 +34,27 @@
         <div class="tab-pane active" id="Identifiers1" role="tabpanel">
             <div class="p-20">
                 <div style="border:1px solid rgb(49, 55, 62); padding:10px">
+                  
                     <fieldset>
                         <legend>Trading Partner PlugIn </legend>
                         <div class="row">
-                            <div class="col-md-2"> <label>ISA Control : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
-                            <div class="col-md-2"> <label>GS Control : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
-                            <div class="col-md-2"> <label>ST Control : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2"> <label>Name : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPlugingName) </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2"> <label>Version : </label> </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPlugingVersion) </div>
                         </div>
                     </fieldset>
-
                     <fieldset>
                         <legend>Partner Test EC Identifier </legend>
                         <div class="row">
                             <div class="col-md-2"> <label>Identifier : </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPTECIdentifierName) </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2"> <label>Identifier Type : </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPTECIdentifierType) </div>
                         </div>
                     </fieldset>
 
@@ -62,11 +62,11 @@
                         <legend>Partner Production EC Identifier </legend>
                         <div class="row">
                             <div class="col-md-2"> <label>Identifier : </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPPECIdentifierName) </div>
                         </div>
                         <div class="row">
                             <div class="col-md-2"> <label>Identifier Type : </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPPECIdentifier_type) </div>
                         </div>
                     </fieldset>
 
@@ -74,7 +74,7 @@
                         <legend>Trading Partner Numbering </legend>
                         <div class="row">
                             <div class="col-md-2"> <label>Identifier : </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.TPNumbering) </div>
                         </div>
                     </fieldset>
 
@@ -89,13 +89,13 @@
                         <legend>Partner Level Control Number </legend>
                         <div class="row">
                             <div class="col-md-2"> <label>Name : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.ID) </div>
 
                             <div class="col-md-2"> <label>Version : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.ID) </div>
 
                             <div class="col-md-2"> <label>Version : </label> </div>
-                            <div class="col-md-2">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-2">   @Html.DisplayFor(model => model.ID) </div>
 
                         </div>
                     </fieldset>
@@ -103,14 +103,14 @@
                     <fieldset>
                         <legend>Transaction Level Control Numbers </legend>
                         <div class="row">
-                           @Html.Action("BindGridPartnerTestECIdentifier", "TradingPartner", new { id =  Model.id })
+                           @Html.Action("BindGridPartnerTestECIdentifier", "TradingPartner", new { id =  Model.ID })
                         </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Transaction Group Lelel Control Numbers </legend>
                         <div class="row">
-                            @Html.Action("BindgridTransactionGroupLelelControlNumbers", "TradingPartner", new { id =  Model.id })
+                            @Html.Action("BindgridTransactionGroupLelelControlNumbers", "TradingPartner", new { id =  Model.ID })
                         </div>
                     </fieldset>
 
@@ -124,7 +124,7 @@
                         <legend>Shipping : </legend>
                         <div class="row">
                             <div class="col-md-2"> <label>Default Export Type :  </label> </div>
-                            <div class="col-md-10">   @Html.DisplayFor(model => model.Name) </div>
+                            <div class="col-md-10">   @Html.DisplayFor(model => model.ID) </div>
                         </div>
 
                         <div class="row">

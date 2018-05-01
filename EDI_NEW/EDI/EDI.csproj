@@ -172,7 +172,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Class Structure\Header_Details_Information.cs" />
+<<<<<<< HEAD
+    <Compile Include="Class Structure\TradingPartner.cs" />
+=======
     <Compile Include="Class Structure\TradingPartners.cs" />
+>>>>>>> 1d2a6f5de8ba7acb25ed9a8416a2f56a3e7a5cb2
     <Compile Include="Class Structure\UserRole.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminDashboardController.cs" />
@@ -197,6 +201,7 @@
     <Compile Include="Helpers\Awesome\CrudHelpers.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Bussines\HeaderDetailInformationBussines.cs" />
+    <Compile Include="Models\Bussines\TradindPartnerBussibness.cs" />
     <Compile Include="Models\C810_Detail.cs">
       <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
@@ -313,6 +318,7 @@
       <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Provider\HeaderDetailsInformation.cs" />
+    <Compile Include="Models\Provider\TradindPartnerProvider.cs" />
     <Compile Include="Models\role_master.cs">
       <DependentUpon>EDIEntities.tt</DependentUpon>
     </Compile>

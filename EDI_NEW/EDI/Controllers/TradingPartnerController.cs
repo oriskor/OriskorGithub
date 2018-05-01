@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using EDI.Class_Structure;
 using EDI.Models;
 using EDI.Models.Bussines;
 using EDI.Structure;
@@ -79,8 +80,13 @@ namespace EDI.Controllers
 
         public PartialViewResult TradingPartnerDetail(string id)
         {
-            tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
-            return PartialView("~/Views/TradingPartnerDetails/TradingPartnerMain.cshtml", TradingPartnerSetup);
+
+            TradindPartnerBussibness objTradindPartnerBussibness = new TradindPartnerBussibness();
+            TradingPartnerIdentifire objTradingPartnerIdentifire = new TradingPartnerIdentifire();
+            objTradingPartnerIdentifire = objTradindPartnerBussibness.GetInboxDetails(id).FirstOrDefault();
+           // C850_Header c850_Header = db.C850_Header.Find(id);
+          
+            return PartialView("~/Views/TradingPartnerDetails/TradingPartnerMain.cshtml", objTradingPartnerIdentifire);
         }
 
 
