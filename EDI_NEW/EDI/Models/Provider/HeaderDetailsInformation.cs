@@ -48,5 +48,14 @@ namespace EDI.Provider
             return ds;
 
         }
+        public DataSet GETtempaltes(string T_ID)
+        {
+            DataSet ds = new DataSet();
+            Hashtable parms = new Hashtable();
+            parms.Add("@T_ID", T_ID);
+            ds = SqlHelper.ExecuteProcudere("SPO_getTemplates", parms);
+            return ds;
+
+        }
     }
 }

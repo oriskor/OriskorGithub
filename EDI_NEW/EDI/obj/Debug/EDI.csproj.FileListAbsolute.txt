@@ -61,3 +61,4 @@ D:\EDI\OriskorGithub\EDI_NEW\EDI\obj\Debug\EDI.csproj.CoreCompileInputs.cache
 D:\EDI\OriskorGithub\EDI_NEW\EDI\obj\Debug\EDI.csproj.CopyComplete
 D:\EDI\OriskorGithub\EDI_NEW\EDI\obj\Debug\EDI.dll
 D:\EDI\OriskorGithub\EDI_NEW\EDI\obj\Debug\EDI.pdb
+D:\EDI\OriskorGithub\EDI_NEW\EDI\obj\Debug\EDI.csprojResolveAssemblyReference.cache

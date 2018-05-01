@@ -136,5 +136,30 @@ namespace EDI.Models.Bussines
             return ListTransactionInboxDetails;
         }
 
+        public List<Templates> GETtempaltes(string t_id)
+        {
+            List<Templates> ListTransactionInboxDetails = new List<Templates>();
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            ds = objHeaderDetailsInformation.GETtempaltes(t_id);
+            if (ds.Tables.Count > 0)
+            {
+                dt = ds.Tables[0];
+                ListTransactionInboxDetails = dt.AsEnumerable()
+                                               .Select(x => new Templates
+                                               {
+
+                                                   Dcument_Type = x.Field<string>("Dcument_Type"),
+                                                   Version = x.Field<string>("Version"),
+                                                   Date_Changed = x.Field<DateTime>("Date_Changed"),
+                                                   t_id = x.Field<string>("t_id"),
+                                                  
+                                               }).ToList();
+
+
+            }
+            return ListTransactionInboxDetails;
+        }
+
     }
 }

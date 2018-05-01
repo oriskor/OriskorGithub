@@ -5,6 +5,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using EDI.Models;
+using EDI.Models.Bussines;
+using EDI.Structure;
 
 namespace EDI.Controllers
 {
@@ -26,13 +28,15 @@ namespace EDI.Controllers
         public PartialViewResult ItemSetup(string id)
         {
             List<item_setup> item_setup = new List<item_setup>();
-            item_setup = db.item_setup.Where(x=> x.id == id).ToList();
+            item_setup = db.item_setup.Where(x => x.id == id).ToList();
             return PartialView("~/Views/TradingPartnerDetails/ItemSetup.cshtml", item_setup);
         }
         public PartialViewResult Tamplate(string id)
         {
-            tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
-            return PartialView("~/Views/TradingPartnerDetails/Tamplate.cshtml", TradingPartnerSetup);
+            List<Templates> templates = new List<Templates>();
+            HeaderDetailInformationBussines _HeaderDetailInformation = new HeaderDetailInformationBussines();
+            templates = _HeaderDetailInformation.GETtempaltes(id);
+            return PartialView("~/Views/TradingPartnerDetails/Tamplate.cshtml", templates);
         }
 
         public PartialViewResult Transaction(string id)
