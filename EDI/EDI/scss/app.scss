@@ -24,10 +24,6 @@ File: scss
 Global Styles 
 *******************/
 
-.card {
-    background: $card-dark;
-}
-
 * {
     outline: none;
 }
@@ -74,6 +70,9 @@ html body .mdi:before,
 html body .mdi-set {
     line-height: initial;
 }
+
+
+
 
 
 /*******************
@@ -153,6 +152,9 @@ html body {
 }
 
 
+
+
+
 /*******************
 Blockquote
 *******************/
@@ -170,6 +172,9 @@ html body blockquote {
 ol li {
     margin: 5px 0;
 }
+
+
+
 
 
 /*******************
@@ -265,6 +270,9 @@ html body {
         padding-bottom: 40px;
     }
 }
+
+
+
 
 
 /*******************
@@ -382,6 +390,9 @@ html body {
 }
 
 
+
+
+
 /*******************
 vertical alignment
 *******************/
@@ -401,6 +412,9 @@ html body {
 }
 
 
+
+
+
 /*******************
 Opacity
 *******************/
@@ -408,6 +422,9 @@ Opacity
 .op-5 {
     opacity: 0.5;
 }
+
+
+
 
 
 /*******************
@@ -447,6 +464,9 @@ html body {
 }
 
 
+
+
+
 /*******************
 Border
 *******************/
@@ -471,6 +491,9 @@ html body {
         border: 1px solid $border!important;
     }
 }
+
+
+
 
 
 /*******************
@@ -503,6 +526,9 @@ Thumb size
 .radius {
     border-radius: $radius;
 }
+
+
+
 
 
 /*******************
@@ -561,6 +587,9 @@ html body {
         color: $themecolor;
     }
 }
+
+
+
 
 
 /*******************
@@ -640,6 +669,9 @@ html body {
 }
 
 
+
+
+
 /*******************
 Rounds
 *******************/
@@ -685,6 +717,9 @@ Rounds
 .round.round-primary {
     background: $primary;
 }
+
+
+
 
 
 /*******************
@@ -789,6 +824,9 @@ Labels
 }
 
 
+
+
+
 /*******************
 Pagination
 *******************/
@@ -853,6 +891,9 @@ Pagination
 
 
 
+
+
+
 /*******************
 Table Cell
 *******************/
@@ -910,6 +951,9 @@ Table Cell
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+
+
 
 
 /*******************
@@ -1041,6 +1085,9 @@ html body .waves-notransition {
 }
 
 
+
+
+
 /*Badge*/
 
 .badge {
@@ -1090,6 +1137,9 @@ html body .waves-notransition {
 .badge-inverse {
     background-color: $inverse;
 }
+
+
+
 
 
 
@@ -1704,6 +1754,9 @@ Buttons
 
 
 
+
+
+
 /*******************
 Notify
 *******************/
@@ -1791,6 +1844,9 @@ Notify
 
 
 
+
+
+
 /*******************
 File Upload 
 ******************/
@@ -1810,6 +1866,9 @@ File Upload
         top: 0;
     }
 }
+
+
+
 
 
 /*******************
@@ -1852,6 +1911,9 @@ Megamenu
 }
 
 
+
+
+
 /*******************
 List-style-none
 ******************/
@@ -1874,6 +1936,9 @@ ul.list-style-none {
 }
 
 
+
+
+
 /*******************
 dropdown-item
 ******************/
@@ -1882,6 +1947,9 @@ dropdown-item
     padding: 8px 1rem;
     color: $bodytext;
 }
+
+
+
 
 
 /*******************
@@ -1893,6 +1961,9 @@ Custom-select
 }
 
 
+
+
+
 /*******************
 textarea
 ******************/
@@ -1900,6 +1971,9 @@ textarea
 textarea {
     resize: none;
 }
+
+
+
 
 
 /*******************
@@ -1951,6 +2025,9 @@ form label {
 }
 
 
+
+
+
 /*******************
 Layouts
 ******************/
@@ -1990,6 +2067,9 @@ Layouts
 
 
 
+
+
+
 /*******************/
 
 
@@ -2005,6 +2085,9 @@ Layouts
 .css-bar>i {
     z-index: 10;
 }
+
+
+
 
 
 /*******************/
@@ -2031,6 +2114,9 @@ Layouts
 }
 
 
+
+
+
 /*******************/
 
 
@@ -2041,7 +2127,7 @@ Layouts
 
 .card-default {
     .card-header {
-        background: $card-dark;
+        background: $white;
         border-bottom: 0px;
     }
 }

@@ -12,7 +12,7 @@ body
     background-color: #fafafa;
     font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
     line-height: 1.42857143;
-    font-size: 14px;
+    font-size: 11px !important;
     color: #262626;
 }
 

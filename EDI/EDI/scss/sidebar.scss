@@ -26,12 +26,12 @@ Main sidebar
 }
 
 
+
 /*******************
 use profile section
 ******************/
 
 .user-profile {
-
     position: relative;
     background-size: cover;
     .setpos {
@@ -68,6 +68,7 @@ use profile section
     .dropdown-menu {
         left: 0px;
         right: 0px;
+        top: 62px!important;
         width: 180px;
         margin: 0 auto;
     }
@@ -131,7 +132,6 @@ sidebar navigation
                         color: $themecolor;
                     }
                 }
-
                 &.active {
                     font-weight: 500;
                     color: $dark;
@@ -139,7 +139,6 @@ sidebar navigation
             }
             ul {
                 padding-left: 28px;
-
                 li a {
                     padding: 7px 35px 7px 15px;
                 }
@@ -257,13 +256,11 @@ When click on sidebar toggler and also for tablet
             top: -35px;
         }
     }
-
     .mini-sidebar.fix-sidebar .left-sidebar {
         position: absolute;
     }
     .mini-sidebar .sidebar-nav #sidebarnav>li:hover>ul {
         height: auto !important;
-
         overflow: auto;
     }
     .mini-sidebar .sidebar-nav #sidebarnav>li:hover>ul,
@@ -298,7 +295,7 @@ When click on sidebar toggler and also for tablet
         .nav-small-cap,
         .sidebar-footer,
         .user-profile .profile-text,
-        .label {
+        >.label {
             display: none;
         }
         .nav-devider {
@@ -314,9 +311,11 @@ When click on sidebar toggler and also for tablet
         .sidebar-nav #sidebarnav>li:hover>a {
             width: 260px;
             background: $sidebar-alt;
-
             .hide-menu {
                 display: inline;
+            }
+            .label {
+                display: none;
             }
         }
     }

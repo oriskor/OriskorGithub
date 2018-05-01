@@ -62,6 +62,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,7 +70,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
@@ -188,6 +188,7 @@
     <Compile Include="Controllers\RolesAddEditController.cs" />
     <Compile Include="Controllers\TradingPartnerController.cs" />
     <Compile Include="Controllers\TransactionInboxController.cs" />
+    <Compile Include="Controllers\TransactionOutboxController.cs" />
     <Compile Include="Controllers\UserManagementController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1034,6 +1035,8 @@
     <Content Include="Views\Shared\EditorTemplates\TimePicker.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TimePickerm.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\_FieldLayout.cshtml" />
+    <Content Include="Views\C850_Header\TransactionInboxItems.cshtml" />
+    <Content Include="Views\TransactionOutbox\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

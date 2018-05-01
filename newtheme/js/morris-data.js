@@ -47,7 +47,7 @@ Morris.Area({
         fillOpacity: 0,
         pointStrokeColors:['#55ce63', '#009efb', '#2f3d4a'],
         behaveLikeLine: true,
-        gridLineColor: 'rgba(120, 130, 140, 0.13)',
+        gridLineColor: '#e0e0e0',
         lineWidth: 3,
         hideHover: 'auto',
         lineColors: ['#55ce63', '#009efb', '#2f3d4a'],
@@ -101,7 +101,7 @@ Morris.Area({
         fillOpacity: 0.4,
         pointStrokeColors:['#b4becb', '#009efb'],
         behaveLikeLine: true,
-        gridLineColor: 'rgba(120, 130, 140, 0.13)',
+        gridLineColor: '#e0e0e0',
         lineWidth: 0,
         smooth: false,
         hideHover: 'auto',
@@ -252,7 +252,7 @@ Morris.Area({
                 resize:true,
                 fillOpacity: 0.8,
                 behaveLikeLine: true,
-                gridLineColor: 'rgba(120, 130, 140, 0.13)',
+                gridLineColor: '#e0e0e0',
                 hideHover: 'auto'
         
     });
