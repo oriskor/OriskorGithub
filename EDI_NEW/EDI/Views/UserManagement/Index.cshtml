@@ -1,0 +1,134 @@
+﻿@model IEnumerable<EDI.Models.user_master>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<!-- row -->
+<div class="row linkone">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="card-title">User Management</h4>
+                    </div>
+                    <div class="col-md-8">
+                    </div>
+                </div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Main" role="tab"><span><i class="ti-home"></i></span> Data</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Items" role="tab"><span><i class="fa fa-unlock-alt"></i></span> Action</a> </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content tabcontent-border ">
+                    <div class="tab-pane  p-20 active" id="Main" role="tabpanel">
+                        <div class="row">
+                            <div>
+                                <button type="button" class="btn btn-outline-secondary" onclick="location.href='@Url.Action("Create", "UserManagement")'"><i class="fa fa-plus" style="color:forestgreen"></i> Add New</button>
+
+                                <button type="button" class="btn btn-outline-warning" onclick="location.href='@Url.Action("Create", "UserManagement")'"><i class="fa fa-edit" style="color:yellow"></i> Edit</button>
+
+                                <button type="button" class="btn btn-outline-danger" onclick="location.href='@Url.Action("Create", "UserManagement")'"><i class="fa fa-remove" style="color:red"></i> Delete</button>
+
+                                <button type="button" class="btn btn-outline-info" onclick="location.href='@Url.Action("Create", "UserManagement")'"><i class="fa fa-list" style="color:azure"></i> Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="Items" role="tabpanel">
+                        <div class="row">
+                            <div>
+                                <button type="button" class="btn btn-outline-success" onclick="location.href='@Url.Action("Create", "UserManagement")'"> <i class="fa fa-check" style="color:green"></i>Active</button>
+
+                                <button type="button" class="btn btn-outline-danger" onclick="location.href='@Url.Action("Create", "UserManagement")'"><i class="fa fa-ban" style="color:red"></i> Inactive</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="col-lg-12 linkone">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table full-color-table full-inverse-table hover-table">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.u_first_name)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.u_last_name)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.UserName)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.phone_no)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.email_id)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.Password)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.company_master.c_name)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.role_master.roll_name)
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.u_first_name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.u_last_name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.UserName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.phone_no)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.email_id)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Password)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.company_master.c_name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.role_master.roll_name)
+                                                    </td>
+                                                    <td>
+                                                        @*@Html.ActionLink("Edit", "Edit", new { id = item.user_id }) |
+                                                            @Html.ActionLink("Details", "Details", new { id = item.user_id }) |
+                                                            @Html.ActionLink("Delete", "Delete", new { id = item.user_id })*@
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- row -->

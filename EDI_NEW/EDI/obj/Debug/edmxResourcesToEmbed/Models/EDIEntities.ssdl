@@ -1,0 +1,1233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="810_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderKey" Type="int" />
+    <Property Name="IT102_QtyInvoiced" Type="varchar" MaxLength="15" />
+    <Property Name="IT103_Unit" Type="varchar" MaxLength="2" />
+    <Property Name="IT104_UnitPrice" Type="varchar" MaxLength="15" />
+    <Property Name="IT107_PetSmartArticleNo" Type="varchar" MaxLength="80" />
+    <Property Name="IT108_ProductServiceIdQlfr" Type="varchar" MaxLength="2" />
+    <Property Name="IT109_ProductServiceId" Type="varchar" MaxLength="80" />
+    <Property Name="SAC02_AllowanceCode" Type="varchar" MaxLength="4" />
+    <Property Name="SAC05_AllowanceAmount" Type="varchar" MaxLength="9" />
+    <Property Name="SAC02_ChargeCode" Type="varchar" MaxLength="4" />
+    <Property Name="SAC05_ChargeAmount" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="810_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionalGroupKey" Type="int" />
+    <Property Name="ST01_TranSetIdfrCode" Type="varchar" MaxLength="3" />
+    <Property Name="ST02_TranSetControlNo" Type="varchar" MaxLength="9" />
+    <Property Name="BIG01_InvoiceDate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="BIG02_InvoiceNo" Type="varchar" MaxLength="22" Nullable="false" />
+    <Property Name="BIG04_PurchaseOrderNo" Type="varchar" MaxLength="22" />
+    <Property Name="REF02_PetSmartVendorNo" Type="varchar" MaxLength="80" />
+    <Property Name="N104_PetSmartSiteNo" Type="varchar" MaxLength="80" />
+    <Property Name="ITD03_TermsDiscountPercent" Type="varchar" MaxLength="15" />
+    <Property Name="ITD05_TermsDiscountDaysDue" Type="varchar" MaxLength="9" />
+    <Property Name="ITD07_TermsNetDays" Type="varchar" MaxLength="9" />
+    <Property Name="ITD12_Description" Type="varchar" MaxLength="80" />
+    <Property Name="TDS01_InvoiceTotalAmount" Type="varchar" MaxLength="9" Nullable="false" />
+    <Property Name="TXI02_HarmonizedSalesTax" Type="varchar" MaxLength="15" />
+    <Property Name="TXI02_GoodsServicesTax" Type="varchar" MaxLength="15" />
+    <Property Name="TXI02_StateTax" Type="varchar" MaxLength="15" />
+    <Property Name="SAC02_TotalAllowanceCode" Type="varchar" MaxLength="4" />
+    <Property Name="SAC05_TotalAllowanceAmount" Type="varchar" MaxLength="9" />
+    <Property Name="SAC02_TotalChargeCode" Type="varchar" MaxLength="4" />
+    <Property Name="SAC05_TotalChargeAmount" Type="varchar" MaxLength="9" />
+    <Property Name="CTT01_NumberOfLineItems" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="850_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderKey" Type="int" />
+    <Property Name="PO102_Quantity" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PO103_UnitMeasurementCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="PO104_UnitPrice" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PO107_ArticleNo" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="PO108_GTIN_Qlfr" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="PO109_GTIN_DigitDatatructure" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="PO111_VendorItemNo" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="PO113_Case" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="SDQ01_UnitMeasurementCode" Type="varchar" MaxLength="2" />
+    <Property Name="SDQ03_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ04_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ05_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ06_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ07_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ08_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ09_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ10_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ11_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ12_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ13_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ14_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ15_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ16_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ17_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ18_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ19_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ20_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ21_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ22_Quantity" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="850_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionalGroupKey" Type="int" />
+    <Property Name="FGKeySave" Type="varchar" MaxLength="5" />
+    <Property Name="ST01_TranSetIdfrCode" Type="varchar" MaxLength="3" />
+    <Property Name="ST02_TranSetControlNo" Type="varchar" MaxLength="9" />
+    <Property Name="BEG01_TransactionSetPurposeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BEG02_PurchaseOrderTypeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BEG03_PurchaseOrderNumber" Type="varchar" MaxLength="22" Nullable="false" />
+    <Property Name="BEG05_PODate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="CUR02_CurrencyCode" Type="varchar" MaxLength="3" />
+    <Property Name="REF02_FreeFormText" Type="varchar" MaxLength="80" />
+    <Property Name="REF02_InternalVendorNo" Type="varchar" MaxLength="80" />
+    <Property Name="REF02_ProductGroup" Type="varchar" MaxLength="80" />
+    <Property Name="PER02_ContactPersonName" Type="varchar" MaxLength="60" />
+    <Property Name="DTM02_DeliveryRequestedDate" Type="varchar" MaxLength="8" />
+    <Property Name="DTM02_RequestedPickupDate" Type="varchar" MaxLength="8" />
+    <Property Name="N104_ShipFromID" Type="varchar" MaxLength="80" />
+    <Property Name="N401_ShipFromCity" Type="varchar" MaxLength="30" />
+    <Property Name="N402_ShipFromState" Type="varchar" MaxLength="2" />
+    <Property Name="N403_ShipFromPostalCode" Type="varchar" MaxLength="15" />
+    <Property Name="N404_ShipFromCountryCode" Type="varchar" MaxLength="3" />
+    <Property Name="N104_ShipToID" Type="varchar" MaxLength="80" />
+    <Property Name="N401_ShipToCity" Type="varchar" MaxLength="30" />
+    <Property Name="N402_ShipToState" Type="varchar" MaxLength="2" />
+    <Property Name="N403_ShipToPostalCode" Type="varchar" MaxLength="15" />
+    <Property Name="N404_ShipToCountryCode" Type="varchar" MaxLength="3" />
+    <Property Name="CTT01_NumberOfPO1Segments" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="852_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderKey" Type="int" />
+    <Property Name="LIN03_GTIN_UCC_Code" Type="varchar" MaxLength="80" />
+    <Property Name="LIN05_BuyerItemNo" Type="varchar" MaxLength="80" />
+    <Property Name="LIN07_VendorItemNo" Type="varchar" MaxLength="80" />
+    <Property Name="CTP02_PriceCode" Type="varchar" MaxLength="3" />
+    <Property Name="CTP03_UnitPrice" Type="varchar" MaxLength="15" />
+    <Property Name="PO406_WeightPerPack" Type="varchar" MaxLength="15" />
+    <Property Name="PO407_Unit" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="852_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionalGroupKey" Type="int" />
+    <Property Name="ST01_TranSetIdfrCode" Type="varchar" MaxLength="3" />
+    <Property Name="ST02_TranSetControlNo" Type="varchar" MaxLength="9" />
+    <Property Name="XQ02_ReportingDate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="XQ03_ReportingEndDate" Type="varchar" MaxLength="8" />
+    <Property Name="N902_InternalVendorNo" Type="varchar" MaxLength="80" />
+    <Property Name="N903_FreeFormDesc" Type="varchar" MaxLength="45" />
+    <Property Name="CTT01_NumberOfLineItems" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="852_ProdActivity">
+    <Key>
+      <PropertyRef Name="ProdActivityKey" />
+    </Key>
+    <Property Name="ProdActivityKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DetailKey" Type="int" />
+    <Property Name="ZA01_ActivityCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="SDQ01_Unit" Type="varchar" MaxLength="2" />
+    <Property Name="SDQ02_IdCodeQlfr" Type="varchar" MaxLength="2" />
+    <Property Name="SDQ03_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ04_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ05_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ06_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ07_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ08_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ09_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ10_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ11_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ12_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ13_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ14_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ15_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ16_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ17_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ18_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ19_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ20_Quantity" Type="varchar" MaxLength="15" />
+    <Property Name="SDQ21_IdCode" Type="varchar" MaxLength="80" />
+    <Property Name="SDQ22_Quantity" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="856_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionalGroupKey" Type="int" />
+    <Property Name="ST01_TranSetIdfrCode" Type="varchar" MaxLength="3" />
+    <Property Name="ST02_TranSetControlNo" Type="varchar" MaxLength="9" />
+    <Property Name="BSN01_TranSetPurposeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BSN02_ShipmentId" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="BSN03_TranSetDate" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="BSN04_TranSetTime" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="BSN05_HierarchicalStructureCode" Type="varchar" MaxLength="4" />
+    <Property Name="CTT01_NumberOfLineItems" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="856_Item">
+    <Key>
+      <PropertyRef Name="ItemKey" />
+    </Key>
+    <Property Name="ItemKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackKey" Type="int" />
+    <Property Name="LIN02_TypeSourceCode" Type="varchar" MaxLength="2" />
+    <Property Name="LIN03_ProductServiceId" Type="varchar" MaxLength="80" />
+    <Property Name="LIN05_BuyerItemNo" Type="varchar" MaxLength="80" />
+    <Property Name="LIN07_GTIN_EAN_UCC" Type="varchar" MaxLength="80" />
+    <Property Name="LIN09_LotNo" Type="varchar" MaxLength="80" />
+    <Property Name="SN102_UnitsShipped" Type="varchar" MaxLength="15" />
+    <Property Name="SN103_Unit" Type="varchar" MaxLength="2" />
+    <Property Name="SLN01_AssignedId" Type="varchar" MaxLength="20" />
+    <Property Name="SLN03_RelationshipCode" Type="varchar" MaxLength="1" />
+    <Property Name="SLN09_TypeSourceCode" Type="varchar" MaxLength="2" />
+    <Property Name="SLN10_ProductServiceId" Type="varchar" MaxLength="80" />
+    <Property Name="DTM02_ExpirationDate" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="856_Order">
+    <Key>
+      <PropertyRef Name="OrderKey" />
+    </Key>
+    <Property Name="OrderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShipmentKey" Type="int" />
+    <Property Name="PRF01_RetailPurchaseOrderNo" Type="varchar" MaxLength="22" />
+    <Property Name="PRF02_ReleaseNumber" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="856_Pack">
+    <Key>
+      <PropertyRef Name="PackKey" />
+    </Key>
+    <Property Name="PackKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderKey" Type="int" />
+    <Property Name="LIN03_LotNo" Type="varchar" MaxLength="80" />
+    <Property Name="MAN02_SerialShipContainerCode" Type="varchar" MaxLength="48" />
+    <Property Name="DTM02_ExpirationDate" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="856_Shipment">
+    <Key>
+      <PropertyRef Name="ShipmentKey" />
+    </Key>
+    <Property Name="ShipmentKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderKey" Type="int" />
+    <Property Name="TD101_PackagingCode" Type="varchar" MaxLength="5" />
+    <Property Name="TD102_LadingQuantity" Type="varchar" MaxLength="9" />
+    <Property Name="REF02_BillOfLadingNo" Type="varchar" MaxLength="80" />
+    <Property Name="N104_ShipToId" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="856_Tare">
+    <Key>
+      <PropertyRef Name="TareKey" />
+    </Key>
+    <Property Name="TareKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderKey" Type="int" />
+    <Property Name="LIN03_LotNo" Type="varchar" MaxLength="80" />
+    <Property Name="MAN02_SerialShipContainerCode" Type="varchar" MaxLength="48" />
+    <Property Name="DTM02_ExpirationDate" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="860_Detail">
+    <Key>
+      <PropertyRef Name="DetailKey" />
+    </Key>
+    <Property Name="DetailKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HeaderKey" Type="int" />
+    <Property Name="POC02_ChangeTypeCode" Type="varchar" MaxLength="2" />
+    <Property Name="POC06_UnitPrice" Type="varchar" MaxLength="15" />
+    <Property Name="POC09_GTIN_EAN_UCC" Type="varchar" MaxLength="80" />
+    <Property Name="POC09_GTIN_UCC" Type="varchar" MaxLength="80" />
+    <Property Name="POC11_BuyerItemNo" Type="varchar" MaxLength="80" />
+    <Property Name="POC13_VendorItemNo" Type="varchar" MaxLength="80" />
+    <Property Name="POC15_CommodityGroupingID" Type="varchar" MaxLength="80" />
+    <Property Name="POC17_CaseID" Type="varchar" MaxLength="80" />
+    <Property Name="PO406_WeightPerPack" Type="varchar" MaxLength="15" />
+    <Property Name="PO407_WeightUnit" Type="varchar" MaxLength="2" />
+    <Property Name="PO408_VolumePerPack" Type="varchar" MaxLength="15" />
+    <Property Name="PO409_VolumeUnit" Type="varchar" MaxLength="2" />
+    <Property Name="QTY02_QuantityAdjusted" Type="varchar" MaxLength="15" />
+    <Property Name="QTY03_01_Unit" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="860_Header">
+    <Key>
+      <PropertyRef Name="HeaderKey" />
+    </Key>
+    <Property Name="HeaderKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FunctionalGroupKey" Type="int" />
+    <Property Name="ST01_TranSetIdfrCode" Type="varchar" MaxLength="3" />
+    <Property Name="ST02_TranSetControlNo" Type="varchar" MaxLength="9" />
+    <Property Name="BCH01_TransactionSetPurposeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BCH02_PurchaseOrderTypeCode" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="BCH03_OriginalPO_No" Type="varchar" MaxLength="22" Nullable="false" />
+    <Property Name="BCH06_OriginalPO_Date" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="BCH11_OriginalPO_DateChange" Type="varchar" MaxLength="8" />
+    <Property Name="DTM02_DeliveryRequestedDate" Type="varchar" MaxLength="8" />
+    <Property Name="DTM02_ShipNotBeforeDate" Type="varchar" MaxLength="8" />
+    <Property Name="DTM02_ShipNoLaterDate" Type="varchar" MaxLength="8" />
+    <Property Name="DTM02_RequestedPickupDate" Type="varchar" MaxLength="8" />
+    <Property Name="N104_ShipFromID" Type="varchar" MaxLength="80" />
+    <Property Name="N401_ShipFromCity" Type="varchar" MaxLength="30" />
+    <Property Name="N402_ShipFromState" Type="varchar" MaxLength="2" />
+    <Property Name="N403_ShipFromZip" Type="varchar" MaxLength="15" />
+    <Property Name="N404_ShipFromCountryCode" Type="varchar" MaxLength="3" />
+    <Property Name="CTT01_NumberOfPOCSegments" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="company_master">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_type" Type="varchar" MaxLength="20" />
+    <Property Name="logo" Type="varbinary(max)" />
+    <Property Name="c_address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="contact_person" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_person_position" Type="varchar" MaxLength="15" />
+    <Property Name="phone_no" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" />
+    <Property Name="package_id" Type="int" Nullable="false" />
+    <Property Name="edi_code" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="docu_type">
+    <Key>
+      <PropertyRef Name="d_id" />
+    </Key>
+    <Property Name="d_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="d_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="tp_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="docu_type_sub">
+    <Key>
+      <PropertyRef Name="d_subid" />
+    </Key>
+    <Property Name="d_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="d_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="alt_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="d_subid" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="edi_format_master">
+    <Key>
+      <PropertyRef Name="edi_code" />
+    </Key>
+    <Property Name="edi_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="edi_type" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="edi_foramt" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EDIFiles">
+    <Key>
+      <PropertyRef Name="RejectedFileID" />
+    </Key>
+    <Property Name="RejectedFileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fileNames" Type="nvarchar" MaxLength="256" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="516" />
+    <Property Name="StatusID" Type="int" />
+    <Property Name="EdiFileTranSetNo" Type="nvarchar(max)" />
+    <Property Name="CreatedDateTime" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'edi_portal.dbo.erp_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="erp_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="erp_name" />
+    </Key>
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="erp_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="technology" Type="varchar" MaxLength="50" />
+    <Property Name="api_details" Type="varchar(max)" />
+    <Property Name="description" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="FunctionalGroupInbound">
+    <Key>
+      <PropertyRef Name="FunctionalGroupKey" />
+    </Key>
+    <Property Name="FunctionalGroupKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterchangeKey" Type="int" Nullable="false" />
+    <Property Name="GS01_FunctionalIdfrCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="GS02_SendersCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="GS03_ReceiversCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="GS04_Date" Type="nvarchar" MaxLength="8" />
+    <Property Name="GS05_Time" Type="nvarchar" MaxLength="8" />
+    <Property Name="GS06_GroupControlNumber" Type="nvarchar" MaxLength="9" />
+    <Property Name="GS07_ResponsibleAgencyCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="GS08_VersionReleaseCode" Type="nvarchar" MaxLength="12" />
+    <Property Name="GE01_NoOfTranSetsIncluded" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="FunctionalGroupOutbound">
+    <Key>
+      <PropertyRef Name="FunctionalGroupKey" />
+    </Key>
+    <Property Name="FunctionalGroupKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InterchangeKey" Type="int" Nullable="false" />
+    <Property Name="GS01_FunctionalIdfrCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="GS02_SendersCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="GS03_ReceiversCode" Type="nvarchar" MaxLength="15" />
+    <Property Name="GS04_Date" Type="nvarchar" MaxLength="8" />
+    <Property Name="GS05_Time" Type="nvarchar" MaxLength="8" />
+    <Property Name="GS06_GroupControlNumber" Type="nvarchar" MaxLength="9" />
+    <Property Name="GS07_ResponsibleAgencyCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="GS08_VersionReleaseCode" Type="nvarchar" MaxLength="12" />
+    <Property Name="GE01_NoOfTranSetsIncluded" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="InterchangeInbound">
+    <Key>
+      <PropertyRef Name="InterchangeKey" />
+    </Key>
+    <Property Name="InterchangeKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISA01_AuthorizationInfoQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA02_AuthorizationInfo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISA03_SecurityInfoQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA04_SecurityInfo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISA05_SenderIdQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA06_SenderId" Type="nvarchar" MaxLength="15" />
+    <Property Name="ISA07_ReceiverIdQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA08_ReceiverId" Type="nvarchar" MaxLength="15" />
+    <Property Name="ISA09_Date" Type="nvarchar" MaxLength="8" />
+    <Property Name="ISA10_Time" Type="nvarchar" MaxLength="8" />
+    <Property Name="ISA11_RepetitionSeparator" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA12_ControlVersionNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="ISA13_ControlNumber" Type="nvarchar" MaxLength="9" />
+    <Property Name="ISA14_AcknowledgmentRequested" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA15_UsageIndicator" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA16_ComponentElementSeparator" Type="nvarchar" MaxLength="1" />
+    <Property Name="IEA01_NoOfIncludedFuncGroups" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="InterchangeOutbound">
+    <Key>
+      <PropertyRef Name="InterchangeKey" />
+    </Key>
+    <Property Name="InterchangeKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISA01_AuthorizationInfoQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA02_AuthorizationInfo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISA03_SecurityInfoQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA04_SecurityInfo" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISA05_SenderIdQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA06_SenderId" Type="nvarchar" MaxLength="15" />
+    <Property Name="ISA07_ReceiverIdQlfr" Type="nvarchar" MaxLength="2" />
+    <Property Name="ISA08_ReceiverId" Type="nvarchar" MaxLength="15" />
+    <Property Name="ISA09_Date" Type="nvarchar" MaxLength="8" />
+    <Property Name="ISA10_Time" Type="nvarchar" MaxLength="8" />
+    <Property Name="ISA11_RepetitionSeparator" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA12_ControlVersionNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="ISA13_ControlNumber" Type="nvarchar" MaxLength="9" />
+    <Property Name="ISA14_AcknowledgmentRequested" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA15_UsageIndicator" Type="nvarchar" MaxLength="1" />
+    <Property Name="ISA16_ComponentElementSeparator" Type="nvarchar" MaxLength="1" />
+    <Property Name="IEA01_NoOfIncludedFuncGroups" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="item_setup">
+    <Key>
+      <PropertyRef Name="item#_id" />
+    </Key>
+    <Property Name="item#_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="item_translation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Upc_#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendor_Part_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Buyer_part" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="UOM" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price_basis" Type="nvarchar" MaxLength="50" />
+    <Property Name="#_of_Inner_packs" Type="nvarchar" MaxLength="50" />
+    <Property Name="#_of_unit_in_cartoons" Type="nvarchar" MaxLength="50" />
+    <Property Name="Max_#" Type="nvarchar" MaxLength="20" />
+    <Property Name="ucc_128_#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vendor_Part_#" Type="nvarchar" MaxLength="20" />
+    <Property Name="Gtin_#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kmart_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unique_product_#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Package_Indicator" Type="nvarchar" MaxLength="25" />
+    <Property Name="Ucc_Company_prifix" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qty_Shipped" Type="nvarchar" MaxLength="20" />
+    <Property Name="Pack_Size" Type="nvarchar" MaxLength="20" />
+    <Property Name="weight" Type="nvarchar" MaxLength="20" />
+    <Property Name="length" Type="nvarchar" MaxLength="20" />
+    <Property Name="width" Type="nvarchar" MaxLength="20" />
+    <Property Name="Height" Type="nvarchar" MaxLength="20" />
+    <Property Name="Manufacturer_Part" Type="nvarchar" MaxLength="20" />
+    <Property Name="Ean" Type="nvarchar" MaxLength="20" />
+    <Property Name="income" Type="nvarchar" MaxLength="20" />
+    <Property Name="expence" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cost_of_Sales" Type="nvarchar" MaxLength="20" />
+    <Property Name="id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="menu_master">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="m_name" Type="varchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="MenuRoleMapping">
+    <Key>
+      <PropertyRef Name="MenuRoleMappingID" />
+    </Key>
+    <Property Name="Menu_Id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sub_Menu_Id" Type="int" />
+    <Property Name="Role_Id" Type="int" />
+    <Property Name="PermissionTypeID" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="MenuRoleMappingID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="package_master">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_duration" Type="nvarchar" MaxLength="20" />
+    <Property Name="price" Type="nvarchar" MaxLength="20" />
+    <Property Name="discount" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="PermissionType">
+    <Key>
+      <PropertyRef Name="PermissionTypeID" />
+    </Key>
+    <Property Name="PermissionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PermissionTypeDesc" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="role_master">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="roll_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Role_Id2" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusCode" Type="nvarchar" MaxLength="256" />
+    <Property Name="StatusDesc" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="sub_menu">
+    <Key>
+      <PropertyRef Name="sub_m_id" />
+    </Key>
+    <Property Name="sub_m_id" Type="int" Nullable="false" />
+    <Property Name="Submenu_name" Type="varchar" MaxLength="50" />
+    <Property Name="m_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'edi_portal.dbo.subscription_master' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="subscription_master">
+    <Key>
+      <PropertyRef Name="c_name" />
+      <PropertyRef Name="p_id" />
+      <PropertyRef Name="p_name" />
+    </Key>
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_id" Type="int" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tradingPartnerSetup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="id" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tradingPartnerSetup_sub">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="TP_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="transaction_rejected">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="edi_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="sent" Type="varchar" MaxLength="5" />
+    <Property Name="received" Type="varchar" MaxLength="5" />
+    <Property Name="t_partner_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="a_doc_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="store_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="date_rejected" Type="date" />
+    <Property Name="d_acnoledgment" Type="date" />
+  </EntityType>
+  <EntityType Name="transaction_sent">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="edi_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="sent" Type="varchar" MaxLength="5" />
+    <Property Name="received" Type="varchar" MaxLength="5" />
+    <Property Name="t_partner_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="a_doc_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="store_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="date_send" Type="date" />
+    <Property Name="d_acnoledgment" Type="date" />
+  </EntityType>
+  <EntityType Name="transactions">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="company" Type="nvarchar" MaxLength="100" />
+    <Property Name="trading_partner" Type="nvarchar" MaxLength="100" />
+    <Property Name="document" Type="nvarchar" MaxLength="50" />
+    <Property Name="document_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Alt_document" Type="nvarchar" MaxLength="50" />
+    <Property Name="store_number" Type="nvarchar" MaxLength="20" />
+    <Property Name="amount" Type="nvarchar" MaxLength="30" />
+    <Property Name="date_received" Type="date" />
+    <Property Name="date_ack" Type="date" />
+    <Property Name="t_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="tp_id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user_master">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="u_first_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="u_last_name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="c_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="phone_no" Type="int" Nullable="false" />
+    <Property Name="email_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <Association Name="FK__EDIFiles__Status__76969D2E">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="EDIFiles" Type="Self.EDIFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="EDIFiles">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Menu___7B5B524B">
+    <End Role="menu_master" Type="Self.menu_master" Multiplicity="0..1" />
+    <End Role="MenuRoleMapping" Type="Self.MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Permi__7C4F7684">
+    <End Role="PermissionType" Type="Self.PermissionType" Multiplicity="0..1" />
+    <End Role="MenuRoleMapping" Type="Self.MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PermissionType">
+        <PropertyRef Name="PermissionTypeID" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="PermissionTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Role___7D439ABD">
+    <End Role="role_master" Type="Self.role_master" Multiplicity="0..1" />
+    <End Role="MenuRoleMapping" Type="Self.MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MenuRoleM__Sub_M__7E37BEF6">
+    <End Role="sub_menu" Type="Self.sub_menu" Multiplicity="0..1" />
+    <End Role="MenuRoleMapping" Type="Self.MenuRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sub_menu">
+        <PropertyRef Name="sub_m_id" />
+      </Principal>
+      <Dependent Role="MenuRoleMapping">
+        <PropertyRef Name="Sub_Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_810_DetailInterReference">
+    <End Role="810_Header" Type="Self.810_Header" Multiplicity="0..1" />
+    <End Role="810_Detail" Type="Self.810_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="810_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="810_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_850_DetailInterReference">
+    <End Role="850_Header" Type="Self.850_Header" Multiplicity="0..1" />
+    <End Role="850_Detail" Type="Self.850_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="850_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="850_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_852_DetailInterReference">
+    <End Role="852_Header" Type="Self.852_Header" Multiplicity="0..1" />
+    <End Role="852_Detail" Type="Self.852_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="852_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="852_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_852_ProdActivityInterReference">
+    <End Role="852_Detail" Type="Self.852_Detail" Multiplicity="0..1" />
+    <End Role="852_ProdActivity" Type="Self.852_ProdActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="852_Detail">
+        <PropertyRef Name="DetailKey" />
+      </Principal>
+      <Dependent Role="852_ProdActivity">
+        <PropertyRef Name="DetailKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_ItemInterReference">
+    <End Role="856_Pack" Type="Self.856_Pack" Multiplicity="0..1" />
+    <End Role="856_Item" Type="Self.856_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="856_Pack">
+        <PropertyRef Name="PackKey" />
+      </Principal>
+      <Dependent Role="856_Item">
+        <PropertyRef Name="PackKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_OrderInterReference">
+    <End Role="856_Shipment" Type="Self.856_Shipment" Multiplicity="0..1" />
+    <End Role="856_Order" Type="Self.856_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="856_Shipment">
+        <PropertyRef Name="ShipmentKey" />
+      </Principal>
+      <Dependent Role="856_Order">
+        <PropertyRef Name="ShipmentKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_PackInterReference">
+    <End Role="856_Order" Type="Self.856_Order" Multiplicity="0..1" />
+    <End Role="856_Pack" Type="Self.856_Pack" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="856_Order">
+        <PropertyRef Name="OrderKey" />
+      </Principal>
+      <Dependent Role="856_Pack">
+        <PropertyRef Name="OrderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_ShipmentInterReference">
+    <End Role="856_Header" Type="Self.856_Header" Multiplicity="0..1" />
+    <End Role="856_Shipment" Type="Self.856_Shipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="856_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="856_Shipment">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_856_TareInterReference">
+    <End Role="856_Order" Type="Self.856_Order" Multiplicity="0..1" />
+    <End Role="856_Tare" Type="Self.856_Tare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="856_Order">
+        <PropertyRef Name="OrderKey" />
+      </Principal>
+      <Dependent Role="856_Tare">
+        <PropertyRef Name="OrderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_860_DetailInterReference">
+    <End Role="860_Header" Type="Self.860_Header" Multiplicity="0..1" />
+    <End Role="860_Detail" Type="Self.860_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="860_Header">
+        <PropertyRef Name="HeaderKey" />
+      </Principal>
+      <Dependent Role="860_Detail">
+        <PropertyRef Name="HeaderKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_c_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="erp_master" Type="Self.erp_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="erp_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_company_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_d_id">
+    <End Role="docu_type" Type="Self.docu_type" Multiplicity="0..1" />
+    <End Role="docu_type_sub" Type="Self.docu_type_sub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="docu_type">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="docu_type_sub">
+        <PropertyRef Name="d_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_doc_id">
+    <End Role="docu_type" Type="Self.docu_type" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="docu_type">
+        <PropertyRef Name="d_id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="doc_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_doctype_id">
+    <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="0..1" />
+    <End Role="docu_type" Type="Self.docu_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tradingPartnerSetup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="docu_type">
+        <PropertyRef Name="tp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalGroupInbound_InterReference">
+    <End Role="InterchangeInbound" Type="Self.InterchangeInbound" Multiplicity="1" />
+    <End Role="FunctionalGroupInbound" Type="Self.FunctionalGroupInbound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterchangeInbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Principal>
+      <Dependent Role="FunctionalGroupInbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FunctionalGroupOutbound_InterReference">
+    <End Role="InterchangeOutbound" Type="Self.InterchangeOutbound" Multiplicity="1" />
+    <End Role="FunctionalGroupOutbound" Type="Self.FunctionalGroupOutbound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InterchangeOutbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Principal>
+      <Dependent Role="FunctionalGroupOutbound">
+        <PropertyRef Name="InterchangeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemsetup_id">
+    <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="0..1" />
+    <End Role="item_setup" Type="Self.item_setup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tradingPartnerSetup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item_setup">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_m_id">
+    <End Role="menu_master" Type="Self.menu_master" Multiplicity="0..1" />
+    <End Role="sub_menu" Type="Self.sub_menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_master">
+        <PropertyRef Name="m_id" />
+      </Principal>
+      <Dependent Role="sub_menu">
+        <PropertyRef Name="m_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="company_master" Type="Self.company_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="company_master">
+        <PropertyRef Name="package_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_package_id">
+    <End Role="package_master" Type="Self.package_master" Multiplicity="1" />
+    <End Role="subscription_master" Type="Self.subscription_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="package_master">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="subscription_master">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_rejected">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_rejected" Type="Self.transaction_rejected" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_rejected">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_role_id">
+    <End Role="role_master" Type="Self.role_master" Multiplicity="0..1" />
+    <End Role="user_master" Type="Self.user_master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_master">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user_master">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sent">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transaction_sent" Type="Self.transaction_sent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transaction_sent">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tp_id">
+    <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tradingPartnerSetup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="tp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_trading_cid">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="tradingPartnerSetup">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tradingsub_tid">
+    <End Role="tradingPartnerSetup" Type="Self.tradingPartnerSetup" Multiplicity="0..1" />
+    <End Role="tradingPartnerSetup_sub" Type="Self.tradingPartnerSetup_sub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tradingPartnerSetup">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tradingPartnerSetup_sub">
+        <PropertyRef Name="TP_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_transactions_id">
+    <End Role="company_master" Type="Self.company_master" Multiplicity="0..1" />
+    <End Role="transactions" Type="Self.transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="company_master">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transactions">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetHeaderDetailInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPO_getAllMenuByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserID" Type="int" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPO_getAllMenuWhichNotAssignedToTheRole" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SPO_getRejectedFiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPO_insertEDIFilesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fileNames" Type="nvarchar" Mode="In" />
+    <Parameter Name="FilePath" Type="nvarchar" Mode="In" />
+    <Parameter Name="StatusCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="EdiFileTranSetNo" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CreatedDateTime" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EDIModelStoreContainer">
+    <EntitySet Name="810_Detail" EntityType="Self.810_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="810_Header" EntityType="Self.810_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="850_Detail" EntityType="Self.850_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="850_Header" EntityType="Self.850_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="852_Detail" EntityType="Self.852_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="852_Header" EntityType="Self.852_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="852_ProdActivity" EntityType="Self.852_ProdActivity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Header" EntityType="Self.856_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Item" EntityType="Self.856_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Order" EntityType="Self.856_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Pack" EntityType="Self.856_Pack" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Shipment" EntityType="Self.856_Shipment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="856_Tare" EntityType="Self.856_Tare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="860_Detail" EntityType="Self.860_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="860_Header" EntityType="Self.860_Header" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="company_master" EntityType="Self.company_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="docu_type" EntityType="Self.docu_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="docu_type_sub" EntityType="Self.docu_type_sub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="edi_format_master" EntityType="Self.edi_format_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EDIFiles" EntityType="Self.EDIFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionalGroupInbound" EntityType="Self.FunctionalGroupInbound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FunctionalGroupOutbound" EntityType="Self.FunctionalGroupOutbound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterchangeInbound" EntityType="Self.InterchangeInbound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InterchangeOutbound" EntityType="Self.InterchangeOutbound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item_setup" EntityType="Self.item_setup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="menu_master" EntityType="Self.menu_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuRoleMapping" EntityType="Self.MenuRoleMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="package_master" EntityType="Self.package_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PermissionType" EntityType="Self.PermissionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="role_master" EntityType="Self.role_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sub_menu" EntityType="Self.sub_menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tradingPartnerSetup" EntityType="Self.tradingPartnerSetup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tradingPartnerSetup_sub" EntityType="Self.tradingPartnerSetup_sub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaction_rejected" EntityType="Self.transaction_rejected" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transaction_sent" EntityType="Self.transaction_sent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transactions" EntityType="Self.transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_master" EntityType="Self.user_master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="erp_master" EntityType="Self.erp_master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [erp_master].[c_name] AS [c_name], 
+    [erp_master].[c_id] AS [c_id], 
+    [erp_master].[erp_name] AS [erp_name], 
+    [erp_master].[technology] AS [technology], 
+    [erp_master].[api_details] AS [api_details], 
+    [erp_master].[description] AS [description]
+    FROM [dbo].[erp_master] AS [erp_master]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="subscription_master" EntityType="Self.subscription_master" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [subscription_master].[c_name] AS [c_name], 
+    [subscription_master].[p_id] AS [p_id], 
+    [subscription_master].[p_name] AS [p_name]
+    FROM [dbo].[subscription_master] AS [subscription_master]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__EDIFiles__Status__76969D2E" Association="Self.FK__EDIFiles__Status__76969D2E">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="EDIFiles" EntitySet="EDIFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Menu___7B5B524B" Association="Self.FK__MenuRoleM__Menu___7B5B524B">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Permi__7C4F7684" Association="Self.FK__MenuRoleM__Permi__7C4F7684">
+      <End Role="PermissionType" EntitySet="PermissionType" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Role___7D439ABD" Association="Self.FK__MenuRoleM__Role___7D439ABD">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MenuRoleM__Sub_M__7E37BEF6" Association="Self.FK__MenuRoleM__Sub_M__7E37BEF6">
+      <End Role="sub_menu" EntitySet="sub_menu" />
+      <End Role="MenuRoleMapping" EntitySet="MenuRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_810_DetailInterReference" Association="Self.FK_810_DetailInterReference">
+      <End Role="810_Header" EntitySet="810_Header" />
+      <End Role="810_Detail" EntitySet="810_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_850_DetailInterReference" Association="Self.FK_850_DetailInterReference">
+      <End Role="850_Header" EntitySet="850_Header" />
+      <End Role="850_Detail" EntitySet="850_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_852_DetailInterReference" Association="Self.FK_852_DetailInterReference">
+      <End Role="852_Header" EntitySet="852_Header" />
+      <End Role="852_Detail" EntitySet="852_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_852_ProdActivityInterReference" Association="Self.FK_852_ProdActivityInterReference">
+      <End Role="852_Detail" EntitySet="852_Detail" />
+      <End Role="852_ProdActivity" EntitySet="852_ProdActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_ItemInterReference" Association="Self.FK_856_ItemInterReference">
+      <End Role="856_Pack" EntitySet="856_Pack" />
+      <End Role="856_Item" EntitySet="856_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_OrderInterReference" Association="Self.FK_856_OrderInterReference">
+      <End Role="856_Shipment" EntitySet="856_Shipment" />
+      <End Role="856_Order" EntitySet="856_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_PackInterReference" Association="Self.FK_856_PackInterReference">
+      <End Role="856_Order" EntitySet="856_Order" />
+      <End Role="856_Pack" EntitySet="856_Pack" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_ShipmentInterReference" Association="Self.FK_856_ShipmentInterReference">
+      <End Role="856_Header" EntitySet="856_Header" />
+      <End Role="856_Shipment" EntitySet="856_Shipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_856_TareInterReference" Association="Self.FK_856_TareInterReference">
+      <End Role="856_Order" EntitySet="856_Order" />
+      <End Role="856_Tare" EntitySet="856_Tare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_860_DetailInterReference" Association="Self.FK_860_DetailInterReference">
+      <End Role="860_Header" EntitySet="860_Header" />
+      <End Role="860_Detail" EntitySet="860_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="fk_c_id" Association="Self.fk_c_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="erp_master" EntitySet="erp_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_company_id" Association="Self.fk_company_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_d_id" Association="Self.fk_d_id">
+      <End Role="docu_type" EntitySet="docu_type" />
+      <End Role="docu_type_sub" EntitySet="docu_type_sub" />
+    </AssociationSet>
+    <AssociationSet Name="fk_doc_id" Association="Self.fk_doc_id">
+      <End Role="docu_type" EntitySet="docu_type" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_doctype_id" Association="Self.fk_doctype_id">
+      <End Role="tradingPartnerSetup" EntitySet="tradingPartnerSetup" />
+      <End Role="docu_type" EntitySet="docu_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalGroupInbound_InterReference" Association="Self.FK_FunctionalGroupInbound_InterReference">
+      <End Role="InterchangeInbound" EntitySet="InterchangeInbound" />
+      <End Role="FunctionalGroupInbound" EntitySet="FunctionalGroupInbound" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FunctionalGroupOutbound_InterReference" Association="Self.FK_FunctionalGroupOutbound_InterReference">
+      <End Role="InterchangeOutbound" EntitySet="InterchangeOutbound" />
+      <End Role="FunctionalGroupOutbound" EntitySet="FunctionalGroupOutbound" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemsetup_id" Association="Self.fk_itemsetup_id">
+      <End Role="tradingPartnerSetup" EntitySet="tradingPartnerSetup" />
+      <End Role="item_setup" EntitySet="item_setup" />
+    </AssociationSet>
+    <AssociationSet Name="fk_m_id" Association="Self.fk_m_id">
+      <End Role="menu_master" EntitySet="menu_master" />
+      <End Role="sub_menu" EntitySet="sub_menu" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_id" Association="Self.fk_p_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="company_master" EntitySet="company_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_package_id" Association="Self.fk_package_id">
+      <End Role="package_master" EntitySet="package_master" />
+      <End Role="subscription_master" EntitySet="subscription_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_rejected" Association="Self.fk_rejected">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_rejected" EntitySet="transaction_rejected" />
+    </AssociationSet>
+    <AssociationSet Name="fk_role_id" Association="Self.fk_role_id">
+      <End Role="role_master" EntitySet="role_master" />
+      <End Role="user_master" EntitySet="user_master" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sent" Association="Self.fk_sent">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transaction_sent" EntitySet="transaction_sent" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tp_id" Association="Self.fk_tp_id">
+      <End Role="tradingPartnerSetup" EntitySet="tradingPartnerSetup" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+    <AssociationSet Name="fk_trading_cid" Association="Self.fk_trading_cid">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="tradingPartnerSetup" EntitySet="tradingPartnerSetup" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tradingsub_tid" Association="Self.fk_tradingsub_tid">
+      <End Role="tradingPartnerSetup" EntitySet="tradingPartnerSetup" />
+      <End Role="tradingPartnerSetup_sub" EntitySet="tradingPartnerSetup_sub" />
+    </AssociationSet>
+    <AssociationSet Name="fk_transactions_id" Association="Self.fk_transactions_id">
+      <End Role="company_master" EntitySet="company_master" />
+      <End Role="transactions" EntitySet="transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
