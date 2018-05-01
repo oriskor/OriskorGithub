@@ -67,6 +67,9 @@
         font-weight: 500;
         color: #3a3c40;
     }
+    thead {
+        white-space: nowrap;
+    }
 </style>
 <!-- row -->
 <div class="row linkone">
@@ -109,7 +112,7 @@
                                     @Html.DisplayFor(item => item.Name)
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="overflow: scroll;">
                                 @Html.Action("ItemSetup", "TradingPartner", new { id = Model.id })
                             </div>
                         </div>
@@ -120,7 +123,8 @@
                             <div class="row"><div> Tamplates </div> </div>
                             <div class="row">
                                 @Html.Action("Tamplate", "TradingPartner", new { id = Model.id })
-                            </div>
+                            </div>HttpCompileException: d:\EDI\OriskorGithub\EDI_NEW\EDI\Views\TradingPartnerDetails\ItemSetup.cshtml(103): error CS1061: 'System.Collections.Generic.List<EDI.Models.item_setup>' does not contain a definition for 'item_translation' and no extension method 'item_translation' accepting a first argument of type 'System.Collections.Generic.List<EDI.Models.item_setup>' could be found (are you missing a using directive or an assembly reference?)
+
                         </div>
                     </div>
 

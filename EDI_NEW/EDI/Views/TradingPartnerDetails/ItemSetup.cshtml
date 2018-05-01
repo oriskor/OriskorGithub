@@ -1,7 +1,98 @@
-﻿@model EDI.Models.tradingPartnerSetup
+﻿@model  List<EDI.Models.item_setup>
+
+<script type='text/javascript'>
+
+
+    $(function () {
+        // Selectors for future use
+        var myTable = "#tableItemsSetup";
+        var myTableBody = myTable + " tbody";
+        var myTableRows = myTableBody + " tr";
+        var myTableColumn = myTable + " th";
+
+        // Starting table state
+        function initTable() {
+            $(myTableBody).attr("data-pageSize", 4);
+            $(myTableBody).attr("data-firstRecord", 0);
+            $('#previous').hide();
+            $('#next').show();
+
+            // Increment the table width for sort icon support
+
+
+            // Start the pagination
+            paginate(parseInt($(myTableBody).attr("data-firstRecord"), 10),
+                parseInt($(myTableBody).attr("data-pageSize"), 10));
+        }
+
+
+        // Table sorting function
+        function sortTable(table, column, order) {
+
+
+        }
+
+        // Heading click
+        $(myTableColumn).click(function () {
+
+
+            // Start the pagination
+            paginate(parseInt($(myTableBody).attr("data-firstRecord"), 10),
+                parseInt($(myTableBody).attr("data-pageSize"), 10));
+        });
+
+        // Pager click
+        $("a.paginate").click(function (e) {
+            e.preventDefault();
+            var tableRows = $(myTableRows);
+            var tmpRec = parseInt($(myTableBody).attr("data-firstRecord"), 10);
+            var pageSize = parseInt($(myTableBody).attr("data-pageSize"), 10);
+
+            // Define the new first record
+            if ($(this).attr("id") == "next") {
+                tmpRec += pageSize;
+            } else {
+                tmpRec -= pageSize;
+            }
+            // The first record is < of 0 or > of total rows
+            if (tmpRec < 0 || tmpRec > tableRows.length) return
+
+            $(myTableBody).attr("data-firstRecord", tmpRec);
+            paginate(tmpRec, pageSize);
+        });
+
+        // Paging function
+        var paginate = function (start, size) {
+            var tableRows = $(myTableRows);
+            var end = start + size;
+            // Hide all the rows
+            tableRows.hide();
+            // Show a reduced set of rows using a range of indices.
+            tableRows.slice(start, end).show();
+            // Show the pager
+            $(".paginate").show();
+            // If the first row is visible hide prev
+            if (tableRows.eq(0).is(":visible")) $('#previous').hide();
+            // If the last row is visible hide next
+            if (tableRows.eq(tableRows.length - 1).is(":visible")) $('#next').hide();
+        }
+
+        // Table starting state
+        initTable();
+
+
+    });
+</script>
+
+<style>
+    label {
+        color: #ffffff;
+    }
+</style>
+
 <div class="card-body">
     <div class="table-responsive">
-        <table class="table full-color-table full-inverse-table hover-table">
+        <table id="tableItemsSetup" class="table full-color-table full-inverse-table hover-table">
             <thead>
                 <tr>
                     <th>
@@ -34,47 +125,176 @@
                     <th>
                         <label> # of Units in Carton </label>
                     </th>
+
+
+
+                    <th>
+                        <label>  Max # </label>
+                    </th>
+                    <th>
+                        <label>  UCC 128 #(20 digit, no spaces or other characters) </label>
+                    </th>
+                    <th>
+                        <label>  GTIN#   </label>
+                    </th>
+                    <th>
+                        <label>  Kmart Code  </label>
+                    </th>
+                    <th>
+                        <label>   Unique Product #(4 digits) </label>
+                    </th>
+                    <th>
+                        <label>
+                            Package Indicator (0-7)
+                        </label>
+                    </th>
+                    <th>
+                        <label>  UCC Company Prefix(8 Digits plus leading 0's)   </label>
+                    </th>
+                    <th>
+                        <label>  Qty shipped </label>
+                    </th>
+                    <th>
+                        <label>  Pack Size  </label>
+                    </th>
+                    <th>
+                        <label> Weight (lb) </label>
+                    </th>
+
+
+                    <th>
+                        <label>  Linght (in) </label>
+                    </th>
+                    <th>
+                        <label>  Width (in) </label>
+                    </th>
+                    <th>
+                        <label> Height (in)   </label>
+                    </th>
+                    <th>
+                        <label>  Manufacturer's Part #  </label>
+                    </th>
+                    <th>
+                        <label>   EAN # </label>
+                    </th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem =>  Model.id)
-                    </td>
+                @foreach (var item in Model)
+                {
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem =>  Model.id)
-                    </td>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.item_translation)
+                        </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem =>  Model.id)
-                    </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Upc__)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Vendor_Part_id)
+                        </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem =>  Model.id)
-                    </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Buyer_part)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem =>  Model.id)
-                    </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UOM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => modelItem.Name)
-                    </td>
-                </tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price_basis)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.C__of_Inner_packs)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.C__of_unit_in_cartoons)
+                        </td>
+
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Max__)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ucc_128__)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gtin__)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kmart_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Unique_product__)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Package_Indicator)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ucc_Company_prifix)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Qty_Shipped)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pack_Size)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.weight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.length)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.width)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Height)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Manufacturer_Part)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ean)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.income)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.expence)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cost_of_Sales)
+                        </td>
+
+
+                    </tr>
+                }
             </tbody>
         </table>
+        <div>
+            <a href="#" class="paginate" id="previous">Previous</a> |
+            <a href="#" class="paginate" id="next">Next</a>
+        </div>
     </div>
 </div>

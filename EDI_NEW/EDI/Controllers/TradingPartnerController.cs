@@ -25,8 +25,9 @@ namespace EDI.Controllers
         }
         public PartialViewResult ItemSetup(string id)
         {
-            tradingPartnerSetup TradingPartnerSetup = db.tradingPartnerSetups.Find(id);
-            return PartialView("~/Views/TradingPartnerDetails/ItemSetup.cshtml", TradingPartnerSetup);
+            List<item_setup> item_setup = new List<item_setup>();
+            item_setup = db.item_setup.Where(x=> x.id == id).ToList();
+            return PartialView("~/Views/TradingPartnerDetails/ItemSetup.cshtml", item_setup);
         }
         public PartialViewResult Tamplate(string id)
         {
