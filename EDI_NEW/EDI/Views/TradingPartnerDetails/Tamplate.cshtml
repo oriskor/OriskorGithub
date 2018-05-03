@@ -1,0 +1,40 @@
+﻿@model List<EDI.Structure.Templates>
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table full-color-table full-inverse-table hover-table">
+            <thead>
+                <tr>
+                    <th>
+                        <label>  Document Type </label>
+                    </th>
+                    <th>
+                        <label>  Version  </label>
+                    </th>
+                    <th>
+                        <label>  Date Changed    </label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dcument_Type)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Version)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date_Changed)
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

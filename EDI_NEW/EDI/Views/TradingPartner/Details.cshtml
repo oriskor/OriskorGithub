@@ -1,0 +1,195 @@
+﻿@model EDI.Models.tradingPartnerSetup
+
+@{
+
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_MasterPage.cshtml";
+}
+
+<style>
+    .linkone {
+        font-size: 12px;
+    }
+
+    dt {
+        color: #ffffff;
+    }
+
+    fieldset {
+        display: block;
+        -webkit-margin-start: 2px;
+        -webkit-margin-end: 2px;
+        -webkit-padding-before: 0.35em;
+        -webkit-padding-start: 0.75em;
+        -webkit-padding-end: 0.75em;
+        -webkit-padding-after: 0.625em;
+        min-width: -webkit-min-content;
+        border-width: 2px;
+        border-style: groove;
+        border-color: rgba(68, 85, 105, 0.81);
+        border-image: initial;
+    }
+
+    legend {
+        display: block !important;
+        -webkit-padding-start: 2px;
+        -webkit-padding-end: 2px;
+        width: auto;
+        max-width: 100%;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+    }
+
+    label {
+        color: #3a3c40;
+    }
+
+    .col-md-10 {
+        border: 1px solid black;
+    }
+
+    div {
+        padding-bottom: 5px;
+    }
+
+    @@media (min-width: 768px) {
+        .col-md-10 {
+            -ms-flex: 0 0 83.333333%;
+            flex: 0 0 80.333333%;
+            max-width: 83.333333%;
+        }
+    }
+
+    legend {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #3a3c40;
+    }
+    thead {
+        white-space: nowrap;
+    }
+</style>
+<!-- row -->
+<div class="row linkone">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Partner Name : </label>   <label class="card-title">@Html.DisplayFor(model => model.Name) </label>
+                    </div>
+                </div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#TradingPartnerDetails1" role="tab"><span><i class="ti-user"></i></span> @Html.DisplayFor(model => model.Name)</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#ItemSetup1" role="tab"><span><i class="fa fa-bars"></i></span> Item Setup </a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#TradingPartnerTemplates1" role="tab"><span><i class="fa fa-file"></i> Templates</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#TradingPartnerAdresses11" role="tab"><span><i class="fa fa-address-book"></i></span> Adresses</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#TradingEDITransactions1" role="tab"><span><i class="fa fa-train"></i></span> Transactions</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#PartnerSetup11" role="tab"><span><i class="fa fa-paragraph"></i></span> Partner Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LookupTables1" role="tab"><span><i class="ti-list-ol"></i> Lookup Tables</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#LabelSetup1" role="tab"><span><i class="ti-settings"></i></span> Label Setup</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#GLAccount11" role="tab"><span><i class="fa fa-address-card-o"></i></span> GL Account</a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#InteGrationSetup1" role="tab"><span><i class="fa fa-asl-interpreting"></i></span> InteGration Setup</a> </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content  tabcontent-border">
+
+                    <div class="tab-pane active" id="TradingPartnerDetails1" role="tabpanel">
+                        <div class="p-20">
+                            @Html.Action("TradingPartnerDetail", "TradingPartner", new { id = Model.id })
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="ItemSetup1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                <div class="col-md-12 checkbox checkbox-primary pull-left p-t-0">
+                                    <input id="HideTrading1" type="checkbox">
+                                    <label for="HideTrading1"> Hide Trading Paartner PlugIn </label>
+                                    @Html.DisplayFor(item => item.Name)
+                                </div>
+                            </div>
+                            <div class="row" style="overflow: scroll;">
+                                @Html.Action("ItemSetup", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="TradingPartnerTemplates1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row"><div> Tamplates </div> </div>
+                            <div class="row">
+                                @Html.Action("Tamplate", "TradingPartner", new { id = Model.id })
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="TradingPartnerAdresses11" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row"><div> Address </div> </div>
+                            <div class="row" style="overflow:scroll">
+                                @Html.Action("Address", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="TradingEDITransactions1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row"><div> Transaction </div> </div>
+                            <div class="row">
+                                @Html.Action("Transaction", "TradingPartner", new { id = Model.id })
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="PartnerSetup11" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                @Html.Action("PartnerSetup", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="LookupTables1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                @Html.Action("LookupTables", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="LabelSetup1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                @Html.Action("LabelSetup", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="GLAccount11" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                @Html.Action("GLAccounts", "TradingPartner", new { id = Model.id })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane  p-20" id="InteGrationSetup1" role="tabpanel">
+                        <div class="p-20">
+                            <div class="row">
+                                @Html.Action("IntegrationSetup", "TradingPartner", new { id = Model.id })
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- row -->
